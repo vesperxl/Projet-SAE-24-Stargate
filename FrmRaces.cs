@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class frmPrincipal : Form
+    public partial class FrmRaces : Form
     {
-        public frmPrincipal()
+        public FrmRaces()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FrmRaces formRaces = new FrmRaces();
-            formRaces.ShowDialog();
         }
     }
 }
