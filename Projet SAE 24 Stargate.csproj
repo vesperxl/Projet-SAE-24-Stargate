@@ -56,18 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmRaces.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRaces.Designer.cs">
       <DependentUpon>FrmRaces.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="MesDatas.cs" />
+>>>>>>> 782ca1d12f1f865b1f5a827ca0f9cf2291297947
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
