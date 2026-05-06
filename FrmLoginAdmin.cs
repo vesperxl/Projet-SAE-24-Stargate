@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class frmPrincipal : Form
+    public partial class FrmLoginAdmin : Form
     {
-        public frmPrincipal()
+        public FrmLoginAdmin()
         {
             InitializeComponent();
         }
 
-        private void btnNvMissions_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            FrmLoginAdmin fadmin = new FrmLoginAdmin();
 
-            fadmin.ShowDialog();
+        }
+
+        
+
+        private void lbltxttitre_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
