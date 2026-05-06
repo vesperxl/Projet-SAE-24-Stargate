@@ -39,7 +39,7 @@
       <HintPath>packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -56,18 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmLoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLoginAdmin.Designer.cs">
       <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="FrmRaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRaces.Designer.cs">
+      <DependentUpon>FrmRaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MesDatas.cs" />
+>>>>>>> a3f9a39e7457aea5811c1250a1c83eb61a527660
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
