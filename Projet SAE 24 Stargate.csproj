@@ -85,11 +85,11 @@
     <Compile Include="frmDemarrage.Designer.cs">
       <DependentUpon>frmDemarrage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRaces.cs">
+    <Compile Include="frmRaces.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRaces.Designer.cs">
-      <DependentUpon>FrmRaces.cs</DependentUpon>
+    <Compile Include="frmRaces.Designer.cs">
+      <DependentUpon>frmRaces.cs</DependentUpon>
     </Compile>
     <Compile Include="MesDatas.cs" />
     <Compile Include="Program.cs" />
@@ -100,11 +100,20 @@
     <EmbeddedResource Include="frmDetailMission.resx">
       <DependentUpon>frmDetailMission.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ucRaces.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRaces.Designer.cs">
+      <DependentUpon>ucRaces.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemarrage.resx">
       <DependentUpon>frmDemarrage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaces.resx">
+      <DependentUpon>frmRaces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,7 +123,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucRaces.resx">
+      <DependentUpon>ucRaces.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

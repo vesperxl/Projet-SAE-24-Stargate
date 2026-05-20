@@ -19,7 +19,7 @@ namespace Projet_SAE_24_Stargate
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmRaces formRaces = new FrmRaces();
+            frmRaces formRaces = new frmRaces();
             formRaces.ShowDialog();
         }
 

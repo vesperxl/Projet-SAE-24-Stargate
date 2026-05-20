@@ -1,6 +1,6 @@
 ﻿namespace Projet_SAE_24_Stargate
 {
-    partial class FrmRaces
+    partial class frmRaces
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkBoxTriAlpha = new System.Windows.Forms.CheckBox();
+            this.chkBoxTriCoul = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 13);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(919, 537);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // chkBoxTriAlpha
+            // 
+            this.chkBoxTriAlpha.AutoSize = true;
+            this.chkBoxTriAlpha.ForeColor = System.Drawing.Color.White;
+            this.chkBoxTriAlpha.Location = new System.Drawing.Point(13, 576);
+            this.chkBoxTriAlpha.Name = "chkBoxTriAlpha";
+            this.chkBoxTriAlpha.Size = new System.Drawing.Size(177, 24);
+            this.chkBoxTriAlpha.TabIndex = 1;
+            this.chkBoxTriAlpha.Text = "Triage Alphabétique";
+            this.chkBoxTriAlpha.UseVisualStyleBackColor = true;
+            this.chkBoxTriAlpha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // chkBoxTriCoul
+            // 
+            this.chkBoxTriCoul.AutoSize = true;
+            this.chkBoxTriCoul.ForeColor = System.Drawing.Color.White;
+            this.chkBoxTriCoul.Location = new System.Drawing.Point(197, 576);
+            this.chkBoxTriCoul.Name = "chkBoxTriCoul";
+            this.chkBoxTriCoul.Size = new System.Drawing.Size(138, 24);
+            this.chkBoxTriCoul.TabIndex = 2;
+            this.chkBoxTriCoul.Text = "Triage Couleur";
+            this.chkBoxTriCoul.UseVisualStyleBackColor = true;
+            this.chkBoxTriCoul.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            // 
+            // frmRaces
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmRaces";
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(929, 629);
+            this.Controls.Add(this.chkBoxTriCoul);
+            this.Controls.Add(this.chkBoxTriAlpha);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "frmRaces";
+            this.Text = "frmRaces";
+            this.Load += new System.EventHandler(this.frmRaces_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox chkBoxTriAlpha;
+        private System.Windows.Forms.CheckBox chkBoxTriCoul;
     }
 }
