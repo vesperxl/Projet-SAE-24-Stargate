@@ -54,14 +54,30 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UC Mission, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\UC Mission.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarteIdentiteMembre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarteIdentiteMembre.Designer.cs">
+      <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connexion.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmDetailMission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmDetailMission.Designer.cs">
+      <DependentUpon>frmDetailMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDemarrage.cs">
       <SubType>Form</SubType>
@@ -78,8 +94,14 @@
     <Compile Include="MesDatas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CarteIdentiteMembre.resx">
+      <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetailMission.resx">
+      <DependentUpon>frmDetailMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemarrage.resx">
       <DependentUpon>frmDemarrage.cs</DependentUpon>

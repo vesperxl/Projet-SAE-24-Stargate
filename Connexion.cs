@@ -20,13 +20,14 @@ namespace Projet_SAE_24_Stargate
                 if (connec == null) {
                     try
                     {
-                        string chaine = @"Data Source = Stargate.bd";
+                        string chaine = @"Data Source = Stargate.db";
                         connec = new SQLiteConnection(chaine);
                         connec.Open();
                     }
                     catch(SQLiteException err)
                     {
-                        Console.WriteLine("Erreur lors de l'ouverture de la connexion");
+                        Console.WriteLine("Erreur lors de l'ouverture de la connexion" + err.GetType());
+                        
                     }
                 }
 

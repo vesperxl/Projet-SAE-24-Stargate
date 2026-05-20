@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.btnRaces = new System.Windows.Forms.Button();
+            this.btnDemarrage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,11 +53,22 @@
             this.btnRaces.UseVisualStyleBackColor = false;
             this.btnRaces.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnDemarrage
+            // 
+            this.btnDemarrage.Location = new System.Drawing.Point(30, 15);
+            this.btnDemarrage.Name = "btnDemarrage";
+            this.btnDemarrage.Size = new System.Drawing.Size(235, 60);
+            this.btnDemarrage.TabIndex = 2;
+            this.btnDemarrage.Text = "Demarrage";
+            this.btnDemarrage.UseVisualStyleBackColor = true;
+            this.btnDemarrage.Click += new System.EventHandler(this.btnDemarrage_Click);
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 589);
+            this.Controls.Add(this.btnDemarrage);
             this.Controls.Add(this.btnRaces);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,6 +84,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRaces;
+        private System.Windows.Forms.Button btnDemarrage;
     }
 }
 
