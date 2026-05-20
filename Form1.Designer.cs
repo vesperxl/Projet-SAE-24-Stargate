@@ -1,6 +1,6 @@
 ﻿namespace Projet_SAE_24_Stargate
 {
-    partial class frmPrincipal
+    partial class Form1
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

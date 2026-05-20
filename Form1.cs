@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class frmPrincipal : Form
+    public partial class Form1 : Form
     {
-        public frmPrincipal()
+        public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         private void button2_Click(object sender, EventArgs e)
