@@ -45,16 +45,17 @@ namespace Projet_SAE_24_Stargate
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBoxTriCoul.Checked)
+            if (chkBoxTriAlpha.Checked)
             {
                 chkBoxTriCoul.Checked = false;
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
             }
-
-            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
 
         private void genererRaces(bool alpha, bool colo)
         {
+            flowLayoutPanel1.SuspendLayout();
+
             flowLayoutPanel1.Controls.Clear();
 
             string ordreTri;
@@ -94,17 +95,18 @@ namespace Projet_SAE_24_Stargate
 
                 ucRaces newRaces = new ucRaces(nom, origine, couleur, image);
                 flowLayoutPanel1.Controls.Add(newRaces);
+
+                flowLayoutPanel1.ResumeLayout();
             }
         }
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chkBoxTriAlpha.Checked)
+            if (chkBoxTriCoul.Checked)
             {
                 chkBoxTriAlpha.Checked = false;
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
             }
-
-            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
     }
 }
