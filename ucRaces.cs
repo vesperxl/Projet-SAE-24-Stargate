@@ -17,16 +17,15 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
         }
 
-        public ucRaces(String nom, String origine, String couleur)
+        public ucRaces(String nom, String origine, String couleur, Image image)
         {
             InitializeComponent();
 
             lblNom.Text = nom;
             lblOrigine.Text = origine;
             BackColor = Color.FromName(couleur);
-
-            //picBox.Image = Image.FromFile(cheminImage);
-            //picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox.Image = image;
+            picBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
     }
 }
