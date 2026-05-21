@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetailMission));
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDetailMission = new System.Windows.Forms.TabPage();
+            this.grpCapture = new System.Windows.Forms.GroupBox();
+            this.flpObjectif = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMembre = new System.Windows.Forms.GroupBox();
             this.flpMembre = new System.Windows.Forms.FlowLayoutPanel();
             this.grpRoute = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextFeuilleRoute = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblSoldeApresDepense = new System.Windows.Forms.Label();
@@ -54,13 +56,10 @@
             this.lblNomMission = new System.Windows.Forms.Label();
             this.picturePlanete = new System.Windows.Forms.PictureBox();
             this.tabJournalMission = new System.Windows.Forms.TabPage();
-            this.grpCapture = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabGeneral.SuspendLayout();
             this.tabDetailMission.SuspendLayout();
+            this.grpCapture.SuspendLayout();
             this.grpMembre.SuspendLayout();
-            this.flpMembre.SuspendLayout();
             this.grpRoute.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,7 +70,6 @@
             this.grpDateDepart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).BeginInit();
-            this.grpCapture.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -103,12 +101,31 @@
             this.tabDetailMission.Text = "Détails de la mission";
             this.tabDetailMission.UseVisualStyleBackColor = true;
             // 
+            // grpCapture
+            // 
+            this.grpCapture.Controls.Add(this.flpObjectif);
+            this.grpCapture.Location = new System.Drawing.Point(358, 15);
+            this.grpCapture.Name = "grpCapture";
+            this.grpCapture.Size = new System.Drawing.Size(309, 278);
+            this.grpCapture.TabIndex = 10;
+            this.grpCapture.TabStop = false;
+            this.grpCapture.Text = "Objectif ";
+            // 
+            // flpObjectif
+            // 
+            this.flpObjectif.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpObjectif.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpObjectif.Location = new System.Drawing.Point(3, 23);
+            this.flpObjectif.Name = "flpObjectif";
+            this.flpObjectif.Size = new System.Drawing.Size(303, 252);
+            this.flpObjectif.TabIndex = 0;
+            // 
             // grpMembre
             // 
             this.grpMembre.Controls.Add(this.flpMembre);
-            this.grpMembre.Location = new System.Drawing.Point(16, 333);
+            this.grpMembre.Location = new System.Drawing.Point(16, 299);
             this.grpMembre.Name = "grpMembre";
-            this.grpMembre.Size = new System.Drawing.Size(651, 202);
+            this.grpMembre.Size = new System.Drawing.Size(651, 221);
             this.grpMembre.TabIndex = 9;
             this.grpMembre.TabStop = false;
             this.grpMembre.Text = "Membre (5 requis)";
@@ -116,33 +133,33 @@
             // flpMembre
             // 
             this.flpMembre.AutoScroll = true;
-            this.flpMembre.Controls.Add(this.flowLayoutPanel2);
             this.flpMembre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMembre.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpMembre.Location = new System.Drawing.Point(3, 23);
             this.flpMembre.Name = "flpMembre";
             this.flpMembre.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMembre.Size = new System.Drawing.Size(645, 176);
+            this.flpMembre.Size = new System.Drawing.Size(645, 195);
             this.flpMembre.TabIndex = 0;
             // 
             // grpRoute
             // 
-            this.grpRoute.Controls.Add(this.richTextBox1);
-            this.grpRoute.Location = new System.Drawing.Point(691, 203);
+            this.grpRoute.Controls.Add(this.richTextFeuilleRoute);
+            this.grpRoute.Location = new System.Drawing.Point(691, 179);
             this.grpRoute.Name = "grpRoute";
             this.grpRoute.Size = new System.Drawing.Size(411, 341);
             this.grpRoute.TabIndex = 7;
             this.grpRoute.TabStop = false;
             this.grpRoute.Text = "Feuille de route";
             // 
-            // richTextBox1
+            // richTextFeuilleRoute
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.richTextBox1.Location = new System.Drawing.Point(13, 29);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(389, 300);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextFeuilleRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextFeuilleRoute.Location = new System.Drawing.Point(13, 29);
+            this.richTextFeuilleRoute.Name = "richTextFeuilleRoute";
+            this.richTextFeuilleRoute.ReadOnly = true;
+            this.richTextFeuilleRoute.Size = new System.Drawing.Size(389, 300);
+            this.richTextFeuilleRoute.TabIndex = 0;
+            this.richTextFeuilleRoute.Text = "";
             // 
             // groupBox3
             // 
@@ -328,6 +345,7 @@
             this.picturePlanete.Location = new System.Drawing.Point(16, 15);
             this.picturePlanete.Name = "picturePlanete";
             this.picturePlanete.Size = new System.Drawing.Size(130, 130);
+            this.picturePlanete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturePlanete.TabIndex = 0;
             this.picturePlanete.TabStop = false;
             // 
@@ -341,32 +359,6 @@
             this.tabJournalMission.Text = "Journal de bord ";
             this.tabJournalMission.UseVisualStyleBackColor = true;
             // 
-            // grpCapture
-            // 
-            this.grpCapture.Controls.Add(this.flowLayoutPanel1);
-            this.grpCapture.Location = new System.Drawing.Point(358, 15);
-            this.grpCapture.Name = "grpCapture";
-            this.grpCapture.Size = new System.Drawing.Size(309, 312);
-            this.grpCapture.TabIndex = 10;
-            this.grpCapture.TabStop = false;
-            this.grpCapture.Text = "Objectif ";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 23);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(303, 286);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Enabled = false;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 13);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(114, 148);
-            this.flowLayoutPanel2.TabIndex = 0;
-            // 
             // frmDetailMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -377,11 +369,12 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDetailMission";
             this.Text = "frmDetailMission";
+            this.Load += new System.EventHandler(this.frmDetailMission_Load);
             this.tabGeneral.ResumeLayout(false);
             this.tabDetailMission.ResumeLayout(false);
             this.tabDetailMission.PerformLayout();
+            this.grpCapture.ResumeLayout(false);
             this.grpMembre.ResumeLayout(false);
-            this.flpMembre.ResumeLayout(false);
             this.grpRoute.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -396,7 +389,6 @@
             this.grpDateDepart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).EndInit();
-            this.grpCapture.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,11 +417,10 @@
         private System.Windows.Forms.Label lblSoldeApresDepense;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpRoute;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextFeuilleRoute;
         private System.Windows.Forms.GroupBox grpMembre;
         private System.Windows.Forms.FlowLayoutPanel flpMembre;
         private System.Windows.Forms.GroupBox grpCapture;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpObjectif;
     }
 }

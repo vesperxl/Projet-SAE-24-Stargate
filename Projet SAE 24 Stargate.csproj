@@ -100,6 +100,12 @@
     <EmbeddedResource Include="frmDetailMission.resx">
       <DependentUpon>frmDetailMission.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ucCarteIdentité.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCarteIdentité.Designer.cs">
+      <DependentUpon>ucCarteIdentité.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucRaces.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucCarteIdentité.resx">
+      <DependentUpon>ucCarteIdentité.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucRaces.resx">
       <DependentUpon>ucRaces.cs</DependentUpon>
     </EmbeddedResource>

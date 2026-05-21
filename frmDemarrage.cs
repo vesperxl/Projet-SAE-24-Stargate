@@ -34,13 +34,6 @@ namespace Projet_SAE_24_Stargate
                 }
 
 
-                MesDatas.DsGlobal.Tables["Planete"].Columns.Add("cheminImagePlanete", typeof(string));
-
-                foreach (DataRow Row in MesDatas.DsGlobal.Tables["Planete"].Rows)
-                {
-                    Row["cheminImagePlanete"] = @"C:\Users\User\Documents\SAE 24\Projet SAE 24 Stargate\images\" + Row["nom"].ToString() + ".png";
-                }
-
                 foreach (DataRow Row in MesDatas.DsGlobal.Tables["Mission"].Rows)
                 {
                     string nomMission = Row["nomPlanete"].ToString() + " - " + Row["numero"].ToString();
@@ -49,8 +42,7 @@ namespace Projet_SAE_24_Stargate
                     string matriculeChef = Row["matriculeChef"].ToString();
                     string budget = Row["budget"].ToString() + " €";
                     string nomChef = "";
-                    string nomImage = "";
-
+                    Image img = (Image)Properties.Resources.ResourceManager.GetObject(Row["nomPlanete"].ToString());
 
                     foreach (DataRow Row2 in MesDatas.DsGlobal.Tables["Membre"].Rows)
                     {
@@ -62,18 +54,13 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
-                    foreach (DataRow Row3 in MesDatas.DsGlobal.Tables["Planete"].Rows)
-                    {
-                        if (Row3["nom"].ToString() == Row["nomPlanete"].ToString())
-                        {
-                            nomImage = Row3["cheminImagePlanete"].ToString();
-                            break;
-                        }
+                 
 
-                    }
+                   
 
-                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img);
                     UCMISSION.afficheur = Click_VoirPlus;
+                    
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
                     flpMission.Controls.Add(UCMISSION);
 
@@ -91,7 +78,11 @@ namespace Projet_SAE_24_Stargate
         private void Click_VoirPlus(object sender, EventArgs e)
         {
             UserControl1 ucClique = (UserControl1)sender;
+            string txt = ucClique.NomMission;
+            string[] tab = txt.Split('-');
 
+            frmDetailMission frm = new frmDetailMission(tab[0].Trim(), Convert.ToInt32(tab[1].Trim()));
+            frm.ShowDialog();
 
         }
 
@@ -112,13 +103,6 @@ namespace Projet_SAE_24_Stargate
                 }
 
 
-                MesDatas.DsGlobal.Tables["Planete"].Columns.Add("cheminImagePlanete", typeof(string));
-
-                foreach (DataRow Row in MesDatas.DsGlobal.Tables["Planete"].Rows)
-                {
-                    Row["cheminImagePlanete"] = @"C:\Users\User\Documents\SAE 24\Projet SAE 24 Stargate\images\" + Row["nom"].ToString() + ".png";
-                }
-
                 foreach (DataRow Row in MesDatas.DsGlobal.Tables["Mission"].Rows)
                 {
                     string nomMission = Row["nomPlanete"].ToString() + " - " + Row["numero"].ToString();
@@ -127,8 +111,7 @@ namespace Projet_SAE_24_Stargate
                     string matriculeChef = Row["matriculeChef"].ToString();
                     string budget = Row["budget"].ToString() + " €";
                     string nomChef = "";
-                    string nomImage = "";
-
+                    Image img = (Image)Properties.Resources.ResourceManager.GetObject(Row["nomPlanete"].ToString());
 
                     foreach (DataRow Row2 in MesDatas.DsGlobal.Tables["Membre"].Rows)
                     {
@@ -140,17 +123,11 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
-                    foreach (DataRow Row3 in MesDatas.DsGlobal.Tables["Planete"].Rows)
-                    {
-                        if (Row3["nom"].ToString() == Row["nomPlanete"].ToString())
-                        {
-                            nomImage = Row3["cheminImagePlanete"].ToString();
-                            break;
-                        }
 
-                    }
 
-                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
+
+
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img);
                     UCMISSION.afficheur = Click_VoirPlus;
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
                     flpMission.Controls.Add(UCMISSION);
@@ -164,9 +141,9 @@ namespace Projet_SAE_24_Stargate
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
-
-
-
         }
+
+
     }
 }
+
