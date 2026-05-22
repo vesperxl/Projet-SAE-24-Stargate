@@ -54,8 +54,6 @@ namespace Projet_SAE_24_Stargate
 
         private void genererRaces(bool alpha, bool colo)
         {
-            flowLayoutPanel1.SuspendLayout();
-
             flowLayoutPanel1.Controls.Clear();
 
             string ordreTri;
@@ -96,7 +94,6 @@ namespace Projet_SAE_24_Stargate
                 ucRaces newRaces = new ucRaces(nom, origine, couleur, image);
                 flowLayoutPanel1.Controls.Add(newRaces);
 
-                flowLayoutPanel1.ResumeLayout();
             }
         }
 

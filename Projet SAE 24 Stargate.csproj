@@ -94,6 +94,24 @@
     <Compile Include="MesDatas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucPlanetes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPlanetes.Designer.cs">
+      <DependentUpon>ucPlanetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPlanetMini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPlanetMini.Designer.cs">
+      <DependentUpon>ucPlanetMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRaces_Allie_Ennemie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRaces_Allie_Ennemie.Designer.cs">
+      <DependentUpon>ucRaces_Allie_Ennemie.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CarteIdentiteMembre.resx">
       <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="ucRaces.resx">
       <DependentUpon>ucRaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPlanetes.resx">
+      <DependentUpon>ucPlanetes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

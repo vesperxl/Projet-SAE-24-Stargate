@@ -17,7 +17,7 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
         }
 
-        public ucRaces(String nom, String origine, String couleur, Image image)
+        public ucRaces(String nom, String origine, String couleur, Image image,int type)
         {
             InitializeComponent();
 
