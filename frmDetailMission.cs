@@ -21,6 +21,8 @@ namespace Projet_SAE_24_Stargate
             this.nomPlanete = nomPlanete;
             this.num = num;
         }
+        private bool ongletCharge = false;
+        BindingSource bsJournal = new BindingSource();
 
         private void frmDetailMission_Load(object sender, EventArgs e)
         {
@@ -49,7 +51,7 @@ namespace Projet_SAE_24_Stargate
 
             //Ajout des objectif
             Label lblObjData = new Label();
-            lblObjData.AutoSize = true;
+            lblObjData.AutoSize = true; 
             lblObjData.Text = ligneMission[0]["objectifDatabaz"].ToString() + " Databaz";
             flpObjectif.Controls.Add(lblObjData);
             Label sep = new Label();
@@ -119,6 +121,39 @@ namespace Projet_SAE_24_Stargate
                 
             }
 
+        }
+
+
+        private void tabGeneral_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tabGeneral.SelectedTab == tabJournalMission && !ongletCharge)
+            {
+                //Binding source 
+                bsJournal.DataSource = MesDatas.DsGlobal.Tables["JournalDeBord"];
+                bsJournal.Filter = "nomPlanete = '" + nomPlanete + "' AND numero = " + num;
+                lblDate.DataBindings.Add("Text", bsJournal, "dateJ");
+                lblEvent.DataBindings.Add("Text", bsJournal, "commentaires");
+            }
+        }
+
+        private void pictureFullGauche_Click(object sender, EventArgs e)
+        {
+            bsJournal.MoveFirst();
+        }
+
+        private void pictureGauche_Click(object sender, EventArgs e)
+        {
+            bsJournal.MovePrevious();
+        }
+
+        private void pictureDroite_Click(object sender, EventArgs e)
+        {
+            bsJournal.MoveNext();
+        }
+
+        private void pictureFullDroite_Click(object sender, EventArgs e)
+        {
+            bsJournal.MoveLast();
         }
     }
 }

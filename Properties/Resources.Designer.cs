@@ -103,6 +103,46 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flecheDroite {
+            get {
+                object obj = ResourceManager.GetObject("flecheDroite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecheFullDroite {
+            get {
+                object obj = ResourceManager.GetObject("flecheFullDroite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecheFullGauche {
+            get {
+                object obj = ResourceManager.GetObject("flecheFullGauche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecheGauche {
+            get {
+                object obj = ResourceManager.GetObject("flecheGauche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kobaia {
             get {
                 object obj = ResourceManager.GetObject("Kobaia", resourceCulture);

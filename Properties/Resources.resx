@@ -130,6 +130,18 @@
   <data name="dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\dollar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="flecheDroite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecheDroite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flecheFullDroite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecheFullDroite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flecheFullGauche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecheFullGauche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flecheGauche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecheGauche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Kobaia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\Kobaia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
