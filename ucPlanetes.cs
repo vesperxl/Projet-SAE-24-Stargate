@@ -16,5 +16,12 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
         }
+
+        public ucPlanetes(String nom, Image image)
+        {
+            lblNom.Text = nom;
+            pctBoxImage.Image = image;
+            InitializeComponent();
+        }
     }
 }

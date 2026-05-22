@@ -28,89 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flpPlanet = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpMonstres = new System.Windows.Forms.FlowLayoutPanel();
-            this.grpBoxInfo = new System.Windows.Forms.GroupBox();
-            this.grpBoxAtmo = new System.Windows.Forms.GroupBox();
-            this.grpBoxPesanteur = new System.Windows.Forms.GroupBox();
-            this.grpBoxDataBaz = new System.Windows.Forms.GroupBox();
-            this.grpBoxInfo.SuspendLayout();
+            this.pctBoxImage = new System.Windows.Forms.PictureBox();
+            this.lblNom = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // flpPlanet
+            // pctBoxImage
             // 
-            this.flpPlanet.Location = new System.Drawing.Point(4, 4);
-            this.flpPlanet.Name = "flpPlanet";
-            this.flpPlanet.Size = new System.Drawing.Size(354, 763);
-            this.flpPlanet.TabIndex = 0;
+            this.pctBoxImage.Location = new System.Drawing.Point(4, 4);
+            this.pctBoxImage.Name = "pctBoxImage";
+            this.pctBoxImage.Size = new System.Drawing.Size(154, 143);
+            this.pctBoxImage.TabIndex = 0;
+            this.pctBoxImage.TabStop = false;
             // 
-            // flpMonstres
+            // lblNom
             // 
-            this.flpMonstres.Location = new System.Drawing.Point(364, 4);
-            this.flpMonstres.Name = "flpMonstres";
-            this.flpMonstres.Size = new System.Drawing.Size(815, 501);
-            this.flpMonstres.TabIndex = 1;
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblNom.Location = new System.Drawing.Point(164, 62);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(0, 32);
+            this.lblNom.TabIndex = 1;
             // 
-            // grpBoxInfo
-            // 
-            this.grpBoxInfo.Controls.Add(this.grpBoxPesanteur);
-            this.grpBoxInfo.Controls.Add(this.grpBoxDataBaz);
-            this.grpBoxInfo.Controls.Add(this.grpBoxAtmo);
-            this.grpBoxInfo.Location = new System.Drawing.Point(365, 512);
-            this.grpBoxInfo.Name = "grpBoxInfo";
-            this.grpBoxInfo.Size = new System.Drawing.Size(814, 255);
-            this.grpBoxInfo.TabIndex = 2;
-            this.grpBoxInfo.TabStop = false;
-            this.grpBoxInfo.Text = "Informations";
-            // 
-            // grpBoxAtmo
-            // 
-            this.grpBoxAtmo.Location = new System.Drawing.Point(6, 26);
-            this.grpBoxAtmo.Name = "grpBoxAtmo";
-            this.grpBoxAtmo.Size = new System.Drawing.Size(257, 223);
-            this.grpBoxAtmo.TabIndex = 1;
-            this.grpBoxAtmo.TabStop = false;
-            this.grpBoxAtmo.Text = "Température Atmosphère";
-            // 
-            // grpBoxPesanteur
-            // 
-            this.grpBoxPesanteur.Location = new System.Drawing.Point(269, 26);
-            this.grpBoxPesanteur.Name = "grpBoxPesanteur";
-            this.grpBoxPesanteur.Size = new System.Drawing.Size(268, 223);
-            this.grpBoxPesanteur.TabIndex = 2;
-            this.grpBoxPesanteur.TabStop = false;
-            this.grpBoxPesanteur.Text = "Pesanteur";
-            // 
-            // grpBoxDataBaz
-            // 
-            this.grpBoxDataBaz.Location = new System.Drawing.Point(543, 25);
-            this.grpBoxDataBaz.Name = "grpBoxDataBaz";
-            this.grpBoxDataBaz.Size = new System.Drawing.Size(257, 223);
-            this.grpBoxDataBaz.TabIndex = 2;
-            this.grpBoxDataBaz.TabStop = false;
-            this.grpBoxDataBaz.Text = "Présence De Databaz";
-            // 
-            // UserControl1
+            // ucPlanetesMini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grpBoxInfo);
-            this.Controls.Add(this.flpMonstres);
-            this.Controls.Add(this.flpPlanet);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1182, 770);
-            this.grpBoxInfo.ResumeLayout(false);
+            this.Controls.Add(this.lblNom);
+            this.Controls.Add(this.pctBoxImage);
+            this.Name = "ucPlanetesMini";
+            this.Size = new System.Drawing.Size(350, 150);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flpPlanet;
-        private System.Windows.Forms.FlowLayoutPanel flpMonstres;
-        private System.Windows.Forms.GroupBox grpBoxInfo;
-        private System.Windows.Forms.GroupBox grpBoxAtmo;
-        private System.Windows.Forms.GroupBox grpBoxPesanteur;
-        private System.Windows.Forms.GroupBox grpBoxDataBaz;
+        private System.Windows.Forms.PictureBox pctBoxImage;
+        private System.Windows.Forms.Label lblNom;
     }
 }

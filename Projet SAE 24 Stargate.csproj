@@ -67,6 +67,12 @@
       <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
     </Compile>
     <Compile Include="Connexion.cs" />
+    <Compile Include="formPlanetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPlanetes.Designer.cs">
+      <DependentUpon>formPlanetes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetailMission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +106,6 @@
     <Compile Include="ucPlanetes.Designer.cs">
       <DependentUpon>ucPlanetes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucPlanetMini.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucPlanetMini.Designer.cs">
-      <DependentUpon>ucPlanetMini.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucRaces_Allie_Ennemie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +114,9 @@
     </Compile>
     <EmbeddedResource Include="CarteIdentiteMembre.resx">
       <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPlanetes.resx">
+      <DependentUpon>formPlanetes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetailMission.resx">
       <DependentUpon>frmDetailMission.cs</DependentUpon>
@@ -143,11 +146,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucPlanetes.resx">
+      <DependentUpon>ucPlanetes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucRaces.resx">
       <DependentUpon>ucRaces.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucPlanetes.resx">
-      <DependentUpon>ucPlanetes.cs</DependentUpon>
+    <EmbeddedResource Include="ucRaces_Allie_Ennemie.resx">
+      <DependentUpon>ucRaces_Allie_Ennemie.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

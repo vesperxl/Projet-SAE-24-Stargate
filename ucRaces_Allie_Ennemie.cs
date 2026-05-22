@@ -16,5 +16,27 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
         }
+
+        public ucRaces_Allie_Ennemie(String nom, String origine, String couleur,String InstruArme, Image image, bool allie)
+        {
+            lblNom.Text = nom;
+            lblOrigine.Text = origine;
+            BackColor = Color.FromName(couleur);
+            picBox.Image = image;
+            picBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+            if (allie)
+            {
+                grpBoxInstruArme.Text = "Instrument";
+                lblInstruArme.Text = InstruArme;
+            }
+            else
+            {
+                grpBoxInstruArme.Text = "Arme";
+                lblInstruArme.Text = InstruArme;
+            }
+
+            InitializeComponent();
+        }
     }
 }

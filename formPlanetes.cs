@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class ucPlanetMini : UserControl
+    public partial class formPlanetes : Form
     {
-        public ucPlanetMini()
+        public formPlanetes()
         {
             InitializeComponent();
         }

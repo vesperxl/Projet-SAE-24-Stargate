@@ -72,7 +72,7 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
-                    ucPlanetes UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
                     UCMISSION.afficheur = Click_VoirPlus;
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
                     flpMission.Controls.Add(UCMISSION);
@@ -150,7 +150,7 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
-                    ucPlanetes UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, nomImage);
                     UCMISSION.afficheur = Click_VoirPlus;
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
                     flpMission.Controls.Add(UCMISSION);
