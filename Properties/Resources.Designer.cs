@@ -153,7 +153,6 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loadingScreen {
         public static System.Drawing.Bitmap loadingScreen {
             get {
                 object obj = ResourceManager.GetObject("loadingScreen", resourceCulture);
