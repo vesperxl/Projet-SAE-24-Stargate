@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -52,7 +53,7 @@ namespace Projet_SAE_24_Stargate
             //Ajout des objectif
             Label lblObjData = new Label();
             lblObjData.AutoSize = true; 
-            lblObjData.Text = ligneMission[0]["objectifDatabaz"].ToString() + " Databaz";
+            lblObjData.Text = ligneMission[0]["objectifDatabaz"].ToString() + "Kilo de Databaz";
             flpObjectif.Controls.Add(lblObjData);
             Label sep = new Label();
             sep.AutoSize = true;
@@ -189,15 +190,59 @@ namespace Projet_SAE_24_Stargate
                     totDepense += Convert.ToInt16(Row.Cells["Montant"].Value);
 
                 }
-
-
                 lblTotDepense.Text = "Total des dépenses : " + totDepense.ToString() + " $G";
-
-
-
-
-
             }
+
+
+            DataTable tblBilan = new DataTable("BilanCapture" + nomPlanete+"-"+num);
+            tblBilan.Columns.Add("nomEspece", typeof(string));
+            tblBilan.Columns.Add("objectifInitial", typeof(int));
+            tblBilan.Columns.Add("nbCapture", typeof(int));
+            tblBilan.Columns.Add("taux", typeof(string));
+            int nbCapture = 0;
+            string tauxFormat = "0.00%";
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["ObjectifCapture"].Rows)
+            {
+                if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
+                {
+                    string nomEspece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + row["idEspeceEnnemi"])[0]["nom"].ToString();
+                    int objectifCapture  = Convert.ToInt16(row["objectif"]);
+
+                    foreach (DataRow row2 in MesDatas.DsGlobal.Tables["Capturer"].Rows)
+                    {
+                        if (row2["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row2["numeroMission"]) == num && row2["idEspeceEnnemi"].ToString() == row["idEspeceEnnemi"].ToString())
+                        {
+                            nbCapture = Convert.ToInt16(row2["nombre"]);
+                            float taux = ((float)nbCapture / (float)objectifCapture) * 100;
+                             tauxFormat = taux.ToString("0.00") + " %";
+                           
+                        }
+                   
+
+                    }
+
+                    tblBilan.Rows.Add(nomEspece, objectifCapture, nbCapture, tauxFormat);
+
+                }
+            }
+            
+            dgvCapture.DataSource = tblBilan;
+            dgvCapture.Columns["nomEspece"].HeaderText = "Espèce";
+            dgvCapture.Columns["objectifInitial"].HeaderText = "Objectif initial";
+            dgvCapture.Columns["nbCapture"].HeaderText = "Nombre de capture";
+            dgvCapture.Columns["taux"].HeaderText = "Taux de réussite";
+
+            dgvCapture.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCapture.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCapture.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+
+
+
+
+
+
 
         }
 
