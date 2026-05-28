@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace Projet_SAE_24_Stargate
 {
@@ -17,8 +16,6 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
         }
-
-        string chcon = @"Data Source=Stargate.db";
 
         Dictionary<string, string> dicoTrad = new Dictionary<string, string>()
         {
@@ -31,31 +28,17 @@ namespace Projet_SAE_24_Stargate
             { "Vert", "Green" },
             { "Violet", "Purple" }
         };
+
         private void frmRaces_Load(object sender, EventArgs e)
         {
-
-            SQLiteDataAdapter daEspece = new SQLiteDataAdapter("SELECT * FROM Espece", chcon);
-            daEspece.Fill(MesDatas.DsGlobal, "Espece");
-
-            SQLiteDataAdapter daHabiter = new SQLiteDataAdapter("SELECT * FROM Habiter", chcon);
-            daHabiter.Fill(MesDatas.DsGlobal, "Habiter");
-
-            SQLiteDataAdapter daAllie = new SQLiteDataAdapter("SELECT * FROM Allie", chcon);
-            daAllie.Fill(MesDatas.DsGlobal, "Allie");
-
-            SQLiteDataAdapter daEnnemi = new SQLiteDataAdapter("SELECT * FROM Ennemi", chcon);
-            daEnnemi.Fill(MesDatas.DsGlobal, "Ennemi");
-
             cboNom.Items.Add("Tous");
-            cboNom.SelectedIndex = 0;
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Rows)
             {
                 cboNom.Items.Add(row["nom"].ToString());
             }
+            cboNom.SelectedIndex = 0; 
 
             cboColor.Items.Add("Toutes");
-            cboColor.SelectedIndex = 0;
-
             List<string> couleursAjoutees = new List<string>();
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Rows)
@@ -68,8 +51,9 @@ namespace Projet_SAE_24_Stargate
                     cboColor.Items.Add(couleur);
                 }
             }
+            cboColor.SelectedIndex = 0;
 
-            cboType.Items.Add("TouTes");
+            cboType.Items.Add("Toutes"); 
             cboType.Items.Add("Alliés");
             cboType.Items.Add("Ennemies");
             cboType.SelectedIndex = 0;
@@ -92,11 +76,11 @@ namespace Projet_SAE_24_Stargate
 
             string ordreTri;
 
-            if (alpha == true)
+            if (alpha)
             {
                 ordreTri = "nom ASC";
             }
-            else if (colo == true)
+            else if (colo)
             {
                 ordreTri = "couleur ASC";
             }
@@ -106,16 +90,16 @@ namespace Projet_SAE_24_Stargate
             }
 
             string filtre = "";
+
             if (cboNom.SelectedItem != null && cboNom.SelectedItem.ToString() != "Tous")
             {
-                filtre = "nom = '" + cboNom.SelectedItem.ToString() + "'";
+                filtre = "nom = '" + cboNom.SelectedItem.ToString().Replace("'", "''") + "'";
             }
 
             if (cboColor.SelectedItem != null && cboColor.SelectedItem.ToString() != "Toutes")
             {
                 filtre = "couleur = '" + cboColor.SelectedItem.ToString() + "'";
             }
-
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Select(filtre, ordreTri))
             {
@@ -130,7 +114,10 @@ namespace Projet_SAE_24_Stargate
 
                 DataRow[] habitation = MesDatas.DsGlobal.Tables["Habiter"].Select("idEspece = " + id);
 
-                couleur = dicoTrad[couleur];
+                if (dicoTrad.ContainsKey(couleur))
+                {
+                    couleur = dicoTrad[couleur];
+                }
 
                 if (habitation.Length > 0)
                 {
@@ -139,7 +126,6 @@ namespace Projet_SAE_24_Stargate
 
                 ucRaces newRaces = new ucRaces(nom, origine, couleur, image);
                 flowLayoutPanel1.Controls.Add(newRaces);
-
             }
         }
 
@@ -152,13 +138,23 @@ namespace Projet_SAE_24_Stargate
             }
         }
 
+        private bool isUpdatingCombo = false;
+
         private void cboNom_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboColor.Items.Count > 0)
+            {
+                cboColor.SelectedIndex = 0;
+            }
             genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
 
         private void cboColor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboNom.Items.Count > 0)
+            {
+                cboNom.SelectedIndex = 0;
+            }
             genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
     }

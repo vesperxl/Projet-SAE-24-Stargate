@@ -46,7 +46,7 @@
             // btnRaces
             // 
             this.btnRaces.BackColor = System.Drawing.Color.Red;
-            this.btnRaces.Location = new System.Drawing.Point(828, 504);
+            this.btnRaces.Location = new System.Drawing.Point(775, 504);
             this.btnRaces.Name = "btnRaces";
             this.btnRaces.Size = new System.Drawing.Size(193, 73);
             this.btnRaces.TabIndex = 1;
@@ -66,17 +66,16 @@
             // 
             // btnbPlanete
             // 
-            this.btnbPlanete.Location = new System.Drawing.Point(532, 386);
+            this.btnbPlanete.Location = new System.Drawing.Point(490, 540);
             this.btnbPlanete.Name = "btnbPlanete";
             this.btnbPlanete.Size = new System.Drawing.Size(75, 23);
             this.btnbPlanete.TabIndex = 3;
-            this.btnbPlanete.Text = "Planete";
             this.btnbPlanete.UseVisualStyleBackColor = true;
             this.btnbPlanete.Click += new System.EventHandler(this.btnbPlanete_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 589);
             this.Controls.Add(this.btnbPlanete);

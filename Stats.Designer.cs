@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.cboStats = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // cboStats
+            // 
+            this.cboStats.FormattingEnabled = true;
+            this.cboStats.Location = new System.Drawing.Point(13, 13);
+            this.cboStats.Name = "cboStats";
+            this.cboStats.Size = new System.Drawing.Size(930, 28);
+            this.cboStats.TabIndex = 0;
+            // 
+            // Stats
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(955, 600);
+            this.Controls.Add(this.cboStats);
+            this.Name = "Stats";
             this.Text = "Stats";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox cboStats;
     }
 }

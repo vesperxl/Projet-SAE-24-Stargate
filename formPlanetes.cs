@@ -27,19 +27,15 @@ namespace Projet_SAE_24_Stargate
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Select())
             {
-                Button btn = new Button();
 
                 string nom = row["nom"].ToString();
 
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
                 Image image = Properties.Resources.loadingScreen;
-                btn.BackColor = Color.Red;
-                btn.Text = "";
                 
-                ucPlanetes ucPlanetes = new ucPlanetes(nom, image);
-                ucPlanetes.Controls.Add(btn);
-                flpPlanet.Controls.Add(ucPlanetes);
+                ucPlanetes ucPlanete = new ucPlanetes(nom, image);
+                flpPlanet.Controls.Add(ucPlanete);
 
             }
         }
