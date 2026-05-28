@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pctBoxImage = new System.Windows.Forms.PictureBox();
             this.lblNom = new System.Windows.Forms.Label();
+            this.pctBoxImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pctBoxImage
-            // 
-            this.pctBoxImage.Location = new System.Drawing.Point(4, 4);
-            this.pctBoxImage.Name = "pctBoxImage";
-            this.pctBoxImage.Size = new System.Drawing.Size(154, 143);
-            this.pctBoxImage.TabIndex = 0;
-            this.pctBoxImage.TabStop = false;
             // 
             // lblNom
             // 
@@ -50,13 +42,21 @@
             this.lblNom.Size = new System.Drawing.Size(0, 32);
             this.lblNom.TabIndex = 1;
             // 
-            // ucPlanetesMini
+            // pctBoxImage
+            // 
+            this.pctBoxImage.Location = new System.Drawing.Point(4, 4);
+            this.pctBoxImage.Name = "pctBoxImage";
+            this.pctBoxImage.Size = new System.Drawing.Size(154, 143);
+            this.pctBoxImage.TabIndex = 0;
+            this.pctBoxImage.TabStop = false;
+            // 
+            // ucPlanetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pctBoxImage);
-            this.Name = "ucPlanetesMini";
+            this.Name = "ucPlanetes";
             this.Size = new System.Drawing.Size(350, 150);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);

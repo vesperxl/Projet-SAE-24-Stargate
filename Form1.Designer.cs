@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnRaces = new System.Windows.Forms.Button();
             this.btnDemarrage = new System.Windows.Forms.Button();
+            this.btnbPlanete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -63,17 +64,28 @@
             this.btnDemarrage.UseVisualStyleBackColor = true;
             this.btnDemarrage.Click += new System.EventHandler(this.btnDemarrage_Click);
             // 
-            // frmPrincipal
+            // btnbPlanete
+            // 
+            this.btnbPlanete.Location = new System.Drawing.Point(532, 386);
+            this.btnbPlanete.Name = "btnbPlanete";
+            this.btnbPlanete.Size = new System.Drawing.Size(75, 23);
+            this.btnbPlanete.TabIndex = 3;
+            this.btnbPlanete.Text = "Planete";
+            this.btnbPlanete.UseVisualStyleBackColor = true;
+            this.btnbPlanete.Click += new System.EventHandler(this.btnbPlanete_Click);
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 589);
+            this.Controls.Add(this.btnbPlanete);
             this.Controls.Add(this.btnDemarrage);
             this.Controls.Add(this.btnRaces);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "frmPrincipal";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -85,6 +97,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRaces;
         private System.Windows.Forms.Button btnDemarrage;
+        private System.Windows.Forms.Button btnbPlanete;
     }
 }
 
