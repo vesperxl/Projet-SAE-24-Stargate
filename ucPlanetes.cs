@@ -10,22 +10,18 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class ucRaces : UserControl
+    public partial class ucPlanetes : UserControl
     {
-        public ucRaces()
+        public ucPlanetes()
         {
             InitializeComponent();
         }
 
-        public ucRaces(String nom, String origine, String couleur, Image image)
+        public ucPlanetes(String nom, Image image)
         {
             InitializeComponent();
             lblNom.Text = nom;
-            lblOrigine.Text = origine;
-            BackColor = Color.FromName(couleur);
-            picBox.Image = image;
-            picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            
+            pctBoxImage.Image = image;
         }
     }
 }

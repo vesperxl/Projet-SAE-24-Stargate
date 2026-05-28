@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace Projet_SAE_24_Stargate
 {
@@ -17,8 +16,6 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
         }
-
-        string chcon = @"Data Source=Stargate.db";
 
         Dictionary<string, string> dicoTrad = new Dictionary<string, string>()
         {
@@ -31,26 +28,46 @@ namespace Projet_SAE_24_Stargate
             { "Vert", "Green" },
             { "Violet", "Purple" }
         };
+
         private void frmRaces_Load(object sender, EventArgs e)
         {
+            cboNom.Items.Add("Tous");
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Rows)
+            {
+                cboNom.Items.Add(row["nom"].ToString());
+            }
+            cboNom.SelectedIndex = 0; 
 
-            SQLiteDataAdapter daEspece = new SQLiteDataAdapter("SELECT * FROM Espece", chcon);
-            daEspece.Fill(MesDatas.DsGlobal, "Espece");
+            cboColor.Items.Add("Toutes");
+            List<string> couleursAjoutees = new List<string>();
 
-            SQLiteDataAdapter daHabiter = new SQLiteDataAdapter("SELECT * FROM Habiter", chcon);
-            daHabiter.Fill(MesDatas.DsGlobal, "Habiter");
-            
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Rows)
+            {
+                string couleur = row["couleur"].ToString();
+
+                if (!couleursAjoutees.Contains(couleur))
+                {
+                    couleursAjoutees.Add(couleur);
+                    cboColor.Items.Add(couleur);
+                }
+            }
+            cboColor.SelectedIndex = 0;
+
+            cboType.Items.Add("Toutes"); 
+            cboType.Items.Add("Alliés");
+            cboType.Items.Add("Ennemies");
+            cboType.SelectedIndex = 0;
+
             genererRaces(false, false);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBoxTriCoul.Checked)
+            if (chkBoxTriAlpha.Checked)
             {
                 chkBoxTriCoul.Checked = false;
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
             }
-
-            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
 
         private void genererRaces(bool alpha, bool colo)
@@ -59,11 +76,11 @@ namespace Projet_SAE_24_Stargate
 
             string ordreTri;
 
-            if (alpha == true)
+            if (alpha)
             {
                 ordreTri = "nom ASC";
             }
-            else if (colo == true)
+            else if (colo)
             {
                 ordreTri = "couleur ASC";
             }
@@ -72,7 +89,19 @@ namespace Projet_SAE_24_Stargate
                 ordreTri = "id ASC";
             }
 
-            foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Select("", ordreTri))
+            string filtre = "";
+
+            if (cboNom.SelectedItem != null && cboNom.SelectedItem.ToString() != "Tous")
+            {
+                filtre = "nom = '" + cboNom.SelectedItem.ToString().Replace("'", "''") + "'";
+            }
+
+            if (cboColor.SelectedItem != null && cboColor.SelectedItem.ToString() != "Toutes")
+            {
+                filtre = "couleur = '" + cboColor.SelectedItem.ToString() + "'";
+            }
+
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Select(filtre, ordreTri))
             {
                 string id = row["id"].ToString();
                 string nom = row["nom"].ToString();
@@ -85,7 +114,10 @@ namespace Projet_SAE_24_Stargate
 
                 DataRow[] habitation = MesDatas.DsGlobal.Tables["Habiter"].Select("idEspece = " + id);
 
-                couleur = dicoTrad[couleur];
+                if (dicoTrad.ContainsKey(couleur))
+                {
+                    couleur = dicoTrad[couleur];
+                }
 
                 if (habitation.Length > 0)
                 {
@@ -99,11 +131,30 @@ namespace Projet_SAE_24_Stargate
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chkBoxTriAlpha.Checked)
+            if (chkBoxTriCoul.Checked)
             {
                 chkBoxTriAlpha.Checked = false;
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
             }
+        }
 
+        private bool isUpdatingCombo = false;
+
+        private void cboNom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboColor.Items.Count > 0)
+            {
+                cboColor.SelectedIndex = 0;
+            }
+            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+        }
+
+        private void cboColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNom.Items.Count > 0)
+            {
+                cboNom.SelectedIndex = 0;
+            }
             genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
     }
