@@ -22,7 +22,7 @@ namespace Projet_SAE_24_Stargate
         private void frmDemarrage_Load(object sender, EventArgs e)
         {
             try
-            {
+            {   
                 SQLiteConnection cx = Connexion.Connec;
                 DataTable dtSchema = cx.GetSchema("Tables");
 
@@ -34,6 +34,20 @@ namespace Projet_SAE_24_Stargate
                 }
 
 
+
+                MesDatas.DsGlobal.Relations.Add("relContactInformateur",
+                    MesDatas.DsGlobal.Tables["Informateur"].Columns["nomCode"],
+                    MesDatas.DsGlobal.Tables["Contact"].Columns["nomCodeInformateur"]);
+
+                MesDatas.DsGlobal.Tables["Contact"].Columns.Add("NomInformateur", typeof(string), "Parent(relContactInformateur).nom");
+
+
+                MesDatas.DsGlobal.Relations.Add("relDepenseTypeDepense",
+                    MesDatas.DsGlobal.Tables["TypeDepense"].Columns["id"],
+                    MesDatas.DsGlobal.Tables["Depense"].Columns["idTypeDepense"]);
+
+                MesDatas.DsGlobal.Tables["Depense"].Columns.Add("nomDepense", typeof(string), "Parent(relDepenseTypeDepense).libelle");
+                   
                 foreach (DataRow Row in MesDatas.DsGlobal.Tables["Mission"].Rows)
                 {
                     string nomMission = Row["nomPlanete"].ToString() + " - " + Row["numero"].ToString();
@@ -101,6 +115,18 @@ namespace Projet_SAE_24_Stargate
                     SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM " + table, cx);
                     da.Fill(MesDatas.DsGlobal, table);
                 }
+
+                MesDatas.DsGlobal.Relations.Add("relContactInformateur",
+                    MesDatas.DsGlobal.Tables["Informateur"].Columns["nomCode"],
+                    MesDatas.DsGlobal.Tables["Contact"].Columns["nomCodeInformateur"]);
+
+                MesDatas.DsGlobal.Tables["Contact"].Columns.Add("NomInformateur", typeof(string), "Parent(relContactInformateur).nom");
+
+                MesDatas.DsGlobal.Relations.Add("relDepenseTypeDepense",
+                  MesDatas.DsGlobal.Tables["TypeDepense"].Columns["id"],
+                  MesDatas.DsGlobal.Tables["Depense"].Columns["idTypeDepense"]);
+
+                MesDatas.DsGlobal.Tables["Depense"].Columns.Add("nomDepense", typeof(string), "Parent(relDepenseTypeDepense).libelle");
 
 
                 foreach (DataRow Row in MesDatas.DsGlobal.Tables["Mission"].Rows)

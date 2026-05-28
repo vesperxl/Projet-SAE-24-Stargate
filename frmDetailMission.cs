@@ -128,12 +128,77 @@ namespace Projet_SAE_24_Stargate
         {
             if(tabGeneral.SelectedTab == tabJournalMission && !ongletCharge)
             {
+                ongletCharge = true;
+
                 //Binding source 
                 bsJournal.DataSource = MesDatas.DsGlobal.Tables["JournalDeBord"];
                 bsJournal.Filter = "nomPlanete = '" + nomPlanete + "' AND numero = " + num;
                 lblDate.DataBindings.Add("Text", bsJournal, "dateJ");
                 lblEvent.DataBindings.Add("Text", bsJournal, "commentaires");
+
+
+                BindingSource bsContact = new BindingSource();
+                bsContact.DataSource = MesDatas.DsGlobal.Tables["Contact"];
+                bsContact.Filter = "nomPlanete = '" + nomPlanete + "' AND numeroMission = " + num;
+                dgvContact.DataSource = bsContact;
+                dgvContact.Columns["nomCodeInformateur"].Visible = false;
+                dgvContact.Columns["nomPlanete"].Visible = false;
+                dgvContact.Columns["numeroMission"].Visible = false;
+                dgvContact.Columns["dateC"].HeaderText = "Date";
+                dgvContact.Columns["sommeVersee"].HeaderText = "Somme";
+                dgvContact.Columns["appreciation"].HeaderText = "Appréciation";
+                dgvContact.Columns["nomInformateur"].HeaderText = "Nom de l'informateur";
+
+                dgvContact.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvContact.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvContact.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+                BindingSource bsDepense = new BindingSource();
+                bsDepense.DataSource = MesDatas.DsGlobal.Tables["Depense"];
+                bsDepense.Filter = "nomPlanete = '" + nomPlanete + "' AND numeroMission = " + num;
+                dgvDepense.DataSource = bsDepense;
+                dgvDepense.Columns["idTypeDepense"].Visible = false;
+                dgvDepense.Columns["nomPlanete"].Visible = false;
+                dgvDepense.Columns["numeroMission"].Visible = false;
+                dgvDepense.Columns["id"].HeaderText = "N°";
+                dgvDepense.Columns["dateD"].HeaderText = "Date";
+                dgvDepense.Columns["montant"].HeaderText = "Montant";
+                dgvDepense.Columns["motif"].HeaderText = "Motif";
+
+                dgvDepense.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvDepense.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvDepense.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+                float sommeVerse = 0;
+                
+                foreach(DataGridViewRow Row in dgvContact.Rows)
+                {
+                    sommeVerse += Convert.ToInt16(Row.Cells["sommeVersee"].Value);
+                   
+                }
+
+
+                lblSommeVersee.Text = "Somme versée : "  + sommeVerse.ToString() + " $G";
+
+                float totDepense = 0;
+
+                foreach (DataGridViewRow Row in dgvDepense.Rows)
+                {
+                    totDepense += Convert.ToInt16(Row.Cells["Montant"].Value);
+
+                }
+
+
+                lblTotDepense.Text = "Total des dépenses : " + totDepense.ToString() + " $G";
+
+
+
+
+
             }
+
         }
 
         private void pictureFullGauche_Click(object sender, EventArgs e)

@@ -57,14 +57,18 @@
             this.picturePlanete = new System.Windows.Forms.PictureBox();
             this.tabJournalMission = new System.Windows.Forms.TabPage();
             this.grpContact = new System.Windows.Forms.GroupBox();
+            this.dgvContact = new System.Windows.Forms.DataGridView();
             this.grpDepense = new System.Windows.Forms.GroupBox();
             this.grpEventJournal = new System.Windows.Forms.GroupBox();
-            this.pictureFullGauche = new System.Windows.Forms.PictureBox();
-            this.pictureGauche = new System.Windows.Forms.PictureBox();
+            this.lblEvent = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.pictureFullDroite = new System.Windows.Forms.PictureBox();
             this.pictureDroite = new System.Windows.Forms.PictureBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblEvent = new System.Windows.Forms.Label();
+            this.pictureGauche = new System.Windows.Forms.PictureBox();
+            this.pictureFullGauche = new System.Windows.Forms.PictureBox();
+            this.dgvDepense = new System.Windows.Forms.DataGridView();
+            this.lblSommeVersee = new System.Windows.Forms.Label();
+            this.lblTotDepense = new System.Windows.Forms.Label();
             this.tabGeneral.SuspendLayout();
             this.tabDetailMission.SuspendLayout();
             this.grpCapture.SuspendLayout();
@@ -80,11 +84,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).BeginInit();
             this.tabJournalMission.SuspendLayout();
+            this.grpContact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContact)).BeginInit();
+            this.grpDepense.SuspendLayout();
             this.grpEventJournal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullDroite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDroite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepense)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -367,6 +375,8 @@
             // 
             // tabJournalMission
             // 
+            this.tabJournalMission.Controls.Add(this.lblTotDepense);
+            this.tabJournalMission.Controls.Add(this.lblSommeVersee);
             this.tabJournalMission.Controls.Add(this.grpContact);
             this.tabJournalMission.Controls.Add(this.grpDepense);
             this.tabJournalMission.Controls.Add(this.grpEventJournal);
@@ -380,6 +390,7 @@
             // 
             // grpContact
             // 
+            this.grpContact.Controls.Add(this.dgvContact);
             this.grpContact.Location = new System.Drawing.Point(18, 183);
             this.grpContact.Name = "grpContact";
             this.grpContact.Size = new System.Drawing.Size(576, 232);
@@ -387,8 +398,21 @@
             this.grpContact.TabStop = false;
             this.grpContact.Text = "Contact avec les informateurs";
             // 
+            // dgvContact
+            // 
+            this.dgvContact.AllowUserToAddRows = false;
+            this.dgvContact.AllowUserToDeleteRows = false;
+            this.dgvContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvContact.Location = new System.Drawing.Point(3, 23);
+            this.dgvContact.Name = "dgvContact";
+            this.dgvContact.ReadOnly = true;
+            this.dgvContact.Size = new System.Drawing.Size(570, 206);
+            this.dgvContact.TabIndex = 0;
+            // 
             // grpDepense
             // 
+            this.grpDepense.Controls.Add(this.dgvDepense);
             this.grpDepense.Location = new System.Drawing.Point(618, 6);
             this.grpDepense.Name = "grpDepense";
             this.grpDepense.Size = new System.Drawing.Size(478, 409);
@@ -411,29 +435,25 @@
             this.grpEventJournal.TabStop = false;
             this.grpEventJournal.Text = "Evénements du journal";
             // 
-            // pictureFullGauche
+            // lblEvent
             // 
-            this.pictureFullGauche.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureFullGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullGauche;
-            this.pictureFullGauche.Location = new System.Drawing.Point(174, 122);
-            this.pictureFullGauche.Name = "pictureFullGauche";
-            this.pictureFullGauche.Size = new System.Drawing.Size(30, 30);
-            this.pictureFullGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureFullGauche.TabIndex = 0;
-            this.pictureFullGauche.TabStop = false;
-            this.pictureFullGauche.Click += new System.EventHandler(this.pictureFullGauche_Click);
+            this.lblEvent.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvent.Location = new System.Drawing.Point(102, 54);
+            this.lblEvent.Name = "lblEvent";
+            this.lblEvent.Size = new System.Drawing.Size(333, 55);
+            this.lblEvent.TabIndex = 4;
+            this.lblEvent.Text = "Décollage réussi, tout va bien, le moral de l\'équipage est au beau fixe";
+            this.lblEvent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureGauche
+            // lblDate
             // 
-            this.pictureGauche.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheGauche;
-            this.pictureGauche.Location = new System.Drawing.Point(227, 122);
-            this.pictureGauche.Name = "pictureGauche";
-            this.pictureGauche.Size = new System.Drawing.Size(30, 30);
-            this.pictureGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureGauche.TabIndex = 1;
-            this.pictureGauche.TabStop = false;
-            this.pictureGauche.Click += new System.EventHandler(this.pictureGauche_Click);
+            this.lblDate.AutoSize = true;
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDate.Location = new System.Drawing.Point(218, 27);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(98, 23);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "2026-01-01";
             // 
             // pictureFullDroite
             // 
@@ -459,25 +479,59 @@
             this.pictureDroite.TabStop = false;
             this.pictureDroite.Click += new System.EventHandler(this.pictureDroite_Click);
             // 
-            // lblDate
+            // pictureGauche
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDate.Location = new System.Drawing.Point(218, 27);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(98, 23);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "2026-01-01";
+            this.pictureGauche.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheGauche;
+            this.pictureGauche.Location = new System.Drawing.Point(227, 122);
+            this.pictureGauche.Name = "pictureGauche";
+            this.pictureGauche.Size = new System.Drawing.Size(30, 30);
+            this.pictureGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureGauche.TabIndex = 1;
+            this.pictureGauche.TabStop = false;
+            this.pictureGauche.Click += new System.EventHandler(this.pictureGauche_Click);
             // 
-            // lblEvent
+            // pictureFullGauche
             // 
-            this.lblEvent.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvent.Location = new System.Drawing.Point(102, 54);
-            this.lblEvent.Name = "lblEvent";
-            this.lblEvent.Size = new System.Drawing.Size(333, 55);
-            this.lblEvent.TabIndex = 4;
-            this.lblEvent.Text = "Décollage réussi, tout va bien, le moral de l\'équipage est au beau fixe";
-            this.lblEvent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureFullGauche.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureFullGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullGauche;
+            this.pictureFullGauche.Location = new System.Drawing.Point(174, 122);
+            this.pictureFullGauche.Name = "pictureFullGauche";
+            this.pictureFullGauche.Size = new System.Drawing.Size(30, 30);
+            this.pictureFullGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFullGauche.TabIndex = 0;
+            this.pictureFullGauche.TabStop = false;
+            this.pictureFullGauche.Click += new System.EventHandler(this.pictureFullGauche_Click);
+            // 
+            // dgvDepense
+            // 
+            this.dgvDepense.AllowUserToAddRows = false;
+            this.dgvDepense.AllowUserToDeleteRows = false;
+            this.dgvDepense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepense.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDepense.Location = new System.Drawing.Point(3, 23);
+            this.dgvDepense.Name = "dgvDepense";
+            this.dgvDepense.ReadOnly = true;
+            this.dgvDepense.Size = new System.Drawing.Size(472, 383);
+            this.dgvDepense.TabIndex = 0;
+            // 
+            // lblSommeVersee
+            // 
+            this.lblSommeVersee.AutoSize = true;
+            this.lblSommeVersee.Location = new System.Drawing.Point(188, 427);
+            this.lblSommeVersee.Name = "lblSommeVersee";
+            this.lblSommeVersee.Size = new System.Drawing.Size(53, 23);
+            this.lblSommeVersee.TabIndex = 2;
+            this.lblSommeVersee.Text = "label1";
+            // 
+            // lblTotDepense
+            // 
+            this.lblTotDepense.AutoSize = true;
+            this.lblTotDepense.Location = new System.Drawing.Point(761, 427);
+            this.lblTotDepense.Name = "lblTotDepense";
+            this.lblTotDepense.Size = new System.Drawing.Size(53, 23);
+            this.lblTotDepense.TabIndex = 3;
+            this.lblTotDepense.Text = "label1";
             // 
             // frmDetailMission
             // 
@@ -510,12 +564,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).EndInit();
             this.tabJournalMission.ResumeLayout(false);
+            this.tabJournalMission.PerformLayout();
+            this.grpContact.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContact)).EndInit();
+            this.grpDepense.ResumeLayout(false);
             this.grpEventJournal.ResumeLayout(false);
             this.grpEventJournal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullDroite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDroite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepense)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -558,5 +617,9 @@
         private System.Windows.Forms.PictureBox pictureDroite;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblEvent;
+        private System.Windows.Forms.DataGridView dgvContact;
+        private System.Windows.Forms.DataGridView dgvDepense;
+        private System.Windows.Forms.Label lblSommeVersee;
+        private System.Windows.Forms.Label lblTotDepense;
     }
 }
