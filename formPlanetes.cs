@@ -14,6 +14,7 @@ namespace Projet_SAE_24_Stargate
     public partial class formPlanetes : Form
     {
         string chcon = @"Data Source=Stargate.db";
+        String planetSelect = "";
 
         public formPlanetes()
         {
@@ -27,16 +28,28 @@ namespace Projet_SAE_24_Stargate
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Select())
             {
-
                 string nom = row["nom"].ToString();
 
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
                 Image image = Properties.Resources.loadingScreen;
-                
+
                 ucPlanetes ucPlanete = new ucPlanetes(nom, image);
+                ucPlanete.Click += new EventHandler(ucPlanete_Click);
                 flpPlanet.Controls.Add(ucPlanete);
 
+            }
+        }
+
+        private void ucPlanete_Click(object sender, EventArgs e)
+        {
+            ucPlanetes planeteClicked = sender as ucPlanetes;
+
+            if (planeteClicked != null)
+            {
+                planetSelect = planeteClicked.nomPlanete;
+
+                MessageBox.Show("" + planetSelect);
             }
         }
     }
