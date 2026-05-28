@@ -12,6 +12,7 @@ namespace Projet_SAE_24_Stargate
 {
     public partial class ucPlanetes : UserControl
     {
+        public String nomPlanete;
         public ucPlanetes()
         {
             InitializeComponent();
@@ -22,6 +23,15 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
             lblNom.Text = nom;
             pctBoxImage.Image = image;
+            nomPlanete = nom;
+
+            pctBoxImage.Click += new EventHandler(Clickeuh);
+            lblNom.Click += new EventHandler(Clickeuh);
+        }
+
+        private void Clickeuh(object sender, EventArgs e)
+        {
+            this.OnClick(e);
         }
     }
 }

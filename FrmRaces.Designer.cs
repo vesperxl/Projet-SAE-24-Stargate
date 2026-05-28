@@ -40,20 +40,18 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 8);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(613, 349);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(920, 537);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // chkBoxTriAlpha
             // 
             this.chkBoxTriAlpha.AutoSize = true;
             this.chkBoxTriAlpha.ForeColor = System.Drawing.Color.White;
-            this.chkBoxTriAlpha.Location = new System.Drawing.Point(9, 374);
-            this.chkBoxTriAlpha.Margin = new System.Windows.Forms.Padding(2);
+            this.chkBoxTriAlpha.Location = new System.Drawing.Point(14, 575);
             this.chkBoxTriAlpha.Name = "chkBoxTriAlpha";
-            this.chkBoxTriAlpha.Size = new System.Drawing.Size(121, 17);
+            this.chkBoxTriAlpha.Size = new System.Drawing.Size(177, 24);
             this.chkBoxTriAlpha.TabIndex = 1;
             this.chkBoxTriAlpha.Text = "Triage Alphabétique";
             this.chkBoxTriAlpha.UseVisualStyleBackColor = true;
@@ -63,10 +61,9 @@
             // 
             this.chkBoxTriCoul.AutoSize = true;
             this.chkBoxTriCoul.ForeColor = System.Drawing.Color.White;
-            this.chkBoxTriCoul.Location = new System.Drawing.Point(131, 374);
-            this.chkBoxTriCoul.Margin = new System.Windows.Forms.Padding(2);
+            this.chkBoxTriCoul.Location = new System.Drawing.Point(196, 575);
             this.chkBoxTriCoul.Name = "chkBoxTriCoul";
-            this.chkBoxTriCoul.Size = new System.Drawing.Size(95, 17);
+            this.chkBoxTriCoul.Size = new System.Drawing.Size(138, 24);
             this.chkBoxTriCoul.TabIndex = 2;
             this.chkBoxTriCoul.Text = "Triage Couleur";
             this.chkBoxTriCoul.UseVisualStyleBackColor = true;
@@ -75,45 +72,41 @@
             // cboNom
             // 
             this.cboNom.FormattingEnabled = true;
-            this.cboNom.Location = new System.Drawing.Point(228, 374);
-            this.cboNom.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNom.Location = new System.Drawing.Point(342, 575);
             this.cboNom.Name = "cboNom";
-            this.cboNom.Size = new System.Drawing.Size(130, 21);
+            this.cboNom.Size = new System.Drawing.Size(193, 28);
             this.cboNom.TabIndex = 3;
             this.cboNom.SelectedIndexChanged += new System.EventHandler(this.cboNom_SelectedIndexChanged);
             // 
             // cboColor
             // 
             this.cboColor.FormattingEnabled = true;
-            this.cboColor.Location = new System.Drawing.Point(361, 374);
-            this.cboColor.Margin = new System.Windows.Forms.Padding(2);
+            this.cboColor.Location = new System.Drawing.Point(542, 575);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(131, 21);
+            this.cboColor.Size = new System.Drawing.Size(194, 28);
             this.cboColor.TabIndex = 4;
             this.cboColor.SelectedIndexChanged += new System.EventHandler(this.cboColor_SelectedIndexChanged);
             // 
             // cboType
             // 
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(494, 374);
-            this.cboType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboType.Location = new System.Drawing.Point(741, 575);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(119, 21);
+            this.cboType.Size = new System.Drawing.Size(176, 28);
             this.cboType.TabIndex = 5;
             // 
             // frmRaces
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(619, 409);
+            this.ClientSize = new System.Drawing.Size(928, 629);
             this.Controls.Add(this.cboType);
             this.Controls.Add(this.cboColor);
             this.Controls.Add(this.cboNom);
             this.Controls.Add(this.chkBoxTriCoul);
             this.Controls.Add(this.chkBoxTriAlpha);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRaces";
             this.Text = "frmRaces";
             this.Load += new System.EventHandler(this.frmRaces_Load);
