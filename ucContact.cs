@@ -21,7 +21,7 @@ namespace Projet_SAE_24_Stargate
 
         public string getDate
         {
-            get { return dateChoice.Text; }
+            get { return dateChoice.Value.ToString("dd/MM/yyyy"); }
         }
 
         public int getSomme
@@ -29,7 +29,7 @@ namespace Projet_SAE_24_Stargate
             get
             {
             
-                return Convert.ToInt32(numSomme.Text);
+                return Convert.ToInt32(numSomme.Value);
             }
         }
        
@@ -42,10 +42,10 @@ namespace Projet_SAE_24_Stargate
            
         }
 
-        public int getInformateur
+        public string getInformateur
         {
 
-            get { return Convert.ToInt32(cboInformateur.Text)   ; }
+            get { return cboInformateur.SelectedValue.ToString(); }
         }
 
         private void ucContact_Load(object sender, EventArgs e)

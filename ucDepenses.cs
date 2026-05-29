@@ -26,7 +26,7 @@ namespace Projet_SAE_24_Stargate
 
         public string getDate
         {
-            get { return dateChoice.Text; }
+            get { return dateChoice.Value.ToString("dd/MM/yyyy"); }
         }
 
         public int getSomme

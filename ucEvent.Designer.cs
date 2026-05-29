@@ -54,7 +54,7 @@
             // dateChoice
             // 
             this.dateChoice.Location = new System.Drawing.Point(61, 11);
-            this.dateChoice.MinDate = new System.DateTime(2026, 5, 28, 0, 0, 0, 0);
+            this.dateChoice.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateChoice.Name = "dateChoice";
             this.dateChoice.Size = new System.Drawing.Size(330, 27);
             this.dateChoice.TabIndex = 10;

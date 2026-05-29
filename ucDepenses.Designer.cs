@@ -92,7 +92,7 @@
             // dateChoice
             // 
             this.dateChoice.Location = new System.Drawing.Point(130, 11);
-            this.dateChoice.MinDate = new System.DateTime(2026, 5, 28, 0, 0, 0, 0);
+            this.dateChoice.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateChoice.Name = "dateChoice";
             this.dateChoice.Size = new System.Drawing.Size(261, 27);
             this.dateChoice.TabIndex = 10;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.dateChoice);
             this.Controls.Add(this.lblDate);
             this.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ucDepenses";
             this.Size = new System.Drawing.Size(400, 360);
             this.Load += new System.EventHandler(this.ucDepenses_Load);

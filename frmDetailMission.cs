@@ -16,11 +16,13 @@ namespace Projet_SAE_24_Stargate
 
         private string nomPlanete;
         private int num;
-        public frmDetailMission(string nomPlanete, int num)
+        private string status;
+        public frmDetailMission(string nomPlanete, int num, string status)
         {
             InitializeComponent();
             this.nomPlanete = nomPlanete;
             this.num = num;
+            this.status = status;
         }
         private bool ongletCharge = false;
         BindingSource bsJournal = new BindingSource();
@@ -36,7 +38,17 @@ namespace Projet_SAE_24_Stargate
             lblDateDeFin.Text = ligneMission[0]["dateRetour"].ToString();
             lblBudget.Text = ligneMission[0]["budget"].ToString() + " $G";
             int budget = Convert.ToInt16(ligneMission[0]["budget"]);
-            grpMembre.Text = "Membre (" + ligneMission[0]["nbMembreRequis"] + " requis)";
+            grpMembre.Text = "Membre (" + ligneMission[0]["nbMembreRequis"] + " requis)"; 
+           if (status.Equals("Terminée"))
+            {
+                btnAdd.Enabled = false;
+                pictureInfo.Visible = true;
+                ToolTip tooltip = new ToolTip();
+                tooltip.SetToolTip(pictureInfo, "Impossible d'ajouter des informations à une mission qui est terminée.");
+
+            }
+            
+            
 
 
             //Calcul du solde apres depenses
@@ -47,7 +59,6 @@ namespace Projet_SAE_24_Stargate
                     budget -= Convert.ToInt16(row["montant"]);
                 }
             }
-
 
             foreach(DataRow row in MesDatas.DsGlobal.Tables["Contact"].Rows)
             {
@@ -175,6 +186,7 @@ namespace Projet_SAE_24_Stargate
                 dgvDepense.Columns["dateD"].HeaderText = "Date";
                 dgvDepense.Columns["montant"].HeaderText = "Montant";
                 dgvDepense.Columns["motif"].HeaderText = "Motif";
+                dgvDepense.Columns["nomDepense"].HeaderText = "Type de dépense";
 
                 dgvDepense.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvDepense.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -249,6 +261,7 @@ namespace Projet_SAE_24_Stargate
             dgvCapture.Columns["objectifInitial"].HeaderText = "Objectif initial";
             dgvCapture.Columns["nbCapture"].HeaderText = "Nombre de capture";
             dgvCapture.Columns["taux"].HeaderText = "Taux de réussite";
+           
 
             dgvCapture.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCapture.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

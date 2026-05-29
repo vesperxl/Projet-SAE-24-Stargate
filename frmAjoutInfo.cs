@@ -80,7 +80,7 @@ namespace Projet_SAE_24_Stargate
                 {
                     SQLiteConnection cx = Connexion.Connec;
                     string requetes = @"INSERT INTO Contact (nomPlanete, numeroMission, dateC, sommeVersee,appreciation,nomCodeInformateur)
-                                        VALUES ('@planete," + numMission + "," + "'" + contact.getDate + "'," + contact.getSomme + ",@apprec, @info)";
+                                        VALUES (@planete," + numMission + "," + "'" + contact.getDate + "'," + contact.getSomme + ",@apprec, @info)";
 
                     SQLiteCommand cd = new SQLiteCommand(requetes, cx);
 
@@ -89,10 +89,98 @@ namespace Projet_SAE_24_Stargate
                     cd.Parameters.AddWithValue("@info", contact.getInformateur);
 
                     cd.ExecuteNonQuery();
+
+                    MessageBox.Show("Contact ajouté avec succès !");
+                    MesDatas.DsGlobal.Tables["Contact"].Clear();
+                    SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM Contact", cx);
+                    da.Fill(MesDatas.DsGlobal, "Contact");
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
+
+            }
+            else if (grpInfo.Controls.Contains(depenses))
+            {
+
+                if (string.IsNullOrEmpty(depenses.getMotif))
+                {
+                    MessageBox.Show("Veuillez écrire un motif.");
+                    return;
+
+                }
+                if(depenses.getSomme <= 0)
+                {
+                    MessageBox.Show("Veuillez entrer une somme supérieure à 0.");
+                    return;
+                }
+                try
+                {
+                    SQLiteConnection cx = Connexion.Connec;
+                    int nextId = 1;
+                    string maxId = MesDatas.DsGlobal.Tables["Depense"].Compute("MAX(id)", "nomPlanete = '" + nomPlanete + "' AND numeroMission = " + numMission).ToString();
+
+                    if (!string.IsNullOrEmpty(maxId))
+                    {
+                        nextId = Convert.ToInt32(maxId) + 1;
+                    }
+
+
+                    string requetes = @"INSERT INTO Depense (nomPlanete, numeroMission, id, dateD, montant, motif, idTypeDepense)
+                                        VALUES (@planete," + numMission + "," + nextId + ",'" + depenses.getDate + "'," + depenses.getSomme + ",@motif," + depenses.getTypeDepense + ")";
+
+                    SQLiteCommand cd = new SQLiteCommand(requetes, cx);
+
+                    cd.Parameters.AddWithValue("@planete", nomPlanete);
+                    cd.Parameters.AddWithValue("@motif", depenses.getMotif);
+
+                    cd.ExecuteNonQuery();
+
+                    MessageBox.Show("Dépense ajoutée avec succès !");
+
+                    MesDatas.DsGlobal.Tables["Depense"].Clear();
+                    SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM Depense", cx);
+                    da.Fill(MesDatas.DsGlobal, "Depense");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+
+            }
+            else if (grpInfo.Controls.Contains(events))
+            {
+                if (string.IsNullOrEmpty(events.getCommentaire))
+                {
+                    MessageBox.Show("Veuillez écrire un commentaire.");
+                    return;
+
+                }
+                try
+                {
+                    SQLiteConnection cx = Connexion.Connec;
+
+
+                    string requetes = @"INSERT INTO JournalDeBord (nomPlanete, numero, dateJ, commentaires)
+                                        VALUES (@planete," + numMission + ",'" + events.getDate + "',@com)";
+                    SQLiteCommand cd = new SQLiteCommand(requetes, cx);
+                    cd.Parameters.AddWithValue("@planete", nomPlanete);
+                    cd.Parameters.AddWithValue("@com", events.getCommentaire);
+                    cd.ExecuteNonQuery();
+                    MessageBox.Show("Événement ajouté avec succès !");
+                    MesDatas.DsGlobal.Tables["JournalDeBord"].Clear();
+                    SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM JournalDeBord", cx);
+                    da.Fill(MesDatas.DsGlobal, "JournalDeBord");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+
+
+
+                this.Close();
             }
         }
     }
