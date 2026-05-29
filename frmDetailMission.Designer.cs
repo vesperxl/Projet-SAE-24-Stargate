@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetailMission));
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDetailMission = new System.Windows.Forms.TabPage();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.grpCapture = new System.Windows.Forms.GroupBox();
             this.flpObjectif = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMembre = new System.Windows.Forms.GroupBox();
@@ -71,7 +72,6 @@
             this.pictureFullGauche = new System.Windows.Forms.PictureBox();
             this.grpBilanCapture = new System.Windows.Forms.GroupBox();
             this.dgvCapture = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.tabGeneral.SuspendLayout();
             this.tabDetailMission.SuspendLayout();
             this.grpCapture.SuspendLayout();
@@ -130,6 +130,16 @@
             this.tabDetailMission.TabIndex = 0;
             this.tabDetailMission.Text = "Détails de la mission";
             this.tabDetailMission.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(21, 218);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(217, 54);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Ajouter des informations";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grpCapture
             // 
@@ -196,7 +206,7 @@
             this.groupBox3.Controls.Add(this.pictureBox4);
             this.groupBox3.Controls.Add(this.lblSoldeApresDepense);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(893, 94);
+            this.groupBox3.Location = new System.Drawing.Point(898, 94);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(201, 61);
             this.groupBox3.TabIndex = 5;
@@ -238,7 +248,7 @@
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.lblBudget);
             this.groupBox2.Controls.Add(this.lblbu);
-            this.groupBox2.Location = new System.Drawing.Point(685, 94);
+            this.groupBox2.Location = new System.Drawing.Point(690, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(183, 61);
             this.groupBox2.TabIndex = 4;
@@ -280,7 +290,7 @@
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.lblDateDeFin);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(893, 20);
+            this.groupBox1.Location = new System.Drawing.Point(898, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 61);
             this.groupBox1.TabIndex = 3;
@@ -322,7 +332,7 @@
             this.grpDateDepart.Controls.Add(this.pictureBox1);
             this.grpDateDepart.Controls.Add(this.lblDateDépart);
             this.grpDateDepart.Controls.Add(this.lblDD);
-            this.grpDateDepart.Location = new System.Drawing.Point(685, 19);
+            this.grpDateDepart.Location = new System.Drawing.Point(690, 19);
             this.grpDateDepart.Name = "grpDateDepart";
             this.grpDateDepart.Size = new System.Drawing.Size(183, 61);
             this.grpDateDepart.TabIndex = 2;
@@ -567,15 +577,6 @@
             this.dgvCapture.ReadOnly = true;
             this.dgvCapture.Size = new System.Drawing.Size(514, 167);
             this.dgvCapture.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(21, 218);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(217, 54);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "Ajouter des informations";
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // frmDetailMission
             // 

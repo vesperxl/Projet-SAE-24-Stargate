@@ -68,15 +68,39 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
-                 
+                    DateTime dateDepartConvert = DateTime.Parse(dateDepart);
+                    DateTime dateRetourConvert = DateTime.Parse(dateRetour);
+                    string status = "uz";
+                    Color color = Color.Black;
 
-                   
+                    if(dateDepartConvert <= DateTime.Now && dateRetourConvert >= DateTime.Now)
+                    {
+                        status = "En cours";
+                        color = Color.Orange;
 
-                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img);
+                    }else if (dateDepartConvert > DateTime.Now)
+                    {
+                        status = "Dans le futur";
+                        color = Color.Silver;
+                    }
+                    else if (dateRetourConvert < DateTime.Now)
+                    {
+                        status = "Terminée";
+                        color = Color.MediumSeaGreen;
+                    }
+
+
+
+
+
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img, status,color);
                     UCMISSION.afficheur = Click_VoirPlus;
                     
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
+                    
                     flpMission.Controls.Add(UCMISSION);
+
+
 
 
                 }
@@ -102,8 +126,7 @@ namespace Projet_SAE_24_Stargate
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            flpMission.Controls.Clear();
-            MesDatas.DsGlobal.Reset();
+
             try
             {
                 SQLiteConnection cx = Connexion.Connec;
@@ -116,18 +139,20 @@ namespace Projet_SAE_24_Stargate
                     da.Fill(MesDatas.DsGlobal, table);
                 }
 
+
+
                 MesDatas.DsGlobal.Relations.Add("relContactInformateur",
                     MesDatas.DsGlobal.Tables["Informateur"].Columns["nomCode"],
                     MesDatas.DsGlobal.Tables["Contact"].Columns["nomCodeInformateur"]);
 
                 MesDatas.DsGlobal.Tables["Contact"].Columns.Add("NomInformateur", typeof(string), "Parent(relContactInformateur).nom");
 
+
                 MesDatas.DsGlobal.Relations.Add("relDepenseTypeDepense",
-                  MesDatas.DsGlobal.Tables["TypeDepense"].Columns["id"],
-                  MesDatas.DsGlobal.Tables["Depense"].Columns["idTypeDepense"]);
+                    MesDatas.DsGlobal.Tables["TypeDepense"].Columns["id"],
+                    MesDatas.DsGlobal.Tables["Depense"].Columns["idTypeDepense"]);
 
                 MesDatas.DsGlobal.Tables["Depense"].Columns.Add("nomDepense", typeof(string), "Parent(relDepenseTypeDepense).libelle");
-
 
                 foreach (DataRow Row in MesDatas.DsGlobal.Tables["Mission"].Rows)
                 {
@@ -149,14 +174,40 @@ namespace Projet_SAE_24_Stargate
 
                     }
 
+                    DateTime dateDepartConvert = DateTime.Parse(dateDepart);
+                    DateTime dateRetourConvert = DateTime.Parse(dateRetour);
+                    string status = "uz";
+                    Color color = Color.Black;
+
+                    if (dateDepartConvert <= DateTime.Now && dateRetourConvert >= DateTime.Now)
+                    {
+                        status = "En cours";
+                        color = Color.Cyan;
+
+                    }
+                    else if (dateDepartConvert > DateTime.Now)
+                    {
+                        status = "Dans le futur";
+                        color = Color.SlateBlue;
+                    }
+                    else if (dateRetourConvert < DateTime.Now)
+                    {
+                        status = "Terminée";
+                        color = Color.LimeGreen;
+                    }
 
 
 
 
-                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img);
+
+                    UserControl1 UCMISSION = new UserControl1(nomMission, nomChef, dateDepart, dateRetour, budget, img, status, color);
                     UCMISSION.afficheur = Click_VoirPlus;
+
                     UCMISSION.BorderStyle = BorderStyle.FixedSingle;
+
                     flpMission.Controls.Add(UCMISSION);
+
+
 
 
                 }
@@ -170,6 +221,12 @@ namespace Projet_SAE_24_Stargate
         }
 
 
+
+
+
+
     }
+
 }
+
 

@@ -73,6 +73,12 @@
     <Compile Include="formPlanetes.Designer.cs">
       <DependentUpon>formPlanetes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAjoutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutInfo.Designer.cs">
+      <DependentUpon>frmAjoutInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetailMission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,24 @@
     <Compile Include="Stats.Designer.cs">
       <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucContact.Designer.cs">
+      <DependentUpon>ucContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDepenses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDepenses.Designer.cs">
+      <DependentUpon>ucDepenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEvent.Designer.cs">
+      <DependentUpon>ucEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucPlanetes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formPlanetes.resx">
       <DependentUpon>formPlanetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjoutInfo.resx">
+      <DependentUpon>frmAjoutInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetailMission.resx">
       <DependentUpon>frmDetailMission.cs</DependentUpon>
@@ -164,6 +191,15 @@
     <EmbeddedResource Include="ucCarteIdentité.resx">
       <DependentUpon>ucCarteIdentité.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucContact.resx">
+      <DependentUpon>ucContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDepenses.resx">
+      <DependentUpon>ucDepenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEvent.resx">
+      <DependentUpon>ucEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucPlanetes.resx">
       <DependentUpon>ucPlanetes.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +222,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evenement.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

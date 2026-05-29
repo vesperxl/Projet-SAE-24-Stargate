@@ -14,8 +14,8 @@ namespace Projet_SAE_24_Stargate
     public partial class frmDetailMission : Form
     {
 
-        String nomPlanete;
-        int num;
+        private string nomPlanete;
+        private int num;
         public frmDetailMission(string nomPlanete, int num)
         {
             InitializeComponent();
@@ -45,6 +45,15 @@ namespace Projet_SAE_24_Stargate
                 if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
                 {
                     budget -= Convert.ToInt16(row["montant"]);
+                }
+            }
+
+
+            foreach(DataRow row in MesDatas.DsGlobal.Tables["Contact"].Rows)
+            {
+                if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
+                {
+                    budget -= Convert.ToInt16(row["sommeVersee"]);
                 }
             }
             lblSoldeApresDepense.Text = budget.ToString() + " $G";
@@ -193,40 +202,49 @@ namespace Projet_SAE_24_Stargate
                 lblTotDepense.Text = "Total des dépenses : " + totDepense.ToString() + " $G";
             }
 
-
-            DataTable tblBilan = new DataTable("BilanCapture" + nomPlanete+"-"+num);
-            tblBilan.Columns.Add("nomEspece", typeof(string));
-            tblBilan.Columns.Add("objectifInitial", typeof(int));
-            tblBilan.Columns.Add("nbCapture", typeof(int));
-            tblBilan.Columns.Add("taux", typeof(string));
-            int nbCapture = 0;
-            string tauxFormat = "0.00%";
-            foreach (DataRow row in MesDatas.DsGlobal.Tables["ObjectifCapture"].Rows)
+            if(!MesDatas.DsGlobal.Tables.Contains("BilanCapture" + nomPlanete + "-" + num))
             {
-                if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
+                DataTable tblBilan = new DataTable("BilanCapture" + nomPlanete + "-" + num);
+                tblBilan.Columns.Add("nomEspece", typeof(string));
+                tblBilan.Columns.Add("objectifInitial", typeof(int));
+                tblBilan.Columns.Add("nbCapture", typeof(int));
+                tblBilan.Columns.Add("taux", typeof(string));
+               
+                foreach (DataRow row in MesDatas.DsGlobal.Tables["ObjectifCapture"].Rows)
                 {
-                    string nomEspece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + row["idEspeceEnnemi"])[0]["nom"].ToString();
-                    int objectifCapture  = Convert.ToInt16(row["objectif"]);
+                    
 
-                    foreach (DataRow row2 in MesDatas.DsGlobal.Tables["Capturer"].Rows)
+                    if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
                     {
-                        if (row2["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row2["numeroMission"]) == num && row2["idEspeceEnnemi"].ToString() == row["idEspeceEnnemi"].ToString())
+                        int nbCapture = 0;
+                        string tauxFormat = "0.00%";
+
+                        string nomEspece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + row["idEspeceEnnemi"])[0]["nom"].ToString();
+                        int objectifCapture = Convert.ToInt16(row["objectif"]);
+
+                        foreach (DataRow row2 in MesDatas.DsGlobal.Tables["Capturer"].Rows)
                         {
-                            nbCapture = Convert.ToInt16(row2["nombre"]);
-                            float taux = ((float)nbCapture / (float)objectifCapture) * 100;
-                             tauxFormat = taux.ToString("0.00") + " %";
-                           
+                            if (row2["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row2["numeroMission"]) == num && row2["idEspeceEnnemi"].ToString() == row["idEspeceEnnemi"].ToString())
+                            {
+                                nbCapture += Convert.ToInt16(row2["nombre"]);
+                                float taux = ((float)nbCapture / (float)objectifCapture) * 100;
+                                tauxFormat = taux.ToString("0.00") + " %";
+
+                            }
+
+
                         }
-                   
+
+                        tblBilan.Rows.Add(nomEspece, objectifCapture, nbCapture, tauxFormat);
 
                     }
-
-                    tblBilan.Rows.Add(nomEspece, objectifCapture, nbCapture, tauxFormat);
-
                 }
+
+                MesDatas.DsGlobal.Tables.Add(tblBilan);
             }
+           
             
-            dgvCapture.DataSource = tblBilan;
+            dgvCapture.DataSource = MesDatas.DsGlobal.Tables["BilanCapture" + nomPlanete + "-" + num];
             dgvCapture.Columns["nomEspece"].HeaderText = "Espèce";
             dgvCapture.Columns["objectifInitial"].HeaderText = "Objectif initial";
             dgvCapture.Columns["nbCapture"].HeaderText = "Nombre de capture";
@@ -264,6 +282,12 @@ namespace Projet_SAE_24_Stargate
         private void pictureFullDroite_Click(object sender, EventArgs e)
         {
             bsJournal.MoveLast();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAjoutInfo frm = new frmAjoutInfo(nomPlanete, num);
+            frm.ShowDialog();
         }
     }
 }
