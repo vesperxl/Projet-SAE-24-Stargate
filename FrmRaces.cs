@@ -12,6 +12,9 @@ namespace Projet_SAE_24_Stargate
 {
     public partial class frmRaces : Form
     {
+        // Le verrou est de retour car on va manipuler certaines listes automatiquement
+        private bool enUpdate = false;
+
         public frmRaces()
         {
             InitializeComponent();
@@ -36,9 +39,10 @@ namespace Projet_SAE_24_Stargate
             {
                 cboNom.Items.Add(row["nom"].ToString());
             }
-            cboNom.SelectedIndex = 0; 
+            cboNom.SelectedIndex = 0;
 
             cboColor.Items.Add("Toutes");
+
             List<string> couleursAjoutees = new List<string>();
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Rows)
@@ -53,7 +57,7 @@ namespace Projet_SAE_24_Stargate
             }
             cboColor.SelectedIndex = 0;
 
-            cboType.Items.Add("Toutes"); 
+            cboType.Items.Add("Toutes");
             cboType.Items.Add("Alliés");
             cboType.Items.Add("Ennemies");
             cboType.SelectedIndex = 0;
@@ -66,6 +70,15 @@ namespace Projet_SAE_24_Stargate
             if (chkBoxTriAlpha.Checked)
             {
                 chkBoxTriCoul.Checked = false;
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+            }
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkBoxTriCoul.Checked)
+            {
+                chkBoxTriAlpha.Checked = false;
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
             }
         }
@@ -89,21 +102,39 @@ namespace Projet_SAE_24_Stargate
                 ordreTri = "id ASC";
             }
 
-            string filtre = "";
+            List<string> conditions = new List<string>();
 
             if (cboNom.SelectedItem != null && cboNom.SelectedItem.ToString() != "Tous")
             {
-                filtre = "nom = '" + cboNom.SelectedItem.ToString().Replace("'", "''") + "'";
+                conditions.Add("nom = '" + cboNom.SelectedItem.ToString().Replace("'", "''") + "'");
             }
 
             if (cboColor.SelectedItem != null && cboColor.SelectedItem.ToString() != "Toutes")
             {
-                filtre = "couleur = '" + cboColor.SelectedItem.ToString() + "'";
+                conditions.Add("couleur = '" + cboColor.SelectedItem.ToString() + "'");
+            }
+
+            string filtre = string.Join(" AND ", conditions);
+
+            string typeSelectionne = "Toutes";
+            if (cboType.SelectedItem != null)
+            {
+                typeSelectionne = cboType.SelectedItem.ToString();
             }
 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Espece"].Select(filtre, ordreTri))
             {
                 string id = row["id"].ToString();
+
+                if (typeSelectionne == "Alliés")
+                {
+                    DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
+                }
+                else if (typeSelectionne == "Ennemies")
+                {
+                    DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
+                }
+
                 string nom = row["nom"].ToString();
                 string couleur = row["couleur"].ToString();
                 string origine = "Inconnue";
@@ -129,33 +160,70 @@ namespace Projet_SAE_24_Stargate
             }
         }
 
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (chkBoxTriCoul.Checked)
-            {
-                chkBoxTriAlpha.Checked = false;
-                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
-            }
-        }
-
-        private bool isUpdatingCombo = false;
-
         private void cboNom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboColor.Items.Count > 0)
+            if (!enUpdate)
             {
-                cboColor.SelectedIndex = 0;
+                enUpdate = true;
+
+                if (cboColor.Items.Count > 0)
+                {
+                    cboColor.SelectedIndex = 0;
+                }
+
+                if (cboType.Items.Count > 0)
+                {
+                    cboType.SelectedIndex = 0;
+                }
+
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+
+                enUpdate = false;
             }
-            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
         }
 
         private void cboColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboNom.Items.Count > 0)
+            if (!enUpdate)
             {
-                cboNom.SelectedIndex = 0;
+                enUpdate = true;
+
+                if (cboNom.Items.Count > 0)
+                {
+                    cboNom.SelectedIndex = 0;
+                }
+
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+
+                enUpdate = false;
             }
-            genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+        }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+
+                if (cboNom.Items.Count > 0)
+                {
+                    cboNom.SelectedIndex = 0;
+                }
+
+                genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+
+                enUpdate = false;
+            }
+        }
+
+        private void btnRes_Click(object sender, EventArgs e)
+        {
+            chkBoxTriAlpha.Checked = false;
+            chkBoxTriCoul.Checked = false;
+
+            cboColor.SelectedIndex = 0;
+            cboNom.SelectedIndex = 0;
+            cboType.SelectedIndex = 0;
         }
     }
 }
