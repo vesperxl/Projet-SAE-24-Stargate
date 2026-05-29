@@ -37,7 +37,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lblNom.Location = new System.Drawing.Point(164, 62);
+            this.lblNom.Location = new System.Drawing.Point(164, 60);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(0, 32);
             this.lblNom.TabIndex = 1;
@@ -57,7 +57,7 @@
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pctBoxImage);
             this.Name = "ucPlanetes";
-            this.Size = new System.Drawing.Size(350, 150);
+            this.Size = new System.Drawing.Size(440, 150);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
