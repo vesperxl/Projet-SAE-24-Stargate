@@ -73,6 +73,7 @@
             this.pictureDroite = new System.Windows.Forms.PictureBox();
             this.pictureGauche = new System.Windows.Forms.PictureBox();
             this.pictureFullGauche = new System.Windows.Forms.PictureBox();
+            this.btnPdf = new System.Windows.Forms.Button();
             this.tabGeneral.SuspendLayout();
             this.tabDetailMission.SuspendLayout();
             this.grpCapture.SuspendLayout();
@@ -344,6 +345,7 @@
             // 
             // tabJournalMission
             // 
+            this.tabJournalMission.Controls.Add(this.btnPdf);
             this.tabJournalMission.Controls.Add(this.lblTotDepense);
             this.tabJournalMission.Controls.Add(this.lblSommeVersee);
             this.tabJournalMission.Controls.Add(this.grpContact);
@@ -592,6 +594,16 @@
             this.pictureFullGauche.TabStop = false;
             this.pictureFullGauche.Click += new System.EventHandler(this.pictureFullGauche_Click);
             // 
+            // btnPdf
+            // 
+            this.btnPdf.Location = new System.Drawing.Point(485, 486);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(151, 45);
+            this.btnPdf.TabIndex = 5;
+            this.btnPdf.Text = "Editer un pdf";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // frmDetailMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -687,5 +699,6 @@
         private System.Windows.Forms.DataGridView dgvCapture;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureInfo;
+        private System.Windows.Forms.Button btnPdf;
     }
 }
