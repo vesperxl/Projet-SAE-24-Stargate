@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            this.btnNvMissions = new System.Windows.Forms.Button();
-=======
             this.button1 = new System.Windows.Forms.Button();
             this.btnRaces = new System.Windows.Forms.Button();
->>>>>>> a3f9a39e7457aea5811c1250a1c83eb61a527660
+            this.btnNvMissions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNvMissions
@@ -62,12 +59,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 589);
-<<<<<<< HEAD
-            this.Controls.Add(this.btnNvMissions);
-=======
             this.Controls.Add(this.btnRaces);
             this.Controls.Add(this.button1);
->>>>>>> a3f9a39e7457aea5811c1250a1c83eb61a527660
+            this.Controls.Add(this.btnNvMissions);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmPrincipal";
@@ -79,12 +73,9 @@
 
         #endregion
 
-<<<<<<< HEAD
-        private System.Windows.Forms.Button btnNvMissions;
-=======
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRaces;
->>>>>>> a3f9a39e7457aea5811c1250a1c83eb61a527660
+        private System.Windows.Forms.Button btnNvMissions;
     }
 }
 
