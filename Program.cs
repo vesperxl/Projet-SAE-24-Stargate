@@ -16,7 +16,7 @@ namespace Projet_SAE_24_Stargate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new Form1());
         }
     }
 }

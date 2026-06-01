@@ -26,7 +26,8 @@ namespace Projet_SAE_24_Stargate
                     }
                     catch(SQLiteException err)
                     {
-                        Console.WriteLine("Erreur lors de l'ouverture de la connexion");
+                        Console.WriteLine("Erreur lors de l'ouverture de la connexion" + err.GetType());
+                        
                     }
                 }
 

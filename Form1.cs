@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Projet_SAE_24_Stargate
 {
-    public partial class frmPrincipal : Form
+    public partial class Form1 : Form
     {
-        public frmPrincipal()
+        public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         private void btnNvMissions_Click(object sender, EventArgs e)
@@ -37,8 +37,26 @@ namespace Projet_SAE_24_Stargate
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmRaces formRaces = new FrmRaces();
+            frmRaces formRaces = new frmRaces();
             formRaces.ShowDialog();
+        }
+
+        private void btnDemarrage_Click(object sender, EventArgs e)
+        {
+            frmDemarrage formDem = new frmDemarrage();
+            formDem.ShowDialog();
+        }
+
+        private void btnbPlanete_Click(object sender, EventArgs e)
+        {
+            formPlanetes frmPlanetes = new formPlanetes();
+            frmPlanetes.ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Stats stats = new Stats();
+            stats.ShowDialog();
         }
     }
 }
