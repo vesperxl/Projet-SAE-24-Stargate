@@ -32,6 +32,7 @@
             this.btnRaces = new System.Windows.Forms.Button();
             this.btnDemarrage = new System.Windows.Forms.Button();
             this.btnbPlanete = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -73,11 +74,22 @@
             this.btnbPlanete.UseVisualStyleBackColor = true;
             this.btnbPlanete.Click += new System.EventHandler(this.btnbPlanete_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(816, 234);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 73);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 589);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnbPlanete);
             this.Controls.Add(this.btnDemarrage);
             this.Controls.Add(this.btnRaces);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.Button btnRaces;
         private System.Windows.Forms.Button btnDemarrage;
         private System.Windows.Forms.Button btnbPlanete;
+        private System.Windows.Forms.Button button2;
     }
 }
 

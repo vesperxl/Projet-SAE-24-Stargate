@@ -113,7 +113,7 @@ namespace Projet_SAE_24_Stargate
 
                         Image image = Properties.Resources.loadingScreen;
 
-                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image);
+                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image, "Zgeg", 1);
                         flpMonstres.Controls.Add(ucRace);
                     }
                 }

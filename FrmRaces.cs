@@ -155,7 +155,7 @@ namespace Projet_SAE_24_Stargate
                     origine = habitation[0]["nomPlanete"].ToString();
                 }
 
-                ucRaces newRaces = new ucRaces(nom, origine, couleur, image);
+                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, "Zgeg", 1);
                 flowLayoutPanel1.Controls.Add(newRaces);
             }
         }

@@ -34,5 +34,11 @@ namespace Projet_SAE_24_Stargate
             formPlanetes frmPlanetes = new formPlanetes();
             frmPlanetes.ShowDialog();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Stats stats = new Stats();
+            stats.ShowDialog();
+        }
     }
 }

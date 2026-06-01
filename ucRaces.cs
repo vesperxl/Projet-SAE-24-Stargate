@@ -17,7 +17,7 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
         }
 
-        public ucRaces(String nom, String origine, String couleur, Image image)
+        public ucRaces(String nom, String origine, String couleur, Image image,String insArm, int races)
         {
             InitializeComponent();
             lblNom.Text = nom;
@@ -25,7 +25,15 @@ namespace Projet_SAE_24_Stargate
             BackColor = Color.FromName(couleur);
             picBox.Image = image;
             picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            
+            if (races == 0)
+            {
+                grpBoxInsArm.Text = "Instrument";
+            }
+            else
+            {
+                grpBoxInsArm.Text = "Arme";
+            }
+            lblInsArm.Text = insArm;
         }
     }
 }
