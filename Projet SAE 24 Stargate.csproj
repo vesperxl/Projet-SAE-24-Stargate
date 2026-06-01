@@ -98,11 +98,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDemarrage.cs">
-    	<SubType>Form</SubType>
+      <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="FormAffectationCapture.cs">
-    	<SubType>Form</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAffectationCapture.Designer.cs">
       <DependentUpon>FormAffectationCapture.cs</DependentUpon>
@@ -160,12 +159,6 @@
     </Compile>
     <Compile Include="ucPlanetes.Designer.cs">
       <DependentUpon>ucPlanetes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucRaces_Allie_Ennemie.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucRaces_Allie_Ennemie.Designer.cs">
-      <DependentUpon>ucRaces_Allie_Ennemie.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CarteIdentiteMembre.resx">
       <DependentUpon>CarteIdentiteMembre.cs</DependentUpon>
@@ -236,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucRaces.resx">
       <DependentUpon>ucRaces.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucRaces_Allie_Ennemie.resx">
-      <DependentUpon>ucRaces_Allie_Ennemie.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
