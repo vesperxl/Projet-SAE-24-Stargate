@@ -98,8 +98,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDemarrage.cs">
+    	<SubType>Form</SubType>
+    </Compile>
+
     <Compile Include="FormAffectationCapture.cs">
-      <SubType>Form</SubType>
+    	<SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAffectationCapture.Designer.cs">
       <DependentUpon>FormAffectationCapture.cs</DependentUpon>
@@ -116,14 +119,11 @@
     <Compile Include="FrmLoginAdmin.Designer.cs">
       <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRaces.cs">
+    <Compile Include="frmRaces.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDemarrage.Designer.cs">
       <DependentUpon>frmDemarrage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRaces.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRaces.Designer.cs">
       <DependentUpon>frmRaces.cs</DependentUpon>
