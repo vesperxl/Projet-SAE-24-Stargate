@@ -45,6 +45,7 @@
             this.panelBack.Controls.Add(this.lblPrenom);
             this.panelBack.Controls.Add(this.pictureCi);
             this.panelBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBack.Enabled = false;
             this.panelBack.Location = new System.Drawing.Point(4, 4);
             this.panelBack.Name = "panelBack";
             this.panelBack.Size = new System.Drawing.Size(106, 140);

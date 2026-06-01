@@ -17,6 +17,7 @@ namespace Projet_SAE_24_Stargate
         public frmDemarrage()
         {
             InitializeComponent();
+            ThemeCp.AppliquerTheme(this);
         }
 
         private void frmDemarrage_Load(object sender, EventArgs e)
