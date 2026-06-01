@@ -21,7 +21,18 @@ namespace Projet_SAE_24_Stargate
         {
             FrmLoginAdmin fadmin = new FrmLoginAdmin();
 
-            fadmin.ShowDialog();
+            this.Hide();
+
+            fadmin.ShowDialog();    
+            if (fadmin.DialogResult == DialogResult.OK )
+            {
+                FormAjoutMission fAMission = new FormAjoutMission();
+                fAMission.ShowDialog();
+                
+            }
+
+            this.Show();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
