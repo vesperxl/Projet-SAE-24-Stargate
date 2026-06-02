@@ -36,6 +36,7 @@
             this.lblOrigine = new System.Windows.Forms.Label();
             this.grpBoxInsArm = new System.Windows.Forms.GroupBox();
             this.lblInsArm = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.grpBoxNom.SuspendLayout();
             this.grpBoxOrigine.SuspendLayout();
@@ -110,6 +111,15 @@
             this.lblInsArm.Size = new System.Drawing.Size(0, 32);
             this.lblInsArm.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(407, 665);
+            this.panel1.TabIndex = 0;
+            // 
             // ucRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -119,7 +129,9 @@
             this.Controls.Add(this.grpBoxOrigine);
             this.Controls.Add(this.grpBoxNom);
             this.Controls.Add(this.picBox);
+            this.Controls.Add(this.panel1);
             this.Name = "ucRaces";
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.Size = new System.Drawing.Size(415, 673);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.grpBoxNom.ResumeLayout(false);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.GroupBox grpBoxInsArm;
         private System.Windows.Forms.Label lblOrigine;
         private System.Windows.Forms.Label lblInsArm;
+        private System.Windows.Forms.Panel panel1;
     }
 }

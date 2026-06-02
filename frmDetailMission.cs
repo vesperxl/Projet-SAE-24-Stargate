@@ -29,6 +29,7 @@ namespace Projet_SAE_24_Stargate
             this.nomPlanete = nomPlanete;
             this.num = num;
             this.status = status;
+            ThemeCp.AppliquerTheme(this);
         }
         private bool ongletCharge = false;
         BindingSource bsJournal = new BindingSource();
@@ -599,6 +600,11 @@ namespace Projet_SAE_24_Stargate
             {
                 MessageBox.Show("Une erreur est survenue lors de la création du PDF : " + ex.Message);
             }
+
+        }
+
+        private void tabDetailMission_Click(object sender, EventArgs e)
+        {
 
         }
     }

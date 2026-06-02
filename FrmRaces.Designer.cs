@@ -36,10 +36,10 @@
             this.cboType = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRes = new System.Windows.Forms.Button();
-            this.lblHosti = new System.Windows.Forms.Label();
-            this.lblColor = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.lblHosti = new System.Windows.Forms.Label();
+            this.btnRes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +130,34 @@
             this.groupBox2.Size = new System.Drawing.Size(257, 489);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Filtre";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Location = new System.Drawing.Point(6, 381);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(56, 25);
+            this.lblNom.TabIndex = 8;
+            this.lblNom.Text = "Nom";
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.Location = new System.Drawing.Point(6, 215);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(88, 25);
+            this.lblColor.TabIndex = 7;
+            this.lblColor.Text = "Couleur";
+            // 
+            // lblHosti
+            // 
+            this.lblHosti.AutoSize = true;
+            this.lblHosti.Location = new System.Drawing.Point(6, 47);
+            this.lblHosti.Name = "lblHosti";
+            this.lblHosti.Size = new System.Drawing.Size(89, 25);
+            this.lblHosti.TabIndex = 6;
+            this.lblHosti.Text = "Hostilité";
             // 
             // btnRes
             // 
@@ -142,33 +169,6 @@
             this.btnRes.Text = "Réinitialiser";
             this.btnRes.UseVisualStyleBackColor = true;
             this.btnRes.Click += new System.EventHandler(this.btnRes_Click);
-            // 
-            // lblHosti
-            // 
-            this.lblHosti.AutoSize = true;
-            this.lblHosti.Location = new System.Drawing.Point(6, 47);
-            this.lblHosti.Name = "lblHosti";
-            this.lblHosti.Size = new System.Drawing.Size(89, 25);
-            this.lblHosti.TabIndex = 6;
-            this.lblHosti.Text = "Hostilité";
-            // 
-            // lblColor
-            // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(6, 215);
-            this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(88, 25);
-            this.lblColor.TabIndex = 7;
-            this.lblColor.Text = "Couleur";
-            // 
-            // lblNom
-            // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(6, 381);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(56, 25);
-            this.lblNom.TabIndex = 8;
-            this.lblNom.Text = "Nom";
             // 
             // frmRaces
             // 
