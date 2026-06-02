@@ -15,15 +15,23 @@ namespace Projet_SAE_24_Stargate
     {
         List<string> Matric = new List<string>();
         int nbMembre;
-
+        int idMissionActuelle;
+        string planeteActuelle;
         List<object> listeCaptures = new List<object>();
 
-        public FormAffectationCapture(int member, string dateDep, string dateRet)
+        public FormAffectationCapture(int member, string dateDep, string dateRet, int numeroM, string planeteM, string nomChef, string matriculeChef)
         {
             InitializeComponent();
+            ThemeCp.AppliquerTheme(this);
+
             nbMembre = member-1;
             lblrestreq.Text = nbMembre.ToString();
-            
+
+
+            idMissionActuelle = numeroM;
+            planeteActuelle = planeteM;
+            lstBoxMembre.Items.Add(nomChef + " [CHEF DE MISSION]");
+            Matric.Add(matriculeChef);
 
             try
             {
@@ -120,32 +128,34 @@ namespace Projet_SAE_24_Stargate
         private void btnAjouterMembre_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if (!(cboMembre.SelectedIndex == -1))
+
+            if (cboMembre.SelectedIndex != -1)
             {
-                if(!lstBoxMembre.Items.Contains(cboMembre.Text))
+                string matriculeSelectionne = cboMembre.SelectedValue.ToString();
+
+                if (!Matric.Contains(matriculeSelectionne))
                 {
-                    if(nbMembre > 0)
+                    if (nbMembre > 0)
                     {
                         lstBoxMembre.Items.Add(cboMembre.Text);
-                        Matric.Add(cboMembre.SelectedValue.ToString());
+                        Matric.Add(matriculeSelectionne);
+
                         nbMembre--;
                         lblrestreq.Text = nbMembre.ToString();
-                        
                     }
                     else
                     {
                         errorProvider1.SetError(cboMembre, "Impossible d'ajouter le membre, l'équipe est au complet.");
                     }
-                    
                 }
                 else
                 {
-                    errorProvider1.SetError(cboMembre, "Membre déjà présent dans l'équipe !");
+                    errorProvider1.SetError(cboMembre, "Ce membre (ou le chef de mission) fait déjà partie de l'équipe !");
                 }
             }
             else
             {
-                errorProvider1.SetError(cboMembre, "Aucun membre séléctionné...");
+                errorProvider1.SetError(cboMembre, "Aucun membre sélectionné...");
             }
         }
 
@@ -163,25 +173,102 @@ namespace Projet_SAE_24_Stargate
 
         private void btnAjouterObjectif_Click(object sender, EventArgs e)
         {
-            if (cboEspeceCapture.SelectedIndex != -1 && nudObjectifCapture.Value!=0)
+            if (cboEspeceCapture.SelectedIndex != -1 && nudObjectifCapture.Value != 0)
             {
-                string affichageAlien = cboEspeceCapture.Text;
-                string idAlien = cboEspeceCapture.SelectedValue.ToString();
-                string quantite = nudObjectifCapture.Value.ToString();
+                int idSelectionne = Convert.ToInt32(cboEspeceCapture.SelectedValue);
+                string nomAlien = cboEspeceCapture.Text;
+                int quantiteAjoutee = Convert.ToInt32(nudObjectifCapture.Value);
 
-                string ligneAffichage = quantite + " x " + affichageAlien;
+                bool especeDejaPresente = false;
 
-                lstBoxObjectifs.Items.Add(ligneAffichage);
-
-                listeCaptures.Add(new
+                foreach (object obj in listeCaptures)
                 {
-                    IdEspece = idAlien,
-                    Quantite = quantite
-                });
+                    EspeceEnnemi esp = (EspeceEnnemi)obj;
 
+                    if (esp.Id == idSelectionne)
+                    {
+                        esp.Quantite += quantiteAjoutee;
+                        especeDejaPresente = true;
+                        break; 
+                    }
+                }
 
+                if (especeDejaPresente == false)
+                {
+                    EspeceEnnemi nouvelleCapture = new EspeceEnnemi();
+                    nouvelleCapture.Id = idSelectionne;
+                    nouvelleCapture.Nom = nomAlien;
+                    nouvelleCapture.Quantite = quantiteAjoutee;
 
+                    listeCaptures.Add(nouvelleCapture);
+                }
+
+                lstBoxObjectifs.Items.Clear();
+                foreach (object obj in listeCaptures)
+                {
+                    EspeceEnnemi esp = (EspeceEnnemi)obj;
+                    lstBoxObjectifs.Items.Add(esp.Quantite + " x " + esp.Nom);
+                }
+
+                nudObjectifCapture.Value = 0;
+                cboEspeceCapture.SelectedIndex = -1;
             }
+        }
+
+        private void btnValiderCapture_Click(object sender, EventArgs e)
+        {
+            errorProvider2.Clear();
+
+            if (lstBoxMembre.Enabled == true)
+            {
+                errorProvider2.SetError(btnValiderMembre, "Veuillez d'abord valider l'équipe de mission.");
+                MessageBox.Show("Erreur : L'équipage doit être validé avant les objectifs !", "SGC - Contrôle");
+                return;
+            }
+
+            SQLiteTransaction maTransaction = Connexion.Connec.BeginTransaction();
+
+            try
+            {
+                string reqInsereMembre = "INSERT INTO Composer (matriculeMembre, nomPlanete, numeroMission) VALUES (@matricule, @planete, @numero);";
+
+                foreach (string mat in Matric)
+                {
+                    SQLiteCommand cmdMembre = new SQLiteCommand(reqInsereMembre, Connexion.Connec, maTransaction);
+                    cmdMembre.Parameters.AddWithValue("@matricule", mat);
+                    cmdMembre.Parameters.AddWithValue("@planete", planeteActuelle);
+                    cmdMembre.Parameters.AddWithValue("@numero", idMissionActuelle);
+                    cmdMembre.ExecuteNonQuery();
+                }
+
+                string reqInsereObjectif = "INSERT INTO ObjectifCapture (idEspeceEnnemi, nomPlanete, numeroMission, objectif) VALUES (@idEspece, @planete, @numero, @obj);";
+
+                foreach (object obj in listeCaptures)
+                {
+                    EspeceEnnemi capture = (EspeceEnnemi)obj;
+
+                    SQLiteCommand cmdObjectif = new SQLiteCommand(reqInsereObjectif, Connexion.Connec, maTransaction);
+                    cmdObjectif.Parameters.AddWithValue("@idEspece", capture.Id);
+                    cmdObjectif.Parameters.AddWithValue("@planete", planeteActuelle);
+                    cmdObjectif.Parameters.AddWithValue("@numero", idMissionActuelle);
+                    cmdObjectif.Parameters.AddWithValue("@obj", capture.Quantite); 
+                    cmdObjectif.ExecuteNonQuery();
+                }
+
+                
+                maTransaction.Commit();
+
+                MessageBox.Show("Mission, équipage et objectifs de captures enregistrés avec succès au SGC !", "Succès");
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                maTransaction.Rollback();
+                MessageBox.Show("Anomalie détectée ! Aucun objectif n'a été enregistré.\nDétail : " + ex.Message, "Rupture de la Transaction");
+            }
+            
         }
     }
     public class Membre
@@ -194,5 +281,6 @@ namespace Projet_SAE_24_Stargate
     {
         public int Id { get; set; }
         public string Nom { get; set; }
+        public int Quantite { get; set; }
     }
 }    

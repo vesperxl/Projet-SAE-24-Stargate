@@ -45,8 +45,10 @@
             this.nudObjectifCapture = new System.Windows.Forms.NumericUpDown();
             this.lblrestreq = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudObjectifCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -136,6 +138,7 @@
             this.btnValiderCapture.TabIndex = 13;
             this.btnValiderCapture.Text = "Valider objectifs";
             this.btnValiderCapture.UseVisualStyleBackColor = true;
+            this.btnValiderCapture.Click += new System.EventHandler(this.btnValiderCapture_Click);
             // 
             // lstBoxObjectifs
             // 
@@ -203,6 +206,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // FormAffectationCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +238,7 @@
             this.Load += new System.EventHandler(this.FormAffectationCapture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudObjectifCapture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +261,6 @@
         private System.Windows.Forms.NumericUpDown nudObjectifCapture;
         private System.Windows.Forms.Label lblrestreq;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

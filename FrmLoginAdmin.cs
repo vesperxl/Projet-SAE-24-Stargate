@@ -1,15 +1,16 @@
-﻿using System;
+﻿using BCrypt.Net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.SQLite;
-using BCrypt.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Projet_SAE_24_Stargate
 {
@@ -18,6 +19,10 @@ namespace Projet_SAE_24_Stargate
         public FrmLoginAdmin()
         {
             InitializeComponent();
+            grpboxAuth.Text = "";
+            ThemeCp.AppliquerTheme(this);
+            grpboxAuth.BackColor = Color.Transparent;
+            grpboxAuth.Paint += (s, e) => e.Graphics.DrawString("AUTHENTIFICATION", new Font("Consolas", 12, FontStyle.Bold), Brushes.Cyan, 10, 0);
             txtMdp.UseSystemPasswordChar = true;
         }
 
@@ -65,7 +70,6 @@ namespace Projet_SAE_24_Stargate
                         }
                         else
                         {
-                            // Le login existe mais le mot de passe est faux
                             errorProvider1.SetError(txtBoxlogin, "Login ou mot de passe incorrect");
                             errorProvidermdp.SetError(txtMdp, "Login ou mot de passe incorrect");
                         }
@@ -74,7 +78,6 @@ namespace Projet_SAE_24_Stargate
                 }
                     else
                     {
-                        // Le login existe mais le mot de passe est faux
                         errorProvider1.SetError(txtBoxlogin, "Login ou mot de passe incorrect");
                         errorProvidermdp.SetError(txtMdp, "Login ou mot de passe incorrect");
                     }

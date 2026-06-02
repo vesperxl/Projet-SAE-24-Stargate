@@ -58,6 +58,9 @@ public static class ThemeCp
             }
             else if (controle is GroupBox grp)
             {
+                // Force le fond de la GroupBox à transparent pour révéler l'image du formulaire
+                grp.BackColor = Color.Transparent;
+
                 grp.Paint -= DessinerGroupBoxNeon;
                 grp.Paint += DessinerGroupBoxNeon;
             }
@@ -90,7 +93,7 @@ public static class ThemeCp
         Brush pinceauTexte = new SolidBrush(bleuNeon);
         using (Pen styloBordure = new Pen(bleuFonceBordure, 1.0f))
         {
-            g.Clear(fondSombre);
+            // MODIFICATION : Suppression de g.Clear(fondSombre) pour préserver la transparence
 
             SizeF tailleTexte = g.MeasureString(box.Text, box.Font);
             int positionTexteY = (int)(tailleTexte.Height / 2);
