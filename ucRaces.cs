@@ -24,7 +24,6 @@ namespace Projet_SAE_24_Stargate
             lblOrigine.Text = origine;
             panel1.BackColor = Color.FromName(couleur);
             picBox.Image = image;
-            picBox.SizeMode = PictureBoxSizeMode.Zoom;
             if (races == 0)
             {
                 grpBoxInsArm.Text = "Instrument";
