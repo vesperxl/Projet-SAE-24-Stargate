@@ -16,10 +16,12 @@ namespace Projet_SAE_24_Stargate
         List<string> Matric = new List<string>();
         int nbMembre;
 
+        List<object> listeCaptures = new List<object>();
+
         public FormAffectationCapture(int member, string dateDep, string dateRet)
         {
             InitializeComponent();
-            nbMembre = member;
+            nbMembre = member-1;
             lblrestreq.Text = nbMembre.ToString();
             
 
@@ -67,7 +69,42 @@ namespace Projet_SAE_24_Stargate
 
                 cboMembre.SelectedIndex = -1;
 
-                
+
+
+
+
+                string reqCapture = @"SELECT e.id, e.nom, e.couleur 
+                      FROM Espece e 
+                      INNER JOIN Ennemi d ON e.id = d.idEspece;";
+
+                SQLiteCommand cmdCapture = new SQLiteCommand(reqCapture, Connexion.Connec);
+                SQLiteDataReader readerCapture = cmdCapture.ExecuteReader();
+
+                var listeEspeces = new List<object>();
+
+                while (readerCapture.Read())
+                {
+                    string idAlien = readerCapture["id"].ToString();
+                    string nomAlien = readerCapture["nom"].ToString();
+                    string couleurAlien = readerCapture["couleur"].ToString();
+
+                    string texteAffichage = nomAlien + " (" + couleurAlien + ")";
+
+                    listeEspeces.Add(new
+                    {
+                        Id = idAlien,
+                        Display = texteAffichage
+                    });
+                }
+                readerCapture.Close();
+
+                cboEspeceCapture.DataSource = null;
+                cboEspeceCapture.DisplayMember = "Display"; 
+                cboEspeceCapture.ValueMember = "Id";        
+                cboEspeceCapture.DataSource = listeEspeces;
+
+                cboEspeceCapture.SelectedIndex = -1;
+
 
 
             }
@@ -120,6 +157,30 @@ namespace Projet_SAE_24_Stargate
                 btnAjouterMembre.Enabled = false;
                 btnValiderMembre.Enabled = false;
                 cboMembre.Enabled = false;
+                errorProvider1.Clear();
+            }
+        }
+
+        private void btnAjouterObjectif_Click(object sender, EventArgs e)
+        {
+            if (cboEspeceCapture.SelectedIndex != -1 && nudObjectifCapture.Value!=0)
+            {
+                string affichageAlien = cboEspeceCapture.Text;
+                string idAlien = cboEspeceCapture.SelectedValue.ToString();
+                string quantite = nudObjectifCapture.Value.ToString();
+
+                string ligneAffichage = quantite + " x " + affichageAlien;
+
+                lstBoxObjectifs.Items.Add(ligneAffichage);
+
+                listeCaptures.Add(new
+                {
+                    IdEspece = idAlien,
+                    Quantite = quantite
+                });
+
+
+
             }
         }
     }
@@ -127,5 +188,11 @@ namespace Projet_SAE_24_Stargate
     {
         public string Matricule { get; set; }
         public string Display { get; set; }
+    }
+
+    public class EspeceEnnemi
+    {
+        public int Id { get; set; }
+        public string Nom { get; set; }
     }
 }    

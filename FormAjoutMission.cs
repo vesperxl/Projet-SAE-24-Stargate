@@ -22,7 +22,7 @@ namespace Projet_SAE_24_Stargate
             nUDBudget.Minimum = 0;
             nUDBudget.Maximum = 1000000000;
             NUpDMembres.Minimum = 0;
-            NUpDMembres.Maximum = 10;
+            NUpDMembres.Maximum = 15;
 
 
             try
@@ -191,9 +191,10 @@ namespace Projet_SAE_24_Stargate
                 finally { }*/
 
                 MessageBox.Show("Mission ajoutée avec succès !");
+                this.Hide();
                 FormAffectationCapture fAffecCap = new FormAffectationCapture((int)NUpDMembres.Value, dateMissiondep, dateMissionret);
                 fAffecCap.ShowDialog();
-                this.Hide();
+                
             }
 
             if (cboplanete.Enabled != false)
