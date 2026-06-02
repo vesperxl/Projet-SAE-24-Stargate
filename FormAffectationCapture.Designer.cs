@@ -45,13 +45,16 @@
             this.nudObjectifCapture = new System.Windows.Forms.NumericUpDown();
             this.lblrestreq = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudObjectifCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
+            this.lblTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblTitre.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.Red;
             this.lblTitre.Location = new System.Drawing.Point(169, 31);
@@ -63,6 +66,7 @@
             // lblAffectation
             // 
             this.lblAffectation.AutoSize = true;
+            this.lblAffectation.BackColor = System.Drawing.Color.Transparent;
             this.lblAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAffectation.ForeColor = System.Drawing.Color.White;
             this.lblAffectation.Location = new System.Drawing.Point(22, 106);
@@ -74,13 +78,14 @@
             // lblResteAffect
             // 
             this.lblResteAffect.AutoSize = true;
+            this.lblResteAffect.BackColor = System.Drawing.Color.Transparent;
             this.lblResteAffect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResteAffect.ForeColor = System.Drawing.Color.White;
             this.lblResteAffect.Location = new System.Drawing.Point(51, 154);
             this.lblResteAffect.Name = "lblResteAffect";
-            this.lblResteAffect.Size = new System.Drawing.Size(526, 24);
+            this.lblResteAffect.Size = new System.Drawing.Size(295, 24);
             this.lblResteAffect.TabIndex = 3;
-            this.lblResteAffect.Text = "Restant disponibles dans disponible au SGC à affecter :";
+            this.lblResteAffect.Text = "Restant disponibles à affecter :";
             // 
             // cboMembre
             // 
@@ -127,19 +132,20 @@
             // btnValiderCapture
             // 
             this.btnValiderCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValiderCapture.Location = new System.Drawing.Point(638, 1020);
+            this.btnValiderCapture.Location = new System.Drawing.Point(638, 993);
             this.btnValiderCapture.Name = "btnValiderCapture";
             this.btnValiderCapture.Size = new System.Drawing.Size(191, 32);
             this.btnValiderCapture.TabIndex = 13;
             this.btnValiderCapture.Text = "Valider objectifs";
             this.btnValiderCapture.UseVisualStyleBackColor = true;
+            this.btnValiderCapture.Click += new System.EventHandler(this.btnValiderCapture_Click);
             // 
             // lstBoxObjectifs
             // 
             this.lstBoxObjectifs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxObjectifs.FormattingEnabled = true;
             this.lstBoxObjectifs.ItemHeight = 24;
-            this.lstBoxObjectifs.Location = new System.Drawing.Point(55, 741);
+            this.lstBoxObjectifs.Location = new System.Drawing.Point(55, 714);
             this.lstBoxObjectifs.Name = "lstBoxObjectifs";
             this.lstBoxObjectifs.Size = new System.Drawing.Size(774, 244);
             this.lstBoxObjectifs.TabIndex = 12;
@@ -147,19 +153,20 @@
             // btnAjouterObjectif
             // 
             this.btnAjouterObjectif.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterObjectif.Location = new System.Drawing.Point(687, 675);
+            this.btnAjouterObjectif.Location = new System.Drawing.Point(687, 648);
             this.btnAjouterObjectif.Name = "btnAjouterObjectif";
             this.btnAjouterObjectif.Size = new System.Drawing.Size(142, 32);
             this.btnAjouterObjectif.TabIndex = 11;
             this.btnAjouterObjectif.Text = "Ajouter";
             this.btnAjouterObjectif.UseVisualStyleBackColor = true;
+            this.btnAjouterObjectif.Click += new System.EventHandler(this.btnAjouterObjectif_Click);
             // 
             // cboEspeceCapture
             // 
             this.cboEspeceCapture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEspeceCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEspeceCapture.FormattingEnabled = true;
-            this.cboEspeceCapture.Location = new System.Drawing.Point(55, 675);
+            this.cboEspeceCapture.Location = new System.Drawing.Point(55, 648);
             this.cboEspeceCapture.Name = "cboEspeceCapture";
             this.cboEspeceCapture.Size = new System.Drawing.Size(396, 32);
             this.cboEspeceCapture.TabIndex = 10;
@@ -167,9 +174,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 613);
+            this.label2.Location = new System.Drawing.Point(22, 586);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(243, 24);
             this.label2.TabIndex = 8;
@@ -178,7 +186,7 @@
             // nudObjectifCapture
             // 
             this.nudObjectifCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudObjectifCapture.Location = new System.Drawing.Point(517, 675);
+            this.nudObjectifCapture.Location = new System.Drawing.Point(517, 648);
             this.nudObjectifCapture.Name = "nudObjectifCapture";
             this.nudObjectifCapture.Size = new System.Drawing.Size(120, 31);
             this.nudObjectifCapture.TabIndex = 14;
@@ -186,9 +194,10 @@
             // lblrestreq
             // 
             this.lblrestreq.AutoSize = true;
+            this.lblrestreq.BackColor = System.Drawing.Color.Transparent;
             this.lblrestreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrestreq.ForeColor = System.Drawing.Color.White;
-            this.lblrestreq.Location = new System.Drawing.Point(586, 154);
+            this.lblrestreq.Location = new System.Drawing.Point(362, 154);
             this.lblrestreq.Name = "lblrestreq";
             this.lblrestreq.Size = new System.Drawing.Size(0, 24);
             this.lblrestreq.TabIndex = 15;
@@ -197,12 +206,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // FormAffectationCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(891, 1074);
+            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.fondMission;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(891, 1045);
             this.Controls.Add(this.lblrestreq);
             this.Controls.Add(this.nudObjectifCapture);
             this.Controls.Add(this.btnValiderCapture);
@@ -223,6 +238,7 @@
             this.Load += new System.EventHandler(this.FormAffectationCapture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudObjectifCapture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +261,6 @@
         private System.Windows.Forms.NumericUpDown nudObjectifCapture;
         private System.Windows.Forms.Label lblrestreq;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

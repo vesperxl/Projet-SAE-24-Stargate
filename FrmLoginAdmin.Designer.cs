@@ -59,19 +59,19 @@
             this.grpboxAuth.ForeColor = System.Drawing.Color.Gainsboro;
             this.grpboxAuth.Location = new System.Drawing.Point(12, 155);
             this.grpboxAuth.Name = "grpboxAuth";
-            this.grpboxAuth.Size = new System.Drawing.Size(751, 382);
+            this.grpboxAuth.Size = new System.Drawing.Size(765, 395);
             this.grpboxAuth.TabIndex = 0;
             this.grpboxAuth.TabStop = false;
-            this.grpboxAuth.Text = "Authentification";
+            this.grpboxAuth.Text = "AUTHENTIFICATION";
             // 
             // btn_annuler
             // 
             this.btn_annuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_annuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_annuler.ForeColor = System.Drawing.Color.Black;
-            this.btn_annuler.Location = new System.Drawing.Point(416, 301);
+            this.btn_annuler.Location = new System.Drawing.Point(387, 301);
             this.btn_annuler.Name = "btn_annuler";
-            this.btn_annuler.Size = new System.Drawing.Size(145, 58);
+            this.btn_annuler.Size = new System.Drawing.Size(175, 58);
             this.btn_annuler.TabIndex = 5;
             this.btn_annuler.Text = "Annuler";
             this.btn_annuler.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             this.txtMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMdp.Location = new System.Drawing.Point(265, 209);
             this.txtMdp.Name = "txtMdp";
-            this.txtMdp.Size = new System.Drawing.Size(468, 35);
+            this.txtMdp.Size = new System.Drawing.Size(478, 35);
             this.txtMdp.TabIndex = 4;
             this.txtMdp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMdp_KeyPress);
             // 
@@ -91,7 +91,7 @@
             this.txtBoxlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxlogin.Location = new System.Drawing.Point(265, 94);
             this.txtBoxlogin.Name = "txtBoxlogin";
-            this.txtBoxlogin.Size = new System.Drawing.Size(468, 35);
+            this.txtBoxlogin.Size = new System.Drawing.Size(478, 35);
             this.txtBoxlogin.TabIndex = 3;
             this.txtBoxlogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxlogin_KeyPress);
             // 
@@ -100,9 +100,9 @@
             this.btnVerifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerifier.ForeColor = System.Drawing.Color.Black;
-            this.btnVerifier.Location = new System.Drawing.Point(587, 301);
+            this.btnVerifier.Location = new System.Drawing.Point(568, 301);
             this.btnVerifier.Name = "btnVerifier";
-            this.btnVerifier.Size = new System.Drawing.Size(145, 58);
+            this.btnVerifier.Size = new System.Drawing.Size(175, 58);
             this.btnVerifier.TabIndex = 2;
             this.btnVerifier.Text = "Vérifier";
             this.btnVerifier.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             this.lblTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblTitre.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.Red;
-            this.lblTitre.Location = new System.Drawing.Point(154, 32);
+            this.lblTitre.Location = new System.Drawing.Point(85, 32);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(534, 38);
             this.lblTitre.TabIndex = 1;
@@ -148,7 +148,7 @@
             this.lbltxttitre.BackColor = System.Drawing.Color.Transparent;
             this.lbltxttitre.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltxttitre.ForeColor = System.Drawing.Color.Red;
-            this.lbltxttitre.Location = new System.Drawing.Point(154, 89);
+            this.lbltxttitre.Location = new System.Drawing.Point(82, 89);
             this.lbltxttitre.Name = "lbltxttitre";
             this.lbltxttitre.Size = new System.Drawing.Size(529, 38);
             this.lbltxttitre.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.loginAdmin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(772, 572);
+            this.ClientSize = new System.Drawing.Size(790, 568);
             this.Controls.Add(this.lbltxttitre);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.grpboxAuth);

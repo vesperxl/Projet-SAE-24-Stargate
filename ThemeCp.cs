@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-public static class ThemeCp
+public static class ThemeCp 
 {
     // Les couleurs : retour au cyan de base, et ajout du bleu foncé pour les bordures
     private static readonly Color fondSombre = Color.FromArgb(15, 15, 20);
@@ -39,6 +39,9 @@ public static class ThemeCp
                 btn.FlatAppearance.BorderSize = 2;
                 btn.BackColor = fondSombre;
                 btn.Cursor = Cursors.Hand;
+
+                btn.Paint -= DessinerBoutonDesactive;
+                btn.Paint += DessinerBoutonDesactive;   
             }
             else if (controle is TextBox txt)
             {
@@ -58,6 +61,9 @@ public static class ThemeCp
             }
             else if (controle is GroupBox grp)
             {
+                // Force le fond de la GroupBox à transparent pour révéler l'image du formulaire
+                grp.BackColor = Color.Transparent;
+
                 grp.Paint -= DessinerGroupBoxNeon;
                 grp.Paint += DessinerGroupBoxNeon;
             }
@@ -90,7 +96,7 @@ public static class ThemeCp
         Brush pinceauTexte = new SolidBrush(bleuNeon);
         using (Pen styloBordure = new Pen(bleuFonceBordure, 1.0f))
         {
-            g.Clear(fondSombre);
+            // MODIFICATION : Suppression de g.Clear(fondSombre) pour préserver la transparence
 
             SizeF tailleTexte = g.MeasureString(box.Text, box.Font);
             int positionTexteY = (int)(tailleTexte.Height / 2);
@@ -141,6 +147,45 @@ public static class ThemeCp
         using (Pen styloBordure = new Pen(bleuNeon, 1.0f)) // Cyan
         {
             e.Graphics.DrawRectangle(styloBordure, 0, 0, pnl.Width - 1, pnl.Height - 1);
+        }
+    }
+
+
+    private static void DessinerBoutonDesactive(object sender, PaintEventArgs e)
+    {
+        Button btn = (Button)sender;
+
+        // On n'intervient QUE si le bouton est verrouillé (Enabled = false)
+        if (!btn.Enabled)
+        {
+            Graphics g = e.Graphics;
+
+            // On définit des couleurs plus ternes pour le mode "désactivé"
+            Color fondSombre = Color.FromArgb(15, 15, 20);
+            Color cyanDesactive = Color.FromArgb(0, 100, 100); // Un cyan foncé/éteint
+            Color bordureDesactive = Color.FromArgb(0, 102, 204); // Le bleu foncé saphir
+
+            // 1. On efface le texte noir forcé par Windows
+            g.Clear(fondSombre);
+
+            // 2. On redessine notre propre bordure
+            using (Pen styloBordure = new Pen(bordureDesactive, 2))
+            {
+                // Le +1 et -2 servent à bien centrer le trait dans le bouton
+                g.DrawRectangle(styloBordure, 1, 1, btn.Width - 2, btn.Height - 2);
+            }
+
+            // 3. On réécrit le texte par-dessus, bien centré et lisible
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            using (Brush pinceauTexte = new SolidBrush(cyanDesactive))
+            {
+                g.DrawString(btn.Text, btn.Font, pinceauTexte, btn.ClientRectangle, format);
+            }
         }
     }
 }

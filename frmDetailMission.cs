@@ -81,7 +81,7 @@ namespace Projet_SAE_24_Stargate
             Label lblObjData = new Label();
             lblObjData.AutoSize = true;
             
-            lblObjData.Text = ligneMission[0]["objectifDatabaz"].ToString() + "Tonnes de Databaz";
+            lblObjData.Text = ligneMission[0]["objectifDatabaz"].ToString() + " Tonnes de Databaz";
             flpObjectif.Controls.Add(lblObjData);
             Label sep = new Label();
             sep.AutoSize = true;

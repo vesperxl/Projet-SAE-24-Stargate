@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetailMission));
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDetailMission = new System.Windows.Forms.TabPage();
-            this.pictureInfo = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpCapture = new System.Windows.Forms.GroupBox();
             this.flpObjectif = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,24 +37,10 @@
             this.flpMembre = new System.Windows.Forms.FlowLayoutPanel();
             this.grpRoute = new System.Windows.Forms.GroupBox();
             this.richTextFeuilleRoute = new System.Windows.Forms.RichTextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblSoldeApresDepense = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblBudget = new System.Windows.Forms.Label();
             this.lblbu = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblDateDeFin = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.grpDateDepart = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblDateDépart = new System.Windows.Forms.Label();
-            this.lblDD = new System.Windows.Forms.Label();
             this.lblNomMission = new System.Windows.Forms.Label();
-            this.picturePlanete = new System.Windows.Forms.PictureBox();
             this.tabJournalMission = new System.Windows.Forms.TabPage();
             this.btnPdf = new System.Windows.Forms.Button();
             this.lblTotDepense = new System.Windows.Forms.Label();
@@ -68,39 +52,54 @@
             this.grpEventJournal = new System.Windows.Forms.GroupBox();
             this.lblEvent = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.grpBilanCapture = new System.Windows.Forms.GroupBox();
+            this.dgvCapture = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblDateDépart = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblDateDeFin = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSoldeApresDepense = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureInfo = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picturePlanete = new System.Windows.Forms.PictureBox();
             this.pictureFullDroite = new System.Windows.Forms.PictureBox();
             this.pictureDroite = new System.Windows.Forms.PictureBox();
             this.pictureGauche = new System.Windows.Forms.PictureBox();
             this.pictureFullGauche = new System.Windows.Forms.PictureBox();
-            this.grpBilanCapture = new System.Windows.Forms.GroupBox();
-            this.dgvCapture = new System.Windows.Forms.DataGridView();
             this.tabGeneral.SuspendLayout();
             this.tabDetailMission.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             this.grpCapture.SuspendLayout();
             this.grpMembre.SuspendLayout();
             this.grpRoute.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.grpDateDepart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).BeginInit();
             this.tabJournalMission.SuspendLayout();
             this.grpContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContact)).BeginInit();
             this.grpDepense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepense)).BeginInit();
             this.grpEventJournal.SuspendLayout();
+            this.grpBilanCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCapture)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullDroite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDroite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).BeginInit();
-            this.grpBilanCapture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCapture)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -110,46 +109,36 @@
             this.tabGeneral.Location = new System.Drawing.Point(13, 9);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(1121, 586);
+            this.tabGeneral.Size = new System.Drawing.Size(1331, 710);
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.SelectedIndexChanged += new System.EventHandler(this.tabGeneral_SelectedIndexChanged);
             // 
             // tabDetailMission
             // 
+            this.tabDetailMission.Controls.Add(this.groupBox1);
+            this.tabDetailMission.Controls.Add(this.groupBox5);
+            this.tabDetailMission.Controls.Add(this.groupBox4);
             this.tabDetailMission.Controls.Add(this.pictureInfo);
             this.tabDetailMission.Controls.Add(this.btnAdd);
             this.tabDetailMission.Controls.Add(this.grpCapture);
             this.tabDetailMission.Controls.Add(this.grpMembre);
             this.tabDetailMission.Controls.Add(this.grpRoute);
-            this.tabDetailMission.Controls.Add(this.groupBox3);
             this.tabDetailMission.Controls.Add(this.groupBox2);
-            this.tabDetailMission.Controls.Add(this.groupBox1);
-            this.tabDetailMission.Controls.Add(this.grpDateDepart);
             this.tabDetailMission.Controls.Add(this.lblNomMission);
             this.tabDetailMission.Controls.Add(this.picturePlanete);
             this.tabDetailMission.Location = new System.Drawing.Point(4, 32);
             this.tabDetailMission.Name = "tabDetailMission";
             this.tabDetailMission.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetailMission.Size = new System.Drawing.Size(1113, 550);
+            this.tabDetailMission.Size = new System.Drawing.Size(1323, 674);
             this.tabDetailMission.TabIndex = 0;
             this.tabDetailMission.Text = "Détails de la mission";
             this.tabDetailMission.UseVisualStyleBackColor = true;
             this.tabDetailMission.Click += new System.EventHandler(this.tabDetailMission_Click);
             // 
-            // pictureInfo
-            // 
-            this.pictureInfo.Image = global::Projet_SAE_24_Stargate.Properties.Resources.info;
-            this.pictureInfo.Location = new System.Drawing.Point(232, 228);
-            this.pictureInfo.Name = "pictureInfo";
-            this.pictureInfo.Size = new System.Drawing.Size(35, 39);
-            this.pictureInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureInfo.TabIndex = 12;
-            this.pictureInfo.TabStop = false;
-            this.pictureInfo.Visible = false;
-            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(19, 221);
+            this.btnAdd.ForeColor = System.Drawing.Color.Cyan;
+            this.btnAdd.Location = new System.Drawing.Point(19, 247);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(209, 54);
             this.btnAdd.TabIndex = 11;
@@ -160,12 +149,12 @@
             // grpCapture
             // 
             this.grpCapture.Controls.Add(this.flpObjectif);
-            this.grpCapture.Location = new System.Drawing.Point(358, 15);
+            this.grpCapture.Location = new System.Drawing.Point(358, 39);
             this.grpCapture.Name = "grpCapture";
-            this.grpCapture.Size = new System.Drawing.Size(309, 278);
+            this.grpCapture.Size = new System.Drawing.Size(368, 389);
             this.grpCapture.TabIndex = 10;
             this.grpCapture.TabStop = false;
-            this.grpCapture.Text = "Objectif ";
+            this.grpCapture.Text = "Objectifs";
             // 
             // flpObjectif
             // 
@@ -173,15 +162,15 @@
             this.flpObjectif.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpObjectif.Location = new System.Drawing.Point(3, 23);
             this.flpObjectif.Name = "flpObjectif";
-            this.flpObjectif.Size = new System.Drawing.Size(303, 252);
+            this.flpObjectif.Size = new System.Drawing.Size(362, 363);
             this.flpObjectif.TabIndex = 0;
             // 
             // grpMembre
             // 
             this.grpMembre.Controls.Add(this.flpMembre);
-            this.grpMembre.Location = new System.Drawing.Point(16, 299);
+            this.grpMembre.Location = new System.Drawing.Point(16, 434);
             this.grpMembre.Name = "grpMembre";
-            this.grpMembre.Size = new System.Drawing.Size(651, 221);
+            this.grpMembre.Size = new System.Drawing.Size(710, 221);
             this.grpMembre.TabIndex = 9;
             this.grpMembre.TabStop = false;
             this.grpMembre.Text = "Membre (5 requis)";
@@ -194,15 +183,15 @@
             this.flpMembre.Location = new System.Drawing.Point(3, 23);
             this.flpMembre.Name = "flpMembre";
             this.flpMembre.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMembre.Size = new System.Drawing.Size(645, 195);
+            this.flpMembre.Size = new System.Drawing.Size(704, 195);
             this.flpMembre.TabIndex = 0;
             // 
             // grpRoute
             // 
             this.grpRoute.Controls.Add(this.richTextFeuilleRoute);
-            this.grpRoute.Location = new System.Drawing.Point(691, 179);
+            this.grpRoute.Location = new System.Drawing.Point(760, 203);
             this.grpRoute.Name = "grpRoute";
-            this.grpRoute.Size = new System.Drawing.Size(411, 341);
+            this.grpRoute.Size = new System.Drawing.Size(530, 452);
             this.grpRoute.TabIndex = 7;
             this.grpRoute.TabStop = false;
             this.grpRoute.Text = "Feuille de route";
@@ -213,197 +202,51 @@
             this.richTextFeuilleRoute.Location = new System.Drawing.Point(13, 29);
             this.richTextFeuilleRoute.Name = "richTextFeuilleRoute";
             this.richTextFeuilleRoute.ReadOnly = true;
-            this.richTextFeuilleRoute.Size = new System.Drawing.Size(389, 300);
+            this.richTextFeuilleRoute.Size = new System.Drawing.Size(511, 412);
             this.richTextFeuilleRoute.TabIndex = 0;
             this.richTextFeuilleRoute.Text = "";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.pictureBox4);
-            this.groupBox3.Controls.Add(this.lblSoldeApresDepense);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(898, 94);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(201, 61);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // lblSoldeApresDepense
-            // 
-            this.lblSoldeApresDepense.AutoSize = true;
-            this.lblSoldeApresDepense.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoldeApresDepense.Location = new System.Drawing.Point(80, 35);
-            this.lblSoldeApresDepense.Name = "lblSoldeApresDepense";
-            this.lblSoldeApresDepense.Size = new System.Drawing.Size(58, 23);
-            this.lblSoldeApresDepense.TabIndex = 1;
-            this.lblSoldeApresDepense.Text = "1000€";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Inter", 10F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(46, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Solde après dépenses";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.lblBudget);
             this.groupBox2.Controls.Add(this.lblbu);
-            this.groupBox2.Location = new System.Drawing.Point(690, 94);
+            this.groupBox2.Location = new System.Drawing.Point(760, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(183, 61);
+            this.groupBox2.Size = new System.Drawing.Size(212, 79);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
             // 
             // lblBudget
             // 
             this.lblBudget.AutoSize = true;
-            this.lblBudget.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudget.Location = new System.Drawing.Point(62, 35);
+            this.lblBudget.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.lblBudget.Location = new System.Drawing.Point(93, 41);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(58, 23);
+            this.lblBudget.Size = new System.Drawing.Size(69, 27);
             this.lblBudget.TabIndex = 1;
             this.lblBudget.Text = "1000€";
             // 
             // lblbu
             // 
             this.lblbu.AutoSize = true;
-            this.lblbu.Font = new System.Drawing.Font("Inter", 10F);
+            this.lblbu.Font = new System.Drawing.Font("Inter", 12F);
             this.lblbu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblbu.Location = new System.Drawing.Point(62, 13);
+            this.lblbu.Location = new System.Drawing.Point(95, 15);
             this.lblbu.Name = "lblbu";
-            this.lblbu.Size = new System.Drawing.Size(58, 21);
+            this.lblbu.Size = new System.Drawing.Size(63, 23);
             this.lblbu.TabIndex = 0;
             this.lblbu.Text = "Budget";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.lblDateDeFin);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(898, 20);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 61);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblDateDeFin
-            // 
-            this.lblDateDeFin.AutoSize = true;
-            this.lblDateDeFin.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDeFin.Location = new System.Drawing.Point(66, 35);
-            this.lblDateDeFin.Name = "lblDateDeFin";
-            this.lblDateDeFin.Size = new System.Drawing.Size(98, 23);
-            this.lblDateDeFin.TabIndex = 1;
-            this.lblDateDeFin.Text = "2026-01-01";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Inter", 10F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(62, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Date de retour";
-            // 
-            // grpDateDepart
-            // 
-            this.grpDateDepart.Controls.Add(this.pictureBox1);
-            this.grpDateDepart.Controls.Add(this.lblDateDépart);
-            this.grpDateDepart.Controls.Add(this.lblDD);
-            this.grpDateDepart.Location = new System.Drawing.Point(690, 19);
-            this.grpDateDepart.Name = "grpDateDepart";
-            this.grpDateDepart.Size = new System.Drawing.Size(183, 61);
-            this.grpDateDepart.TabIndex = 2;
-            this.grpDateDepart.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblDateDépart
-            // 
-            this.lblDateDépart.AutoSize = true;
-            this.lblDateDépart.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDépart.Location = new System.Drawing.Point(66, 35);
-            this.lblDateDépart.Name = "lblDateDépart";
-            this.lblDateDépart.Size = new System.Drawing.Size(98, 23);
-            this.lblDateDépart.TabIndex = 1;
-            this.lblDateDépart.Text = "2026-01-01";
-            // 
-            // lblDD
-            // 
-            this.lblDD.AutoSize = true;
-            this.lblDD.Font = new System.Drawing.Font("Inter", 10F);
-            this.lblDD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDD.Location = new System.Drawing.Point(62, 13);
-            this.lblDD.Name = "lblDD";
-            this.lblDD.Size = new System.Drawing.Size(110, 21);
-            this.lblDD.TabIndex = 0;
-            this.lblDD.Text = "Date de départ";
             // 
             // lblNomMission
             // 
             this.lblNomMission.AutoSize = true;
-            this.lblNomMission.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomMission.Location = new System.Drawing.Point(14, 168);
+            this.lblNomMission.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNomMission.Location = new System.Drawing.Point(13, 203);
             this.lblNomMission.Name = "lblNomMission";
-            this.lblNomMission.Size = new System.Drawing.Size(234, 30);
+            this.lblNomMission.Size = new System.Drawing.Size(266, 35);
             this.lblNomMission.TabIndex = 1;
             this.lblNomMission.Text = "Mission Nom mission";
-            // 
-            // picturePlanete
-            // 
-            this.picturePlanete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturePlanete.Location = new System.Drawing.Point(16, 32);
-            this.picturePlanete.Name = "picturePlanete";
-            this.picturePlanete.Size = new System.Drawing.Size(130, 130);
-            this.picturePlanete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturePlanete.TabIndex = 0;
-            this.picturePlanete.TabStop = false;
             // 
             // tabJournalMission
             // 
@@ -417,16 +260,16 @@
             this.tabJournalMission.Location = new System.Drawing.Point(4, 32);
             this.tabJournalMission.Name = "tabJournalMission";
             this.tabJournalMission.Padding = new System.Windows.Forms.Padding(3);
-            this.tabJournalMission.Size = new System.Drawing.Size(1113, 550);
+            this.tabJournalMission.Size = new System.Drawing.Size(1323, 674);
             this.tabJournalMission.TabIndex = 1;
             this.tabJournalMission.Text = "Journal de bord ";
             this.tabJournalMission.UseVisualStyleBackColor = true;
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(485, 486);
+            this.btnPdf.Location = new System.Drawing.Point(568, 596);
             this.btnPdf.Name = "btnPdf";
-            this.btnPdf.Size = new System.Drawing.Size(151, 45);
+            this.btnPdf.Size = new System.Drawing.Size(175, 60);
             this.btnPdf.TabIndex = 5;
             this.btnPdf.Text = "Editer un pdf";
             this.btnPdf.UseVisualStyleBackColor = true;
@@ -435,7 +278,7 @@
             // lblTotDepense
             // 
             this.lblTotDepense.AutoSize = true;
-            this.lblTotDepense.Location = new System.Drawing.Point(583, 434);
+            this.lblTotDepense.Location = new System.Drawing.Point(701, 552);
             this.lblTotDepense.Name = "lblTotDepense";
             this.lblTotDepense.Size = new System.Drawing.Size(53, 23);
             this.lblTotDepense.TabIndex = 3;
@@ -444,7 +287,7 @@
             // lblSommeVersee
             // 
             this.lblSommeVersee.AutoSize = true;
-            this.lblSommeVersee.Location = new System.Drawing.Point(17, 434);
+            this.lblSommeVersee.Location = new System.Drawing.Point(17, 552);
             this.lblSommeVersee.Name = "lblSommeVersee";
             this.lblSommeVersee.Size = new System.Drawing.Size(53, 23);
             this.lblSommeVersee.TabIndex = 2;
@@ -453,9 +296,9 @@
             // grpContact
             // 
             this.grpContact.Controls.Add(this.dgvContact);
-            this.grpContact.Location = new System.Drawing.Point(18, 205);
+            this.grpContact.Location = new System.Drawing.Point(18, 279);
             this.grpContact.Name = "grpContact";
-            this.grpContact.Size = new System.Drawing.Size(535, 229);
+            this.grpContact.Size = new System.Drawing.Size(618, 273);
             this.grpContact.TabIndex = 1;
             this.grpContact.TabStop = false;
             this.grpContact.Text = "Contact avec les informateurs";
@@ -471,15 +314,15 @@
             this.dgvContact.Location = new System.Drawing.Point(3, 23);
             this.dgvContact.Name = "dgvContact";
             this.dgvContact.ReadOnly = true;
-            this.dgvContact.Size = new System.Drawing.Size(529, 203);
+            this.dgvContact.Size = new System.Drawing.Size(612, 247);
             this.dgvContact.TabIndex = 0;
             // 
             // grpDepense
             // 
             this.grpDepense.Controls.Add(this.dgvDepense);
-            this.grpDepense.Location = new System.Drawing.Point(581, 205);
+            this.grpDepense.Location = new System.Drawing.Point(670, 279);
             this.grpDepense.Name = "grpDepense";
-            this.grpDepense.Size = new System.Drawing.Size(526, 226);
+            this.grpDepense.Size = new System.Drawing.Size(634, 270);
             this.grpDepense.TabIndex = 1;
             this.grpDepense.TabStop = false;
             this.grpDepense.Text = "Dépenses effectuées";
@@ -495,7 +338,7 @@
             this.dgvDepense.Location = new System.Drawing.Point(3, 23);
             this.dgvDepense.Name = "dgvDepense";
             this.dgvDepense.ReadOnly = true;
-            this.dgvDepense.Size = new System.Drawing.Size(520, 200);
+            this.dgvDepense.Size = new System.Drawing.Size(628, 244);
             this.dgvDepense.TabIndex = 0;
             // 
             // grpEventJournal
@@ -508,17 +351,17 @@
             this.grpEventJournal.Controls.Add(this.pictureFullGauche);
             this.grpEventJournal.Location = new System.Drawing.Point(18, 6);
             this.grpEventJournal.Name = "grpEventJournal";
-            this.grpEventJournal.Size = new System.Drawing.Size(535, 190);
+            this.grpEventJournal.Size = new System.Drawing.Size(618, 271);
             this.grpEventJournal.TabIndex = 0;
             this.grpEventJournal.TabStop = false;
             this.grpEventJournal.Text = "Evénements du journal";
             // 
             // lblEvent
             // 
-            this.lblEvent.Font = new System.Drawing.Font("Inter SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvent.Location = new System.Drawing.Point(100, 62);
+            this.lblEvent.Font = new System.Drawing.Font("Inter SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblEvent.Location = new System.Drawing.Point(53, 73);
             this.lblEvent.Name = "lblEvent";
-            this.lblEvent.Size = new System.Drawing.Size(333, 55);
+            this.lblEvent.Size = new System.Drawing.Size(528, 98);
             this.lblEvent.TabIndex = 4;
             this.lblEvent.Text = "Décollage réussi, tout va bien, le moral de l\'équipage est au beau fixe";
             this.lblEvent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -526,67 +369,20 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Inter", 15F);
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDate.Location = new System.Drawing.Point(212, 26);
+            this.lblDate.Location = new System.Drawing.Point(253, 23);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(98, 23);
+            this.lblDate.Size = new System.Drawing.Size(121, 28);
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "2026-01-01";
-            // 
-            // pictureFullDroite
-            // 
-            this.pictureFullDroite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureFullDroite.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullDroite;
-            this.pictureFullDroite.Location = new System.Drawing.Point(333, 135);
-            this.pictureFullDroite.Name = "pictureFullDroite";
-            this.pictureFullDroite.Size = new System.Drawing.Size(30, 30);
-            this.pictureFullDroite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureFullDroite.TabIndex = 3;
-            this.pictureFullDroite.TabStop = false;
-            this.pictureFullDroite.Click += new System.EventHandler(this.pictureFullDroite_Click);
-            // 
-            // pictureDroite
-            // 
-            this.pictureDroite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDroite.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheDroite;
-            this.pictureDroite.Location = new System.Drawing.Point(280, 135);
-            this.pictureDroite.Name = "pictureDroite";
-            this.pictureDroite.Size = new System.Drawing.Size(30, 30);
-            this.pictureDroite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureDroite.TabIndex = 2;
-            this.pictureDroite.TabStop = false;
-            this.pictureDroite.Click += new System.EventHandler(this.pictureDroite_Click);
-            // 
-            // pictureGauche
-            // 
-            this.pictureGauche.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheGauche;
-            this.pictureGauche.Location = new System.Drawing.Point(225, 135);
-            this.pictureGauche.Name = "pictureGauche";
-            this.pictureGauche.Size = new System.Drawing.Size(30, 30);
-            this.pictureGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureGauche.TabIndex = 1;
-            this.pictureGauche.TabStop = false;
-            this.pictureGauche.Click += new System.EventHandler(this.pictureGauche_Click);
-            // 
-            // pictureFullGauche
-            // 
-            this.pictureFullGauche.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureFullGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullGauche;
-            this.pictureFullGauche.Location = new System.Drawing.Point(172, 135);
-            this.pictureFullGauche.Name = "pictureFullGauche";
-            this.pictureFullGauche.Size = new System.Drawing.Size(30, 30);
-            this.pictureFullGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureFullGauche.TabIndex = 0;
-            this.pictureFullGauche.TabStop = false;
-            this.pictureFullGauche.Click += new System.EventHandler(this.pictureFullGauche_Click);
             // 
             // grpBilanCapture
             // 
             this.grpBilanCapture.Controls.Add(this.dgvCapture);
-            this.grpBilanCapture.Location = new System.Drawing.Point(584, 6);
+            this.grpBilanCapture.Location = new System.Drawing.Point(673, 6);
             this.grpBilanCapture.Name = "grpBilanCapture";
-            this.grpBilanCapture.Size = new System.Drawing.Size(520, 193);
+            this.grpBilanCapture.Size = new System.Drawing.Size(622, 271);
             this.grpBilanCapture.TabIndex = 4;
             this.grpBilanCapture.TabStop = false;
             this.grpBilanCapture.Text = "Bilan des captures";
@@ -602,40 +398,234 @@
             this.dgvCapture.Location = new System.Drawing.Point(3, 23);
             this.dgvCapture.Name = "dgvCapture";
             this.dgvCapture.ReadOnly = true;
-            this.dgvCapture.Size = new System.Drawing.Size(514, 167);
+            this.dgvCapture.Size = new System.Drawing.Size(616, 245);
             this.dgvCapture.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.pictureBox5);
+            this.groupBox4.Controls.Add(this.lblDateDépart);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Location = new System.Drawing.Point(760, 30);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(212, 79);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            // 
+            // lblDateDépart
+            // 
+            this.lblDateDépart.AutoSize = true;
+            this.lblDateDépart.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.lblDateDépart.Location = new System.Drawing.Point(80, 41);
+            this.lblDateDépart.Name = "lblDateDépart";
+            this.lblDateDépart.Size = new System.Drawing.Size(69, 27);
+            this.lblDateDépart.TabIndex = 1;
+            this.lblDateDépart.Text = "1000€";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Inter", 12F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(74, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Date de départ";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.pictureBox1);
+            this.groupBox5.Controls.Add(this.lblDateDeFin);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Location = new System.Drawing.Point(1069, 30);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(212, 79);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            // 
+            // lblDateDeFin
+            // 
+            this.lblDateDeFin.AutoSize = true;
+            this.lblDateDeFin.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.lblDateDeFin.Location = new System.Drawing.Point(80, 41);
+            this.lblDateDeFin.Name = "lblDateDeFin";
+            this.lblDateDeFin.Size = new System.Drawing.Size(69, 27);
+            this.lblDateDeFin.TabIndex = 1;
+            this.lblDateDeFin.Text = "1000€";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Inter", 12F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(74, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Date de retour";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.lblSoldeApresDepense);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(1069, 118);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(212, 79);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            // 
+            // lblSoldeApresDepense
+            // 
+            this.lblSoldeApresDepense.AutoSize = true;
+            this.lblSoldeApresDepense.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSoldeApresDepense.Location = new System.Drawing.Point(93, 41);
+            this.lblSoldeApresDepense.Name = "lblSoldeApresDepense";
+            this.lblSoldeApresDepense.Size = new System.Drawing.Size(69, 27);
+            this.lblSoldeApresDepense.TabIndex = 1;
+            this.lblSoldeApresDepense.Text = "1000€";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Inter", 9.5F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(62, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Solde après depenses";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Projet_SAE_24_Stargate.Properties.Resources.dollar;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 57);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.calendrier;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 57);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Projet_SAE_24_Stargate.Properties.Resources.calendrier;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(58, 57);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureInfo
+            // 
+            this.pictureInfo.Image = global::Projet_SAE_24_Stargate.Properties.Resources.info;
+            this.pictureInfo.Location = new System.Drawing.Point(232, 254);
+            this.pictureInfo.Name = "pictureInfo";
+            this.pictureInfo.Size = new System.Drawing.Size(35, 39);
+            this.pictureInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureInfo.TabIndex = 12;
+            this.pictureInfo.TabStop = false;
+            this.pictureInfo.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Projet_SAE_24_Stargate.Properties.Resources.wallet;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(58, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // picturePlanete
+            // 
+            this.picturePlanete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturePlanete.Location = new System.Drawing.Point(19, 17);
+            this.picturePlanete.Name = "picturePlanete";
+            this.picturePlanete.Size = new System.Drawing.Size(180, 180);
+            this.picturePlanete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturePlanete.TabIndex = 0;
+            this.picturePlanete.TabStop = false;
+            // 
+            // pictureFullDroite
+            // 
+            this.pictureFullDroite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureFullDroite.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullDroite;
+            this.pictureFullDroite.Location = new System.Drawing.Point(431, 201);
+            this.pictureFullDroite.Name = "pictureFullDroite";
+            this.pictureFullDroite.Size = new System.Drawing.Size(35, 35);
+            this.pictureFullDroite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFullDroite.TabIndex = 3;
+            this.pictureFullDroite.TabStop = false;
+            this.pictureFullDroite.Click += new System.EventHandler(this.pictureFullDroite_Click);
+            // 
+            // pictureDroite
+            // 
+            this.pictureDroite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureDroite.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheDroite;
+            this.pictureDroite.Location = new System.Drawing.Point(340, 201);
+            this.pictureDroite.Name = "pictureDroite";
+            this.pictureDroite.Size = new System.Drawing.Size(35, 35);
+            this.pictureDroite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureDroite.TabIndex = 2;
+            this.pictureDroite.TabStop = false;
+            this.pictureDroite.Click += new System.EventHandler(this.pictureDroite_Click);
+            // 
+            // pictureGauche
+            // 
+            this.pictureGauche.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheGauche;
+            this.pictureGauche.Location = new System.Drawing.Point(243, 201);
+            this.pictureGauche.Name = "pictureGauche";
+            this.pictureGauche.Size = new System.Drawing.Size(35, 35);
+            this.pictureGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureGauche.TabIndex = 1;
+            this.pictureGauche.TabStop = false;
+            this.pictureGauche.Click += new System.EventHandler(this.pictureGauche_Click);
+            // 
+            // pictureFullGauche
+            // 
+            this.pictureFullGauche.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureFullGauche.Image = global::Projet_SAE_24_Stargate.Properties.Resources.flecheFullGauche;
+            this.pictureFullGauche.Location = new System.Drawing.Point(156, 201);
+            this.pictureFullGauche.Name = "pictureFullGauche";
+            this.pictureFullGauche.Size = new System.Drawing.Size(35, 35);
+            this.pictureFullGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFullGauche.TabIndex = 0;
+            this.pictureFullGauche.TabStop = false;
+            this.pictureFullGauche.Click += new System.EventHandler(this.pictureFullGauche_Click);
             // 
             // frmDetailMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 607);
+            this.ClientSize = new System.Drawing.Size(1356, 731);
             this.Controls.Add(this.tabGeneral);
             this.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDetailMission";
-            this.Text = "frmDetailMission";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Détails de la missions";
             this.Load += new System.EventHandler(this.frmDetailMission_Load);
             this.tabGeneral.ResumeLayout(false);
             this.tabDetailMission.ResumeLayout(false);
             this.tabDetailMission.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             this.grpCapture.ResumeLayout(false);
             this.grpMembre.ResumeLayout(false);
             this.grpRoute.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.grpDateDepart.ResumeLayout(false);
-            this.grpDateDepart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).EndInit();
             this.tabJournalMission.ResumeLayout(false);
             this.tabJournalMission.PerformLayout();
             this.grpContact.ResumeLayout(false);
@@ -644,12 +634,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepense)).EndInit();
             this.grpEventJournal.ResumeLayout(false);
             this.grpEventJournal.PerformLayout();
+            this.grpBilanCapture.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCapture)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePlanete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullDroite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDroite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGauche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFullGauche)).EndInit();
-            this.grpBilanCapture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCapture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,22 +663,10 @@
         private System.Windows.Forms.TabPage tabJournalMission;
         private System.Windows.Forms.PictureBox picturePlanete;
         private System.Windows.Forms.Label lblNomMission;
-        private System.Windows.Forms.GroupBox grpDateDepart;
-        private System.Windows.Forms.Label lblDD;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblDateDépart;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblDateDeFin;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Label lblbu;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label lblSoldeApresDepense;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpRoute;
         private System.Windows.Forms.RichTextBox richTextFeuilleRoute;
         private System.Windows.Forms.GroupBox grpMembre;
@@ -701,5 +691,17 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureInfo;
         private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label lblDateDépart;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblDateDeFin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblSoldeApresDepense;
+        private System.Windows.Forms.Label label2;
     }
 }

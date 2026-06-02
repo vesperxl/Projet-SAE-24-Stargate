@@ -116,9 +116,9 @@
             this.groupBoxMission.Controls.Add(this.lblPlanet);
             this.groupBoxMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxMission.ForeColor = System.Drawing.Color.White;
-            this.groupBoxMission.Location = new System.Drawing.Point(29, 92);
+            this.groupBoxMission.Location = new System.Drawing.Point(24, 12);
             this.groupBoxMission.Name = "groupBoxMission";
-            this.groupBoxMission.Size = new System.Drawing.Size(815, 1012);
+            this.groupBoxMission.Size = new System.Drawing.Size(815, 951);
             this.groupBoxMission.TabIndex = 1;
             this.groupBoxMission.TabStop = false;
             this.groupBoxMission.Text = "Nouvelle mission";
@@ -145,7 +145,7 @@
             // 
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(492, 825);
+            this.btnAnnuler.Location = new System.Drawing.Point(476, 845);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(154, 64);
             this.btnAnnuler.TabIndex = 26;
@@ -157,7 +157,7 @@
             // 
             this.rtbFeuilleRoute.Location = new System.Drawing.Point(305, 426);
             this.rtbFeuilleRoute.Name = "rtbFeuilleRoute";
-            this.rtbFeuilleRoute.Size = new System.Drawing.Size(438, 182);
+            this.rtbFeuilleRoute.Size = new System.Drawing.Size(438, 215);
             this.rtbFeuilleRoute.TabIndex = 25;
             this.rtbFeuilleRoute.Text = "";
             // 
@@ -218,7 +218,7 @@
             // 
             this.lblbud.AutoSize = true;
             this.lblbud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbud.Location = new System.Drawing.Point(440, 726);
+            this.lblbud.Location = new System.Drawing.Point(440, 759);
             this.lblbud.Name = "lblbud";
             this.lblbud.Size = new System.Drawing.Size(36, 24);
             this.lblbud.TabIndex = 19;
@@ -227,7 +227,7 @@
             // nUDBudget
             // 
             this.nUDBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nUDBudget.Location = new System.Drawing.Point(305, 724);
+            this.nUDBudget.Location = new System.Drawing.Point(305, 757);
             this.nUDBudget.Name = "nUDBudget";
             this.nUDBudget.Size = new System.Drawing.Size(120, 29);
             this.nUDBudget.TabIndex = 18;
@@ -236,7 +236,7 @@
             // 
             this.lbltonnes.AutoSize = true;
             this.lbltonnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltonnes.Location = new System.Drawing.Point(440, 676);
+            this.lbltonnes.Location = new System.Drawing.Point(440, 709);
             this.lbltonnes.Name = "lbltonnes";
             this.lbltonnes.Size = new System.Drawing.Size(73, 24);
             this.lbltonnes.TabIndex = 17;
@@ -245,7 +245,7 @@
             // NUpDdataBaz
             // 
             this.NUpDdataBaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NUpDdataBaz.Location = new System.Drawing.Point(305, 676);
+            this.NUpDdataBaz.Location = new System.Drawing.Point(305, 709);
             this.NUpDdataBaz.Name = "NUpDdataBaz";
             this.NUpDdataBaz.Size = new System.Drawing.Size(120, 29);
             this.NUpDdataBaz.TabIndex = 16;
@@ -254,7 +254,7 @@
             // 
             this.lblprsn.AutoSize = true;
             this.lblprsn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprsn.Location = new System.Drawing.Point(440, 634);
+            this.lblprsn.Location = new System.Drawing.Point(440, 667);
             this.lblprsn.Name = "lblprsn";
             this.lblprsn.Size = new System.Drawing.Size(109, 24);
             this.lblprsn.TabIndex = 15;
@@ -264,7 +264,7 @@
             // NUpDMembres
             // 
             this.NUpDMembres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NUpDMembres.Location = new System.Drawing.Point(305, 634);
+            this.NUpDMembres.Location = new System.Drawing.Point(305, 667);
             this.NUpDMembres.Name = "NUpDMembres";
             this.NUpDMembres.Size = new System.Drawing.Size(120, 29);
             this.NUpDMembres.TabIndex = 14;
@@ -283,7 +283,7 @@
             // 
             this.lblbudget.AutoSize = true;
             this.lblbudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbudget.Location = new System.Drawing.Point(44, 726);
+            this.lblbudget.Location = new System.Drawing.Point(44, 759);
             this.lblbudget.Name = "lblbudget";
             this.lblbudget.Size = new System.Drawing.Size(88, 24);
             this.lblbudget.TabIndex = 12;
@@ -293,7 +293,7 @@
             // 
             this.lblObjData.AutoSize = true;
             this.lblObjData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjData.Location = new System.Drawing.Point(44, 681);
+            this.lblObjData.Location = new System.Drawing.Point(44, 714);
             this.lblObjData.Name = "lblObjData";
             this.lblObjData.Size = new System.Drawing.Size(204, 24);
             this.lblObjData.TabIndex = 11;
@@ -303,7 +303,7 @@
             // 
             this.lblNbMemb.AutoSize = true;
             this.lblNbMemb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbMemb.Location = new System.Drawing.Point(44, 635);
+            this.lblNbMemb.Location = new System.Drawing.Point(44, 668);
             this.lblNbMemb.Name = "lblNbMemb";
             this.lblNbMemb.Size = new System.Drawing.Size(220, 24);
             this.lblNbMemb.TabIndex = 10;
@@ -363,7 +363,7 @@
             // 
             this.btnValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValid.ForeColor = System.Drawing.Color.Black;
-            this.btnValid.Location = new System.Drawing.Point(652, 825);
+            this.btnValid.Location = new System.Drawing.Point(645, 845);
             this.btnValid.Name = "btnValid";
             this.btnValid.Size = new System.Drawing.Size(154, 64);
             this.btnValid.TabIndex = 4;
@@ -406,8 +406,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.fond_scifi_stargate_vortex;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.fondMission;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(866, 997);
             this.Controls.Add(this.groupBoxMission);
             this.Controls.Add(this.lblTitre);

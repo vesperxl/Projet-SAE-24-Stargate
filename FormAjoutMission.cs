@@ -18,11 +18,12 @@ namespace Projet_SAE_24_Stargate
         public FormAjoutMission()
         {
             InitializeComponent();
+            ThemeCp.AppliquerTheme(this);
             dtpdepart.MinDate = DateTime.Now;
             nUDBudget.Minimum = 0;
             nUDBudget.Maximum = 1000000000;
             NUpDMembres.Minimum = 0;
-            NUpDMembres.Maximum = 10;
+            NUpDMembres.Maximum = 15;
 
 
             try
@@ -51,7 +52,7 @@ namespace Projet_SAE_24_Stargate
             finally { }
         }
 
-        // LA MÉTHODE DE FILTRAGE DES CHEFS AJOUTÉE SANS TOUCHER AU RESTE
+        
         private void ChargerChefsDisponibles(string dateDep, string dateRet)
         {
             try
@@ -140,10 +141,11 @@ namespace Projet_SAE_24_Stargate
                 dateMissiondep = dtpdepart.Value.ToString("yyyy-MM-dd");
                 dateMissionret = dtpretour.Value.ToString("yyyy-MM-dd");
 
-                // UNIQUEMENT LE CHANGEMENT DU TYPE ICI POUR ÉVITER LE CRASH (.ToString())
+                
                 string matriculeChef = cbochefmission.SelectedValue.ToString();
                 string planete = cboplanete.SelectedItem.ToString();
-                /*try 
+                string nomChefText = cbochefmission.Text;
+                try 
                 {
                     string requete = @"INSERT INTO Mission (
                                             nomPlanete,
@@ -182,18 +184,18 @@ namespace Projet_SAE_24_Stargate
 
                     cmd.ExecuteNonQuery();
 
+                    this.Hide();
                     MessageBox.Show("Mission ajoutée avec succès !");
-                    FormAffectationCapture fAffecCap = new FormAffectationCapture((int)NUpDMembres.Value, dateMissiondep, dateMissionret);
+                    FormAffectationCapture fAffecCap = new FormAffectationCapture((int)NUpDMembres.Value, dateMissiondep, dateMissionret, numMission, planete, nomChefText, matriculeChef);
                     fAffecCap.ShowDialog();
                     DialogResult = DialogResult.OK;
+
                 }
                 catch (Exception ex){ MessageBox.Show("Erreur : " + ex.Message); }
-                finally { }*/
+                finally { }
 
-                MessageBox.Show("Mission ajoutée avec succès !");
-                FormAffectationCapture fAffecCap = new FormAffectationCapture((int)NUpDMembres.Value, dateMissiondep, dateMissionret);
-                fAffecCap.ShowDialog();
-                this.Hide();
+                
+
             }
 
             if (cboplanete.Enabled != false)
@@ -222,7 +224,6 @@ namespace Projet_SAE_24_Stargate
 
         private void dtpretour_ValueChanged(object sender, EventArgs e)
         {
-            // Prise en compte du changement de date de retour pour rafraîchir
             dateMissiondep = dtpdepart.Value.ToString("yyyy-MM-dd");
             dateMissionret = dtpretour.Value.ToString("yyyy-MM-dd");
             ChargerChefsDisponibles(dateMissiondep, dateMissionret);
@@ -232,7 +233,6 @@ namespace Projet_SAE_24_Stargate
         {
             dtpretour.MinDate = dtpdepart.Value;
 
-            // Prise en compte du changement de date de départ pour rafraîchir
             dateMissiondep = dtpdepart.Value.ToString("yyyy-MM-dd");
             dateMissionret = dtpretour.Value.ToString("yyyy-MM-dd");
             ChargerChefsDisponibles(dateMissiondep, dateMissionret);
