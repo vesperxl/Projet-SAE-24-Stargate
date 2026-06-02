@@ -602,5 +602,10 @@ namespace Projet_SAE_24_Stargate
             }
 
         }
+
+        private void tabDetailMission_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

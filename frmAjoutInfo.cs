@@ -22,6 +22,7 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
             this.nomPlanete = nomPlanete;
             this.numMission = num;
+            ThemeCp.AppliquerTheme(this);
         }
 
 
