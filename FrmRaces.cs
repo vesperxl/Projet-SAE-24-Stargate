@@ -12,7 +12,6 @@ namespace Projet_SAE_24_Stargate
 {
     public partial class frmRaces : Form
     {
-        // Le verrou est de retour car on va manipuler certaines listes automatiquement
         private bool enUpdate = false;
 
         public frmRaces()
@@ -128,13 +127,17 @@ namespace Projet_SAE_24_Stargate
             {
                 string id = row["id"].ToString();
 
-                if (typeSelectionne == "Alliés")
+                DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
+                
+                DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
+
+                if (typeSelectionne == "Alliés" && estAllie.Length == 0)
                 {
-                    DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
+                    continue; 
                 }
-                else if (typeSelectionne == "Ennemies")
+                else if (typeSelectionne == "Ennemies" && estEnnemi.Length == 0)
                 {
-                    DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
+                    continue; 
                 }
 
                 string nom = row["nom"].ToString();
@@ -144,7 +147,7 @@ namespace Projet_SAE_24_Stargate
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
                 Image image = Properties.Resources.loadingScreen;
-
+                string insArme = "";
                 DataRow[] habitation = MesDatas.DsGlobal.Tables["Habiter"].Select("idEspece = " + id);
 
                 if (dicoTrad.ContainsKey(couleur))
@@ -157,7 +160,19 @@ namespace Projet_SAE_24_Stargate
                     origine = habitation[0]["nomPlanete"].ToString();
                 }
 
-                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, "Zgeg", 1);
+                int allie_enemy = -1;
+                if (estAllie.Length > 0)
+                {
+                    insArme = estAllie[0]["instrumentMusique"].ToString();
+                    allie_enemy = 0;
+                }
+                else if (estEnnemi.Length > 0)
+                {
+                    insArme = estEnnemi[0]["typeArme"].ToString();
+                    allie_enemy = 1;
+                }
+
+                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, allie_enemy);
                 flowLayoutPanel1.Controls.Add(newRaces);
             }
         }
