@@ -29,6 +29,7 @@ namespace Projet_SAE_24_Stargate
             this.nomPlanete = nomPlanete;
             this.num = num;
             this.status = status;
+            ThemeCp.AppliquerTheme(this);
         }
         private bool ongletCharge = false;
         BindingSource bsJournal = new BindingSource();
