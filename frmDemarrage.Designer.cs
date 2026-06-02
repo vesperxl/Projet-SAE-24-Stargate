@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDemarrage));
             this.flpMission = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +40,7 @@
             this.flpMission.AutoScroll = true;
             this.flpMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flpMission.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpMission.Location = new System.Drawing.Point(536, 12);
+            this.flpMission.Location = new System.Drawing.Point(656, 12);
             this.flpMission.Name = "flpMission";
             this.flpMission.Padding = new System.Windows.Forms.Padding(10);
             this.flpMission.Size = new System.Drawing.Size(533, 687);
@@ -49,11 +48,12 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(490, 12);
+            this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.refresh;
+            this.pictureBox1.Location = new System.Drawing.Point(591, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(59, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -64,11 +64,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 711);
+            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.backgroundDemar;
+            this.ClientSize = new System.Drawing.Size(1201, 711);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flpMission);
             this.Name = "frmDemarrage";
-            this.Text = "frmDemarrage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Tableau de bord";
             this.Load += new System.EventHandler(this.frmDemarrage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

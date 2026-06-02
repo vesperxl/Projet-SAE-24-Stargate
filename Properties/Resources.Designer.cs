@@ -63,6 +63,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundDemar {
+            get {
+                object obj = ResourceManager.GetObject("backgroundDemar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendrier {
             get {
                 object obj = ResourceManager.GetObject("calendrier", resourceCulture);

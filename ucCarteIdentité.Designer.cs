@@ -39,7 +39,7 @@
             // 
             // panelBack
             // 
-            this.panelBack.BackColor = System.Drawing.SystemColors.Control;
+            this.panelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelBack.Controls.Add(this.lblStatu);
             this.panelBack.Controls.Add(this.lblNom);
             this.panelBack.Controls.Add(this.lblPrenom);
