@@ -19,6 +19,7 @@ namespace Projet_SAE_24_Stargate
         public formPlanetes()
         {
             InitializeComponent();
+            ThemeCp.AppliquerTheme(this);
         }
 
         Dictionary<string, string> dicoTrad = new Dictionary<string, string>()
@@ -36,13 +37,11 @@ namespace Projet_SAE_24_Stargate
         private void formPlanetes_Load(object sender, EventArgs e)
         {
 
-            foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Select())
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Rows)
             {
                 string nom = row["nom"].ToString();
 
-                string nomImage = nom + ".png";
-                string cheminImage = "./../../pic/" + nomImage;
-                Image image = Properties.Resources.loadingScreen;
+                Image image = (Image)Properties.Resources.ResourceManager.GetObject(row["nom"].ToString());
 
                 ucPlanetes ucPlanete = new ucPlanetes(nom, image);
                 ucPlanete.Click += new EventHandler(ucPlanete_Click);
