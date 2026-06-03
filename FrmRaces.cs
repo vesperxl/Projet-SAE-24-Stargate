@@ -18,7 +18,6 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
             ThemeCp.AppliquerTheme(this);
-
         }
 
         Dictionary<string, string> dicoTrad = new Dictionary<string, string>()
@@ -27,7 +26,7 @@ namespace Projet_SAE_24_Stargate
             { "Gris", "Gray" },
             { "Marron", "Brown" },
             { "Orange", "Orange" },
-            { "Pourpre", "Purple" },
+            { "Pourpre", "Crimson" },
             { "Rose", "Pink" },
             { "Vert", "Green" },
             { "Violet", "Purple" }
@@ -128,16 +127,15 @@ namespace Projet_SAE_24_Stargate
                 string id = row["id"].ToString();
 
                 DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
-                
                 DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
 
                 if (typeSelectionne == "Alliés" && estAllie.Length == 0)
                 {
-                    continue; 
+                    continue;
                 }
                 else if (typeSelectionne == "Ennemies" && estEnnemi.Length == 0)
                 {
-                    continue; 
+                    continue;
                 }
 
                 string nom = row["nom"].ToString();
@@ -147,7 +145,11 @@ namespace Projet_SAE_24_Stargate
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
                 Image image = Properties.Resources.loadingScreen;
+
                 string insArme = "";
+                string attitude = "";
+                string dateContact = "";
+
                 DataRow[] habitation = MesDatas.DsGlobal.Tables["Habiter"].Select("idEspece = " + id);
 
                 if (dicoTrad.ContainsKey(couleur))
@@ -161,18 +163,37 @@ namespace Projet_SAE_24_Stargate
                 }
 
                 int allie_enemy = -1;
+
+                // Récupération des données si c'est un allié
                 if (estAllie.Length > 0)
                 {
                     insArme = estAllie[0]["instrumentMusique"].ToString();
+                    attitude = estAllie[0]["degreBienveillance"].ToString();
+
+                    if (estAllie[0]["datePremierContact"] != DBNull.Value)
+                    {
+                        if (DateTime.TryParse(estAllie[0]["datePremierContact"].ToString(), out DateTime dt))
+                        {
+                            dateContact = dt.ToShortDateString();
+                        }
+                        else
+                        {
+                            dateContact = estAllie[0]["datePremierContact"].ToString();
+                        }
+                    }
                     allie_enemy = 0;
                 }
+                // Récupération des données si c'est un ennemi
                 else if (estEnnemi.Length > 0)
                 {
                     insArme = estEnnemi[0]["typeArme"].ToString();
+                    attitude = estEnnemi[0]["degreAgressivite"].ToString();
+                    dateContact = ""; // Les ennemis n'ont pas de date de contact dans la BDD
                     allie_enemy = 1;
                 }
 
-                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, allie_enemy);
+                // Plus de "poire" ni de "pomme", on passe les vraies variables !
+                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, attitude, dateContact, allie_enemy);
                 flowLayoutPanel1.Controls.Add(newRaces);
             }
         }

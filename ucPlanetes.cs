@@ -21,6 +21,7 @@ namespace Projet_SAE_24_Stargate
         public ucPlanetes(String nom, Image image)
         {
             InitializeComponent();
+            
             lblNom.Text = nom;
             pctBoxImage.Image = image;
             pctBoxImage.SizeMode = PictureBoxSizeMode.Zoom;

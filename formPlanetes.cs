@@ -28,7 +28,7 @@ namespace Projet_SAE_24_Stargate
             { "Gris", "Gray" },
             { "Marron", "Brown" },
             { "Orange", "Orange" },
-            { "Pourpre", "Purple" },
+            { "Pourpre", "Crimson" },
             { "Rose", "Pink" },
             { "Vert", "Green" },
             { "Violet", "Purple" }
@@ -53,28 +53,25 @@ namespace Projet_SAE_24_Stargate
         private void ucPlanete_Click(object sender, EventArgs e)
         {
             ucPlanetes planeteClicked = sender as ucPlanetes;
-            
+
             if (planeteClicked != null)
             {
                 planetSelect = planeteClicked.nomPlanete;
             }
-            
+
             if (MesDatas.DsGlobal.Tables["Planete"].Select("nom = '" + planetSelect + "'")[0]["temperature"] != DBNull.Value)
             {
                 lblTemp.Text = MesDatas.DsGlobal.Tables["Planete"].Select("nom = '" + planetSelect + "'")[0]["temperature"].ToString() + "°C";
             }
-
             else
             {
                 lblTemp.Text = "Inconnu";
             }
 
-
             if (MesDatas.DsGlobal.Tables["Planete"].Select("nom = '" + planetSelect + "'")[0]["gravite"] != DBNull.Value)
             {
                 lblPes.Text = MesDatas.DsGlobal.Tables["Planete"].Select("nom = '" + planetSelect + "'")[0]["gravite"].ToString() + "g";
             }
-
             else
             {
                 lblPes.Text = "Inconnu";
@@ -98,6 +95,10 @@ namespace Projet_SAE_24_Stargate
                 foreach (DataRow hab in habitations)
                 {
                     string idEspece = hab["idEspece"].ToString();
+
+                    DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + idEspece);
+                    DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + idEspece);
+
                     DataRow[] espece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + idEspece);
 
                     if (espece.Length > 0)
@@ -112,15 +113,44 @@ namespace Projet_SAE_24_Stargate
 
                         Image image = Properties.Resources.loadingScreen;
 
-                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image, "Zgeg", 1);
+                        string insArme = "";
+                        string attitude = "";
+                        string dateContact = "";
+                        int allie_enemy = -1;
+
+                        if (estAllie.Length > 0)
+                        {
+                            insArme = estAllie[0]["instrumentMusique"].ToString();
+                            attitude = estAllie[0]["degreBienveillance"].ToString();
+
+                            if (estAllie[0]["datePremierContact"] != DBNull.Value)
+                            {
+                                if (DateTime.TryParse(estAllie[0]["datePremierContact"].ToString(), out DateTime dt))
+                                {
+                                    dateContact = dt.ToShortDateString();
+                                }
+                                else
+                                {
+                                    dateContact = estAllie[0]["datePremierContact"].ToString();
+                                }
+                            }
+                            allie_enemy = 0;
+                        }
+                        else if (estEnnemi.Length > 0)
+                        {
+                            insArme = estEnnemi[0]["typeArme"].ToString();
+                            attitude = estEnnemi[0]["degreAgressivite"].ToString();
+                            dateContact = "";
+                            allie_enemy = 1;
+                        }
+
+                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image, insArme, attitude, dateContact, allie_enemy);
                         flpMonstres.Controls.Add(ucRace);
                     }
                 }
             }
-
             else
             {
-
                 Label lbl = new Label();
                 lbl.Text = "AUCUNE ESPÈCE";
                 lbl.Font = new Font("Arial", 64, FontStyle.Bold);

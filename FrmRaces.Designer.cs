@@ -50,7 +50,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(276, 13);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(975, 720);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(975, 788);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // chkBoxTriAlpha
@@ -79,6 +79,7 @@
             // 
             // cboNom
             // 
+            this.cboNom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNom.FormattingEnabled = true;
             this.cboNom.Location = new System.Drawing.Point(8, 409);
             this.cboNom.Name = "cboNom";
@@ -88,6 +89,7 @@
             // 
             // cboColor
             // 
+            this.cboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Location = new System.Drawing.Point(6, 243);
             this.cboColor.Name = "cboColor";
@@ -97,6 +99,7 @@
             // 
             // cboType
             // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.FormattingEnabled = true;
             this.cboType.Location = new System.Drawing.Point(6, 75);
             this.cboType.Name = "cboType";
@@ -127,7 +130,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(13, 160);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(257, 489);
+            this.groupBox2.Size = new System.Drawing.Size(257, 513);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtre";
@@ -162,9 +165,9 @@
             // btnRes
             // 
             this.btnRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRes.Location = new System.Drawing.Point(12, 655);
+            this.btnRes.Location = new System.Drawing.Point(13, 679);
             this.btnRes.Name = "btnRes";
-            this.btnRes.Size = new System.Drawing.Size(258, 73);
+            this.btnRes.Size = new System.Drawing.Size(258, 122);
             this.btnRes.TabIndex = 8;
             this.btnRes.Text = "Réinitialiser";
             this.btnRes.UseVisualStyleBackColor = true;
@@ -175,12 +178,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1263, 740);
+            this.ClientSize = new System.Drawing.Size(1263, 813);
             this.Controls.Add(this.btnRes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmRaces";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRaces";
             this.Load += new System.EventHandler(this.frmRaces_Load);
             this.groupBox1.ResumeLayout(false);

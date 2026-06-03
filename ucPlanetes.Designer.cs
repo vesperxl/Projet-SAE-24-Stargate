@@ -54,10 +54,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pctBoxImage);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "ucPlanetes";
-            this.Size = new System.Drawing.Size(440, 150);
+            this.Size = new System.Drawing.Size(438, 148);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

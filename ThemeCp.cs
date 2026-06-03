@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-public static class ThemeCp 
+public static class ThemeCp
 {
     // Les couleurs : retour au cyan de base, et ajout du bleu foncé pour les bordures
     private static readonly Color fondSombre = Color.FromArgb(15, 15, 20);
@@ -41,7 +41,7 @@ public static class ThemeCp
                 btn.Cursor = Cursors.Hand;
 
                 btn.Paint -= DessinerBoutonDesactive;
-                btn.Paint += DessinerBoutonDesactive;   
+                btn.Paint += DessinerBoutonDesactive;
             }
             else if (controle is TextBox txt)
             {
@@ -61,9 +61,6 @@ public static class ThemeCp
             }
             else if (controle is GroupBox grp)
             {
-                // Force le fond de la GroupBox à transparent pour révéler l'image du formulaire
-                grp.BackColor = Color.Transparent;
-
                 grp.Paint -= DessinerGroupBoxNeon;
                 grp.Paint += DessinerGroupBoxNeon;
             }
@@ -96,7 +93,7 @@ public static class ThemeCp
         Brush pinceauTexte = new SolidBrush(bleuNeon);
         using (Pen styloBordure = new Pen(bleuFonceBordure, 1.0f))
         {
-            // MODIFICATION : Suppression de g.Clear(fondSombre) pour préserver la transparence
+            g.Clear(fondSombre);
 
             SizeF tailleTexte = g.MeasureString(box.Text, box.Font);
             int positionTexteY = (int)(tailleTexte.Height / 2);
