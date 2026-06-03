@@ -37,6 +37,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblNom.ForeColor = System.Drawing.Color.Cyan;
             this.lblNom.Location = new System.Drawing.Point(164, 60);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(0, 32);

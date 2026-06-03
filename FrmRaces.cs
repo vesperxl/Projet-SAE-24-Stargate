@@ -144,7 +144,8 @@ namespace Projet_SAE_24_Stargate
 
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
-                Image image = Properties.Resources.loadingScreen;
+
+                Image image = (Image)Properties.Resources.ResourceManager.GetObject(nom);
 
                 string insArme = "";
                 string attitude = "";

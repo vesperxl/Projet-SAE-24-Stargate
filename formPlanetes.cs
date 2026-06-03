@@ -43,6 +43,11 @@ namespace Projet_SAE_24_Stargate
 
                 Image image = (Image)Properties.Resources.ResourceManager.GetObject(row["nom"].ToString());
 
+                if (image == null)
+                {
+                    image = Properties.Resources.PlanetNotFound;
+                }
+
                 ucPlanetes ucPlanete = new ucPlanetes(nom, image);
                 ucPlanete.Click += new EventHandler(ucPlanete_Click);
                 flpPlanet.Controls.Add(ucPlanete);
@@ -111,7 +116,7 @@ namespace Projet_SAE_24_Stargate
                             couleur = dicoTrad[couleur];
                         }
 
-                        Image image = Properties.Resources.loadingScreen;
+                        Image image = (Image)Properties.Resources.ResourceManager.GetObject(nom);
 
                         string insArme = "";
                         string attitude = "";

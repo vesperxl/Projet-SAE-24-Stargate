@@ -37,16 +37,16 @@
             this.cboReq5 = new System.Windows.Forms.ComboBox();
             this.dgvReq5 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelReq1 = new System.Windows.Forms.Panel();
-            this.panelReq2 = new System.Windows.Forms.Panel();
-            this.panelReq3 = new System.Windows.Forms.Panel();
-            this.panelReq4 = new System.Windows.Forms.Panel();
-            this.panelReq5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.panelReq1 = new System.Windows.Forms.Panel();
+            this.panelReq2 = new System.Windows.Forms.Panel();
+            this.panelReq3 = new System.Windows.Forms.Panel();
+            this.panelReq4 = new System.Windows.Forms.Panel();
+            this.panelReq5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq3)).BeginInit();
@@ -97,6 +97,7 @@
             // 
             // cboReq1
             // 
+            this.cboReq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboReq1.FormattingEnabled = true;
             this.cboReq1.Location = new System.Drawing.Point(15, 20);
             this.cboReq1.Name = "cboReq1";
@@ -116,6 +117,7 @@
             // 
             // cboReq5
             // 
+            this.cboReq5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboReq5.FormattingEnabled = true;
             this.cboReq5.Location = new System.Drawing.Point(14, 14);
             this.cboReq5.Name = "cboReq5";
@@ -144,48 +146,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 724);
             this.flowLayoutPanel1.TabIndex = 9;
-            // 
-            // panelReq1
-            // 
-            this.panelReq1.Controls.Add(this.cboReq1);
-            this.panelReq1.Controls.Add(this.dgvReq1);
-            this.panelReq1.Location = new System.Drawing.Point(218, 12);
-            this.panelReq1.Name = "panelReq1";
-            this.panelReq1.Size = new System.Drawing.Size(1154, 716);
-            this.panelReq1.TabIndex = 10;
-            // 
-            // panelReq2
-            // 
-            this.panelReq2.Controls.Add(this.dgvReq2);
-            this.panelReq2.Location = new System.Drawing.Point(217, 12);
-            this.panelReq2.Name = "panelReq2";
-            this.panelReq2.Size = new System.Drawing.Size(1143, 724);
-            this.panelReq2.TabIndex = 11;
-            // 
-            // panelReq3
-            // 
-            this.panelReq3.Controls.Add(this.dgvReq3);
-            this.panelReq3.Location = new System.Drawing.Point(218, 12);
-            this.panelReq3.Name = "panelReq3";
-            this.panelReq3.Size = new System.Drawing.Size(1154, 716);
-            this.panelReq3.TabIndex = 12;
-            // 
-            // panelReq4
-            // 
-            this.panelReq4.Controls.Add(this.dgvReq4);
-            this.panelReq4.Location = new System.Drawing.Point(218, 12);
-            this.panelReq4.Name = "panelReq4";
-            this.panelReq4.Size = new System.Drawing.Size(1154, 716);
-            this.panelReq4.TabIndex = 13;
-            // 
-            // panelReq5
-            // 
-            this.panelReq5.Controls.Add(this.dgvReq5);
-            this.panelReq5.Controls.Add(this.cboReq5);
-            this.panelReq5.Location = new System.Drawing.Point(218, 12);
-            this.panelReq5.Name = "panelReq5";
-            this.panelReq5.Size = new System.Drawing.Size(1155, 717);
-            this.panelReq5.TabIndex = 14;
             // 
             // button1
             // 
@@ -236,6 +196,48 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // panelReq1
+            // 
+            this.panelReq1.Controls.Add(this.cboReq1);
+            this.panelReq1.Controls.Add(this.dgvReq1);
+            this.panelReq1.Location = new System.Drawing.Point(218, 12);
+            this.panelReq1.Name = "panelReq1";
+            this.panelReq1.Size = new System.Drawing.Size(1154, 716);
+            this.panelReq1.TabIndex = 10;
+            // 
+            // panelReq2
+            // 
+            this.panelReq2.Controls.Add(this.dgvReq2);
+            this.panelReq2.Location = new System.Drawing.Point(217, 12);
+            this.panelReq2.Name = "panelReq2";
+            this.panelReq2.Size = new System.Drawing.Size(1143, 724);
+            this.panelReq2.TabIndex = 11;
+            // 
+            // panelReq3
+            // 
+            this.panelReq3.Controls.Add(this.dgvReq3);
+            this.panelReq3.Location = new System.Drawing.Point(218, 12);
+            this.panelReq3.Name = "panelReq3";
+            this.panelReq3.Size = new System.Drawing.Size(1154, 716);
+            this.panelReq3.TabIndex = 12;
+            // 
+            // panelReq4
+            // 
+            this.panelReq4.Controls.Add(this.dgvReq4);
+            this.panelReq4.Location = new System.Drawing.Point(218, 12);
+            this.panelReq4.Name = "panelReq4";
+            this.panelReq4.Size = new System.Drawing.Size(1154, 716);
+            this.panelReq4.TabIndex = 13;
+            // 
+            // panelReq5
+            // 
+            this.panelReq5.Controls.Add(this.dgvReq5);
+            this.panelReq5.Controls.Add(this.cboReq5);
+            this.panelReq5.Location = new System.Drawing.Point(218, 12);
+            this.panelReq5.Name = "panelReq5";
+            this.panelReq5.Size = new System.Drawing.Size(1155, 717);
+            this.panelReq5.TabIndex = 14;
             // 
             // Stats
             // 
