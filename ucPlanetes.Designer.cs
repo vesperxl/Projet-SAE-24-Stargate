@@ -57,7 +57,7 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pctBoxImage);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPlanetes";
             this.Size = new System.Drawing.Size(438, 148);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();

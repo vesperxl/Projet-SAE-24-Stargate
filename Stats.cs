@@ -206,5 +206,30 @@ namespace Projet_SAE_24_Stargate
                 dgvReq5.DataSource = Req5(nomPlanete, numero);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelReq1.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelReq2.BringToFront();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelReq3.BringToFront();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelReq4.BringToFront();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panelReq5.BringToFront();
+        }
     }
 }
