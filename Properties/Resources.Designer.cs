@@ -93,6 +93,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap bahC {
+            get {
+                object obj = ResourceManager.GetObject("bahC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap calendrier {
             get {
                 object obj = ResourceManager.GetObject("calendrier", resourceCulture);
@@ -156,6 +166,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         public static System.Drawing.Bitmap dollar {
             get {
                 object obj = ResourceManager.GetObject("dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eérnaD {
+            get {
+                object obj = ResourceManager.GetObject("eérnaD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +283,29 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap hainihC {
+            get {
+                object obj = ResourceManager.GetObject("hainihC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap hsybvoD {
             get {
                 object obj = ResourceManager.GetObject("hsybvoD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ibarhoS {
+            get {
+                object obj = ResourceManager.GetObject("ibarhoS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +356,26 @@ namespace Projet_SAE_24_Stargate.Properties {
         public static System.Drawing.Bitmap iugrahC {
             get {
                 object obj = ResourceManager.GetObject("iugrahC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap jam {
+            get {
+                object obj = ResourceManager.GetObject("jam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap jdaH {
+            get {
+                object obj = ResourceManager.GetObject("jdaH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,6 +573,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Petits_gris {
+            get {
+                object obj = ResourceManager.GetObject("Petits gris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap PlanetNotFound {
             get {
                 object obj = ResourceManager.GetObject("PlanetNotFound", resourceCulture);
@@ -586,6 +656,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         public static System.Drawing.Bitmap Setna {
             get {
                 object obj = ResourceManager.GetObject("Setna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap siaruO {
+            get {
+                object obj = ResourceManager.GetObject("siaruO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

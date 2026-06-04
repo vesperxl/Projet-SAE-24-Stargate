@@ -34,11 +34,11 @@ namespace Projet_SAE_24_Stargate
             Cursor = Cursors.Hand;
 
             MouseEnter += new EventHandler(BleuSurvol);
-            MouseLeave += new EventHandler(BlancSurvol);
+            MouseLeave += new EventHandler(BaseSurvol);
             pctBoxImage.MouseEnter += new EventHandler(BleuSurvol);
-            pctBoxImage.MouseLeave += new EventHandler(BlancSurvol);
+            pctBoxImage.MouseLeave += new EventHandler(BaseSurvol);
             lblNom.MouseEnter += new EventHandler(BleuSurvol);
-            lblNom.MouseLeave += new EventHandler(BlancSurvol);
+            lblNom.MouseLeave += new EventHandler(BaseSurvol);
         }
 
         private void Clickeuh(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Projet_SAE_24_Stargate
             BackColor = Color.LightBlue;
         }
 
-        private void BlancSurvol(object sender, EventArgs e)
+        private void BaseSurvol(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(15, 15, 20);
         }

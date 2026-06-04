@@ -185,7 +185,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmRaces";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRaces";
+            this.Text = "Liste Des Races";
             this.Load += new System.EventHandler(this.frmRaces_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

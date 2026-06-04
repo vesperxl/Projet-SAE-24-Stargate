@@ -150,7 +150,7 @@
             this.Controls.Add(this.flpPlanet);
             this.Name = "formPlanetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formPlanetes";
+            this.Text = "Liste Des Planètes";
             this.Load += new System.EventHandler(this.formPlanetes_Load);
             this.grpBoxInfo.ResumeLayout(false);
             this.grpBoxPesanteur.ResumeLayout(false);

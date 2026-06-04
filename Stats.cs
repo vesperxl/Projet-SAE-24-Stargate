@@ -23,6 +23,8 @@ namespace Projet_SAE_24_Stargate
         {
             DataTable table = new DataTable();
             SQLiteConnection connection = Connexion.Connec;
+            SQLiteCommand command = null;
+            SQLiteDataReader reader = null;
 
             string requete = @"
                 SELECT DISTINCT mb.nom, mb.prenom,
@@ -32,38 +34,48 @@ namespace Projet_SAE_24_Stargate
                 JOIN Composer c2 ON c1.nomPlanete = c2.nomPlanete AND c1.numeroMission = c2.numeroMission
                 LEFT JOIN Militaire mil ON mb.matricule = mil.matriculeMembre
                 WHERE c2.matriculeMembre = @matricule AND mb.matricule != @matricule";
-                
 
-            using (SQLiteCommand command = new SQLiteCommand(requete, connection))
+            try
             {
+                command = new SQLiteCommand(requete, connection);
                 command.Parameters.AddWithValue("@matricule", matricule);
-                using (SQLiteDataReader reader = command.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
+                reader = command.ExecuteReader();
+                table.Load(reader);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             return table;
         }
+
         public DataTable Req2()
         {
             DataTable table = new DataTable();
             SQLiteConnection connection = Connexion.Connec;
+            SQLiteCommand command = null;
+            SQLiteDataReader reader = null;
 
+            // Correction de ISNULL par IFNULL pour SQLite
             string requete = @"
-                SELECT m.nomPlanete || '-' || m.numero AS NomMission,
-                       d.dateD, d.motif, d.montant,
-                       m.budget AS BudgetInitial,
-                       (m.budget - COALESCE((SELECT SUM(montant) FROM Depense d2 WHERE d2.nomPlanete = m.nomPlanete AND d2.numeroMission = m.numero), 0)) AS BudgetActuel
+                 SELECT m.nomPlanete || '-' || m.numero AS NomMission,
+                 d.dateD, d.motif, d.montant,
+                 m.budget AS BudgetInitial,
+                (m.budget - IFNULL((SELECT SUM(montant) FROM Depense d2 WHERE d2.nomPlanete = m.nomPlanete AND d2.numeroMission = m.numero), 0)) AS BudgetActuel
                 FROM Mission m
                 LEFT JOIN Depense d ON m.nomPlanete = d.nomPlanete AND m.numero = d.numeroMission
                 WHERE (SELECT COUNT(*) FROM Composer c WHERE c.nomPlanete = m.nomPlanete AND c.numeroMission = m.numero) > 10";
 
-            using (SQLiteCommand command = new SQLiteCommand(requete, connection))
+            try
             {
-                using (SQLiteDataReader reader = command.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
+                command = new SQLiteCommand(requete, connection);
+                reader = command.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             return table;
@@ -73,6 +85,8 @@ namespace Projet_SAE_24_Stargate
         {
             DataTable table = new DataTable();
             SQLiteConnection connection = Connexion.Connec;
+            SQLiteCommand command = null;
+            SQLiteDataReader reader = null;
 
             string requete = @"
                 SELECT p.nom, COUNT(m.numero) AS NombreMissions
@@ -80,12 +94,15 @@ namespace Projet_SAE_24_Stargate
                 LEFT JOIN Mission m ON p.nom = m.nomPlanete
                 GROUP BY p.nom";
 
-            using (SQLiteCommand command = new SQLiteCommand(requete, connection))
+            try
             {
-                using (SQLiteDataReader reader = command.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
+                command = new SQLiteCommand(requete, connection);
+                reader = command.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             return table;
@@ -95,6 +112,8 @@ namespace Projet_SAE_24_Stargate
         {
             DataTable table = new DataTable();
             SQLiteConnection connection = Connexion.Connec;
+            SQLiteCommand command = null;
+            SQLiteDataReader reader = null;
 
             string requete = @"
                 SELECT d.dateD || ' - ' || d.motif || ' - ' || d.montant || '€' AS 'Dépenses les plus importantes',
@@ -109,12 +128,15 @@ namespace Projet_SAE_24_Stargate
                     WHERE d2.nomPlanete = d.nomPlanete AND d2.numeroMission = d.numeroMission
                 )";
 
-            using (SQLiteCommand command = new SQLiteCommand(requete, connection))
+            try
             {
-                using (SQLiteDataReader reader = command.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
+                command = new SQLiteCommand(requete, connection);
+                reader = command.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             return table;
@@ -122,6 +144,11 @@ namespace Projet_SAE_24_Stargate
 
         private void Stats_Load(object sender, EventArgs e)
         {
+            SQLiteCommand cmdMembres = null;
+            SQLiteDataReader rMembres = null;
+            SQLiteCommand cmdMissions = null;
+            SQLiteDataReader rMissions = null;
+
             try
             {
                 dgvReq2.DataSource = Req2();
@@ -130,9 +157,10 @@ namespace Projet_SAE_24_Stargate
 
                 string reqMembres = "SELECT matricule, nom || ' ' || prenom AS NomComplet FROM Membre ORDER BY nom";
                 DataTable membres = new DataTable();
-                using (SQLiteCommand cmd = new SQLiteCommand(reqMembres, Connexion.Connec))
-                using (SQLiteDataReader r = cmd.ExecuteReader())
-                    membres.Load(r);
+
+                cmdMembres = new SQLiteCommand(reqMembres, Connexion.Connec);
+                rMembres = cmdMembres.ExecuteReader();
+                membres.Load(rMembres);
 
                 cboReq1.DisplayMember = "NomComplet";
                 cboReq1.ValueMember = "matricule";
@@ -142,9 +170,10 @@ namespace Projet_SAE_24_Stargate
                                       nomPlanete, numero 
                                FROM Mission ORDER BY nomPlanete, numero";
                 DataTable missions = new DataTable();
-                using (SQLiteCommand cmd = new SQLiteCommand(reqMissions, Connexion.Connec))
-                using (SQLiteDataReader r = cmd.ExecuteReader())
-                    missions.Load(r);
+
+                cmdMissions = new SQLiteCommand(reqMissions, Connexion.Connec);
+                rMissions = cmdMissions.ExecuteReader();
+                missions.Load(rMissions);
 
                 cboReq5.DisplayMember = "NomMission";
                 cboReq5.ValueMember = "NomMission";
@@ -155,10 +184,13 @@ namespace Projet_SAE_24_Stargate
                 MessageBox.Show(ex.Message);
             }
         }
+
         public DataTable Req5(string nomPlanete, int numeroMission)
         {
             DataTable table = new DataTable();
             SQLiteConnection connection = Connexion.Connec;
+            SQLiteCommand command = null;
+            SQLiteDataReader reader = null;
 
             string requete = @"
                 SELECT i.nomCode, e.nom AS EspeceOrigine, SUM(co.sommeVersee) AS TotalRecu
@@ -176,15 +208,19 @@ namespace Projet_SAE_24_Stargate
                 GROUP BY nomCodeInformateur
                 ))";
 
-            using (SQLiteCommand command = new SQLiteCommand(requete, connection))
+            try
             {
+                command = new SQLiteCommand(requete, connection);
                 command.Parameters.AddWithValue("@nomPlanete", nomPlanete);
                 command.Parameters.AddWithValue("@numeroMission", numeroMission);
-                using (SQLiteDataReader reader = command.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
+                reader = command.ExecuteReader();
+                table.Load(reader);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             return table;
         }
 
@@ -194,7 +230,6 @@ namespace Projet_SAE_24_Stargate
             {
                 dgvReq1.DataSource = Req1(cboReq1.SelectedValue.ToString());
             }
-                
         }
 
         private void cboReq5_SelectedIndexChanged(object sender, EventArgs e)
