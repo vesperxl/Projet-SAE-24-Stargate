@@ -55,6 +55,7 @@
             // 
             this.grpBoxNom.Controls.Add(this.lblNom);
             this.grpBoxNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBoxNom.ForeColor = System.Drawing.Color.Cyan;
             this.grpBoxNom.Location = new System.Drawing.Point(16, 364);
             this.grpBoxNom.Name = "grpBoxNom";
             this.grpBoxNom.Size = new System.Drawing.Size(384, 94);
@@ -75,6 +76,7 @@
             // 
             this.grpBoxOrigine.Controls.Add(this.lblOrigine);
             this.grpBoxOrigine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBoxOrigine.ForeColor = System.Drawing.Color.Cyan;
             this.grpBoxOrigine.Location = new System.Drawing.Point(16, 464);
             this.grpBoxOrigine.Name = "grpBoxOrigine";
             this.grpBoxOrigine.Size = new System.Drawing.Size(383, 94);
@@ -93,8 +95,10 @@
             // 
             // grpBoxInsArm
             // 
+            this.grpBoxInsArm.BackColor = System.Drawing.Color.Transparent;
             this.grpBoxInsArm.Controls.Add(this.lblInsArm);
             this.grpBoxInsArm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBoxInsArm.ForeColor = System.Drawing.Color.Cyan;
             this.grpBoxInsArm.Location = new System.Drawing.Point(16, 564);
             this.grpBoxInsArm.Name = "grpBoxInsArm";
             this.grpBoxInsArm.Size = new System.Drawing.Size(383, 94);

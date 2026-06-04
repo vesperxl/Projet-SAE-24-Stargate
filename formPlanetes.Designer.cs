@@ -49,14 +49,14 @@
             this.flpPlanet.AutoScroll = true;
             this.flpPlanet.Location = new System.Drawing.Point(12, 12);
             this.flpPlanet.Name = "flpPlanet";
-            this.flpPlanet.Size = new System.Drawing.Size(437, 873);
+            this.flpPlanet.Size = new System.Drawing.Size(510, 873);
             this.flpPlanet.TabIndex = 1;
             // 
             // flpMonstres
             // 
             this.flpMonstres.AutoScroll = true;
             this.flpMonstres.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpMonstres.Location = new System.Drawing.Point(455, 12);
+            this.flpMonstres.Location = new System.Drawing.Point(528, 12);
             this.flpMonstres.Name = "flpMonstres";
             this.flpMonstres.Size = new System.Drawing.Size(858, 719);
             this.flpMonstres.TabIndex = 2;
@@ -67,7 +67,7 @@
             this.grpBoxInfo.Controls.Add(this.grpBoxDataBaz);
             this.grpBoxInfo.Controls.Add(this.grpBoxAtmo);
             this.grpBoxInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.grpBoxInfo.Location = new System.Drawing.Point(455, 737);
+            this.grpBoxInfo.Location = new System.Drawing.Point(528, 737);
             this.grpBoxInfo.Name = "grpBoxInfo";
             this.grpBoxInfo.Size = new System.Drawing.Size(858, 148);
             this.grpBoxInfo.TabIndex = 3;
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 897);
+            this.ClientSize = new System.Drawing.Size(1398, 897);
             this.Controls.Add(this.grpBoxInfo);
             this.Controls.Add(this.flpMonstres);
             this.Controls.Add(this.flpPlanet);

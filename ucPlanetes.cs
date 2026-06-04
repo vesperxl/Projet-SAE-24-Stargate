@@ -23,6 +23,7 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
             lblNom.Text = nom;
             pctBoxImage.Image = image;
+            pctBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             nomPlanete = nom;
 
             pctBoxImage.Click += new EventHandler(Clickeuh);
@@ -50,7 +51,7 @@ namespace Projet_SAE_24_Stargate
 
         private void BlancSurvol(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(15, 15, 20);
         }
     }
 }

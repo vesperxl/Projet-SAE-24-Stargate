@@ -20,6 +20,7 @@ namespace Projet_SAE_24_Stargate
         public ucRaces(String nom, String origine, String couleur, Image image,String insArm, int races)
         {
             InitializeComponent();
+            ThemeCp.AppliquerTheme(this);
             lblNom.Text = nom;
             lblOrigine.Text = origine;
             panel1.BackColor = Color.FromName(couleur);

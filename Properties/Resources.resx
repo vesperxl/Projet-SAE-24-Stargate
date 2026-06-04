@@ -125,6 +125,33 @@
   <data name="fond_scifi_stargate_vortex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\fond_scifi_stargate_vortex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Terre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Terre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vénus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Vénus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Aina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Mars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mercure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Mercure.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Muh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Muh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Neptune" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Neptune.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Saturne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Saturne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sohia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Sohia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backgroundDemar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backDema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
