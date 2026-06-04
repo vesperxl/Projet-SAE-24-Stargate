@@ -165,7 +165,7 @@
             // 
             this.dtpretour.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpretour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpretour.Location = new System.Drawing.Point(305, 375);
+            this.dtpretour.Location = new System.Drawing.Point(305, 279);
             this.dtpretour.Name = "dtpretour";
             this.dtpretour.Size = new System.Drawing.Size(407, 26);
             this.dtpretour.TabIndex = 24;
@@ -175,7 +175,7 @@
             // 
             this.dtpdepart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpdepart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpdepart.Location = new System.Drawing.Point(305, 320);
+            this.dtpdepart.Location = new System.Drawing.Point(305, 224);
             this.dtpdepart.Name = "dtpdepart";
             this.dtpdepart.Size = new System.Drawing.Size(407, 26);
             this.dtpdepart.TabIndex = 23;
@@ -186,7 +186,7 @@
             this.cbochefmission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbochefmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbochefmission.FormattingEnabled = true;
-            this.cbochefmission.Location = new System.Drawing.Point(305, 195);
+            this.cbochefmission.Location = new System.Drawing.Point(305, 350);
             this.cbochefmission.Name = "cbochefmission";
             this.cbochefmission.Size = new System.Drawing.Size(407, 32);
             this.cbochefmission.TabIndex = 22;
@@ -323,7 +323,7 @@
             // 
             this.lblRetour.AutoSize = true;
             this.lblRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetour.Location = new System.Drawing.Point(44, 375);
+            this.lblRetour.Location = new System.Drawing.Point(44, 279);
             this.lblRetour.Name = "lblRetour";
             this.lblRetour.Size = new System.Drawing.Size(162, 24);
             this.lblRetour.TabIndex = 8;
@@ -333,7 +333,7 @@
             // 
             this.lbldepart.AutoSize = true;
             this.lbldepart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldepart.Location = new System.Drawing.Point(44, 322);
+            this.lbldepart.Location = new System.Drawing.Point(44, 226);
             this.lbldepart.Name = "lbldepart";
             this.lbldepart.Size = new System.Drawing.Size(161, 24);
             this.lbldepart.TabIndex = 7;
@@ -343,21 +343,21 @@
             // 
             this.lblparametres.AutoSize = true;
             this.lblparametres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblparametres.Location = new System.Drawing.Point(11, 268);
+            this.lblparametres.Location = new System.Drawing.Point(11, 172);
             this.lblparametres.Name = "lblparametres";
             this.lblparametres.Size = new System.Drawing.Size(274, 24);
             this.lblparametres.TabIndex = 6;
-            this.lblparametres.Text = "3 - Paramètres de la mission";
+            this.lblparametres.Text = "2 - Paramètres de la mission";
             // 
             // lblChefMission
             // 
             this.lblChefMission.AutoSize = true;
             this.lblChefMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChefMission.Location = new System.Drawing.Point(9, 198);
+            this.lblChefMission.Location = new System.Drawing.Point(9, 353);
             this.lblChefMission.Name = "lblChefMission";
             this.lblChefMission.Size = new System.Drawing.Size(289, 24);
             this.lblChefMission.TabIndex = 5;
-            this.lblChefMission.Text = "2 - Choix du  chef de mission ";
+            this.lblChefMission.Text = "3 - Choix du  chef de mission ";
             // 
             // btnValid
             // 
@@ -413,6 +413,7 @@
             this.Controls.Add(this.lblTitre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAjoutMission";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionnaire des nouvelles missions SGC";
             this.groupBoxMission.ResumeLayout(false);
             this.groupBoxMission.PerformLayout();

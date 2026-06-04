@@ -234,6 +234,7 @@
             this.Controls.Add(this.lblTitre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAffectationCapture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionnaire des nouvelles missions SGC";
             this.Load += new System.EventHandler(this.FormAffectationCapture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudObjectifCapture)).EndInit();
