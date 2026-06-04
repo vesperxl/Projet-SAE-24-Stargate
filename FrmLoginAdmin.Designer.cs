@@ -177,6 +177,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLoginAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentification Administrateur SGC";
             this.Load += new System.EventHandler(this.FrmLoginAdmin_Load);
             this.grpboxAuth.ResumeLayout(false);
