@@ -129,14 +129,6 @@ namespace Projet_SAE_24_Stargate
                 DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
                 DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
 
-                if (typeSelectionne == "Alliés" && estAllie.Length == 0)
-                {
-                    continue;
-                }
-                else if (typeSelectionne == "Ennemies" && estEnnemi.Length == 0)
-                {
-                    continue;
-                }
 
                 string nom = row["nom"].ToString();
                 string couleur = row["couleur"].ToString();
@@ -165,7 +157,6 @@ namespace Projet_SAE_24_Stargate
 
                 int allie_enemy = -1;
 
-                // Récupération des données si c'est un allié
                 if (estAllie.Length > 0)
                 {
                     insArme = estAllie[0]["instrumentMusique"].ToString();
@@ -173,27 +164,19 @@ namespace Projet_SAE_24_Stargate
 
                     if (estAllie[0]["datePremierContact"] != DBNull.Value)
                     {
-                        if (DateTime.TryParse(estAllie[0]["datePremierContact"].ToString(), out DateTime dt))
-                        {
-                            dateContact = dt.ToShortDateString();
-                        }
-                        else
-                        {
-                            dateContact = estAllie[0]["datePremierContact"].ToString();
-                        }
+                       dateContact = "1er Contact : " + estAllie[0]["datePremierContact"].ToString();
                     }
                     allie_enemy = 0;
                 }
-                // Récupération des données si c'est un ennemi
+
                 else if (estEnnemi.Length > 0)
                 {
                     insArme = estEnnemi[0]["typeArme"].ToString();
                     attitude = estEnnemi[0]["degreAgressivite"].ToString();
-                    dateContact = ""; // Les ennemis n'ont pas de date de contact dans la BDD
+                    dateContact = ""; 
                     allie_enemy = 1;
                 }
 
-                // Plus de "poire" ni de "pomme", on passe les vraies variables !
                 ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, attitude, dateContact, allie_enemy);
                 flowLayoutPanel1.Controls.Add(newRaces);
             }
@@ -263,6 +246,11 @@ namespace Projet_SAE_24_Stargate
             cboColor.SelectedIndex = 0;
             cboNom.SelectedIndex = 0;
             cboType.SelectedIndex = 0;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

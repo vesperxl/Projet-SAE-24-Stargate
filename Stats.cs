@@ -151,6 +151,13 @@ namespace Projet_SAE_24_Stargate
 
             try
             {
+                dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
+                dgvReq2.Font = new Font(dgvReq1.Font.FontFamily, 14);
+                dgvReq3.Font = new Font(dgvReq1.Font.FontFamily, 14);
+                dgvReq4.Font = new Font(dgvReq1.Font.FontFamily, 14);
+                dgvReq5.Font = new Font(dgvReq1.Font.FontFamily, 14);
+
+                dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq2.DataSource = Req2();
                 dgvReq3.DataSource = Req3();
                 dgvReq4.DataSource = Req4();
@@ -265,6 +272,11 @@ namespace Projet_SAE_24_Stargate
         private void button5_Click(object sender, EventArgs e)
         {
             panelReq5.BringToFront();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

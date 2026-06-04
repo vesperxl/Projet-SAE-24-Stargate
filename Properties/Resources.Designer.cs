@@ -293,6 +293,16 @@ namespace Projet_SAE_24_Stargate.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap homeNeon {
+            get {
+                object obj = ResourceManager.GetObject("homeNeon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap hsybvoD {
             get {
                 object obj = ResourceManager.GetObject("hsybvoD", resourceCulture);

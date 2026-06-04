@@ -37,7 +37,7 @@ namespace Projet_SAE_24_Stargate
                 grpBoxAttitude.Text = "Degré de bienveillance";
 
                 lblDate.Visible = true;
-                lblDate.Text = "1er Contact : " + dateContact;
+                lblDate.Text =  dateContact;
             }
 
             else if (races == 1)
@@ -48,7 +48,8 @@ namespace Projet_SAE_24_Stargate
                 grpBoxInsArm.Text = "Type d'arme";
                 grpBoxAttitude.Text = "Agressivité";
 
-                lblDate.Visible = false;
+                lblDate.Visible = true;
+                lblDate.Text = dateContact;
             }
 
             else

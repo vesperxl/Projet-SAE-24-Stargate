@@ -60,7 +60,7 @@
             this.Controls.Add(this.pctBoxImage);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPlanetes";
-            this.Size = new System.Drawing.Size(438, 148);
+            this.Size = new System.Drawing.Size(462, 148);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

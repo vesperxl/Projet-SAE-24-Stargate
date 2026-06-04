@@ -42,6 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelReq1 = new System.Windows.Forms.Panel();
             this.panelReq2 = new System.Windows.Forms.Panel();
             this.panelReq3 = new System.Windows.Forms.Panel();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq5)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelReq1.SuspendLayout();
             this.panelReq2.SuspendLayout();
             this.panelReq3.SuspendLayout();
@@ -98,17 +100,18 @@
             // cboReq1
             // 
             this.cboReq1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReq1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboReq1.FormattingEnabled = true;
             this.cboReq1.Location = new System.Drawing.Point(15, 20);
             this.cboReq1.Name = "cboReq1";
-            this.cboReq1.Size = new System.Drawing.Size(1127, 28);
+            this.cboReq1.Size = new System.Drawing.Size(1127, 40);
             this.cboReq1.TabIndex = 5;
             this.cboReq1.SelectedIndexChanged += new System.EventHandler(this.cboReq1_SelectedIndexChanged);
             // 
             // dgvReq1
             // 
             this.dgvReq1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReq1.Location = new System.Drawing.Point(15, 54);
+            this.dgvReq1.Location = new System.Drawing.Point(18, 75);
             this.dgvReq1.Name = "dgvReq1";
             this.dgvReq1.RowHeadersWidth = 62;
             this.dgvReq1.RowTemplate.Height = 28;
@@ -118,17 +121,18 @@
             // cboReq5
             // 
             this.cboReq5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReq5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboReq5.FormattingEnabled = true;
             this.cboReq5.Location = new System.Drawing.Point(14, 14);
             this.cboReq5.Name = "cboReq5";
-            this.cboReq5.Size = new System.Drawing.Size(1122, 28);
+            this.cboReq5.Size = new System.Drawing.Size(1122, 40);
             this.cboReq5.TabIndex = 7;
             this.cboReq5.SelectedIndexChanged += new System.EventHandler(this.cboReq5_SelectedIndexChanged);
             // 
             // dgvReq5
             // 
             this.dgvReq5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReq5.Location = new System.Drawing.Point(14, 60);
+            this.dgvReq5.Location = new System.Drawing.Point(14, 75);
             this.dgvReq5.Name = "dgvReq5";
             this.dgvReq5.RowHeadersWidth = 62;
             this.dgvReq5.RowTemplate.Height = 28;
@@ -142,6 +146,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 724);
@@ -149,9 +154,10 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 138);
+            this.button1.Size = new System.Drawing.Size(196, 105);
             this.button1.TabIndex = 0;
             this.button1.Text = "Liste Personnes Avec Membres Déjà Parti";
             this.button1.UseVisualStyleBackColor = true;
@@ -159,9 +165,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 147);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 114);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 138);
+            this.button2.Size = new System.Drawing.Size(196, 105);
             this.button2.TabIndex = 1;
             this.button2.Text = "Missions + 10 Personnes";
             this.button2.UseVisualStyleBackColor = true;
@@ -169,9 +176,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 291);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(3, 225);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 138);
+            this.button3.Size = new System.Drawing.Size(196, 105);
             this.button3.TabIndex = 2;
             this.button3.Text = "Missions Par Planètes";
             this.button3.UseVisualStyleBackColor = true;
@@ -179,9 +187,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 435);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(3, 336);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(196, 138);
+            this.button4.Size = new System.Drawing.Size(196, 105);
             this.button4.TabIndex = 3;
             this.button4.Text = "Dépenses La Plus Elevé Par Mission";
             this.button4.UseVisualStyleBackColor = true;
@@ -189,13 +198,27 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 579);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(3, 447);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(196, 138);
+            this.button5.Size = new System.Drawing.Size(196, 105);
             this.button5.TabIndex = 4;
             this.button5.Text = "Informateur Avec Moins D\'Argent";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.homeNeon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 558);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelReq1
             // 
@@ -260,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq5)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelReq1.ResumeLayout(false);
             this.panelReq2.ResumeLayout(false);
             this.panelReq3.ResumeLayout(false);
@@ -289,5 +313,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panelReq4;
         private System.Windows.Forms.Panel panelReq5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

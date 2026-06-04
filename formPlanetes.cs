@@ -16,6 +16,9 @@ namespace Projet_SAE_24_Stargate
         string chcon = @"Data Source=Stargate.db";
         String planetSelect = "";
 
+        // Booléen pour empêcher les boucles d'événements
+        private bool enUpdate = false;
+
         public formPlanetes()
         {
             InitializeComponent();
@@ -36,12 +39,85 @@ namespace Projet_SAE_24_Stargate
 
         private void formPlanetes_Load(object sender, EventArgs e)
         {
+            cboData.SelectedIndexChanged += cboData_SelectedIndexChanged;
+            cboAliens.SelectedIndexChanged += cboAliens_SelectedIndexChanged; 
+            chkTriAlpha.CheckedChanged += chkTriAlpha_CheckedChanged;
+            ChkTriTemp.CheckedChanged += ChkTriTemp_CheckedChanged;
+            chkTriPes.CheckedChanged += chkTriPes_CheckedChanged;
 
-            foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Rows)
+            cboData.Items.Clear();
+            cboData.Items.Add("Toutes les planètes");
+            cboData.Items.Add("Avec DataBaz");
+            cboData.Items.Add("Sans DataBaz");
+
+            cboAliens.Items.Clear();
+            cboAliens.Items.Add("Peu importe");
+            cboAliens.Items.Add("Avec espèces");
+            cboAliens.Items.Add("Sans aucune espèce");
+
+            enUpdate = true;
+            cboData.SelectedIndex = 0;
+            cboAliens.SelectedIndex = 0;
+            enUpdate = false;
+
+            genererPlanetes(false, false, false);
+        }
+
+        private void genererPlanetes(bool alpha, bool temp, bool pes)
+        {
+            flpMonstres.Controls.Clear();
+            flpPlanet.Controls.Clear();
+
+            string ordreTri = "";
+
+            if (alpha)
+            {
+                ordreTri = "nom ASC";
+            }
+            else if (temp)
+            {
+                ordreTri = "temperature ASC";
+            }
+            else if (pes)
+            {
+                ordreTri = "gravite ASC";
+            }
+
+            List<string> conditions = new List<string>();
+
+            if (cboData.SelectedItem != null && cboData.SelectedIndex != 0)
+            {
+                if (cboData.SelectedIndex == 1)
+                {
+                    conditions.Add("dataBazON = 1");
+                }
+                else if (cboData.SelectedIndex == 2)
+                {
+                    conditions.Add("(dataBazON = 0 OR dataBazON IS NULL)");
+                }
+            }
+
+            string filtre = string.Join(" AND ", conditions);
+
+            foreach (DataRow row in MesDatas.DsGlobal.Tables["Planete"].Select(filtre, ordreTri))
             {
                 string nom = row["nom"].ToString();
 
-                Image image = (Image)Properties.Resources.ResourceManager.GetObject(row["nom"].ToString());
+                if (cboAliens.SelectedItem != null && cboAliens.SelectedIndex != 0)
+                {
+                    bool aDesAliens = MesDatas.DsGlobal.Tables["Habiter"].Select("nomPlanete = '" + nom.Replace("'", "''") + "'").Length > 0;
+
+                    if (cboAliens.SelectedIndex == 1 && !aDesAliens)
+                    {
+                        continue;
+                    }
+                    else if (cboAliens.SelectedIndex == 2 && aDesAliens)
+                    {
+                        continue;
+                    }
+                }
+
+                Image image = (Image)Properties.Resources.ResourceManager.GetObject(nom);
 
                 if (image == null)
                 {
@@ -51,7 +127,71 @@ namespace Projet_SAE_24_Stargate
                 ucPlanetes ucPlanete = new ucPlanetes(nom, image);
                 ucPlanete.Click += new EventHandler(ucPlanete_Click);
                 flpPlanet.Controls.Add(ucPlanete);
+            }
+        }
 
+        private void cboData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+                genererPlanetes(chkTriAlpha.Checked, ChkTriTemp.Checked, chkTriPes.Checked);
+                enUpdate = false;
+            }
+        }
+
+        private void cboAliens_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+                genererPlanetes(chkTriAlpha.Checked, ChkTriTemp.Checked, chkTriPes.Checked);
+                enUpdate = false;
+            }
+        }
+
+        private void chkTriAlpha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+                if (chkTriAlpha.Checked)
+                {
+                    ChkTriTemp.Checked = false;
+                    chkTriPes.Checked = false;
+                }
+                genererPlanetes(chkTriAlpha.Checked, ChkTriTemp.Checked, chkTriPes.Checked);
+                enUpdate = false;
+            }
+        }
+
+        private void ChkTriTemp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+                if (ChkTriTemp.Checked)
+                {
+                    chkTriAlpha.Checked = false;
+                    chkTriPes.Checked = false;
+                }
+                genererPlanetes(chkTriAlpha.Checked, ChkTriTemp.Checked, chkTriPes.Checked);
+                enUpdate = false;
+            }
+        }
+
+        private void chkTriPes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!enUpdate)
+            {
+                enUpdate = true;
+                if (chkTriPes.Checked)
+                {
+                    chkTriAlpha.Checked = false;
+                    ChkTriTemp.Checked = false;
+                }
+                genererPlanetes(chkTriAlpha.Checked, ChkTriTemp.Checked, chkTriPes.Checked);
+                enUpdate = false;
             }
         }
 
@@ -120,36 +260,25 @@ namespace Projet_SAE_24_Stargate
 
                         string insArme = "";
                         string attitude = "";
-                        string dateContact = "";
+                        string pourcentage = " % De Population : ";
                         int allie_enemy = -1;
 
                         if (estAllie.Length > 0)
                         {
                             insArme = estAllie[0]["instrumentMusique"].ToString();
                             attitude = estAllie[0]["degreBienveillance"].ToString();
-
-                            if (estAllie[0]["datePremierContact"] != DBNull.Value)
-                            {
-                                if (DateTime.TryParse(estAllie[0]["datePremierContact"].ToString(), out DateTime dt))
-                                {
-                                    dateContact = dt.ToShortDateString();
-                                }
-                                else
-                                {
-                                    dateContact = estAllie[0]["datePremierContact"].ToString();
-                                }
-                            }
                             allie_enemy = 0;
                         }
                         else if (estEnnemi.Length > 0)
                         {
                             insArme = estEnnemi[0]["typeArme"].ToString();
                             attitude = estEnnemi[0]["degreAgressivite"].ToString();
-                            dateContact = "";
                             allie_enemy = 1;
                         }
 
-                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image, insArme, attitude, dateContact, allie_enemy);
+                        pourcentage += hab["pourcentage"].ToString() + " %";
+
+                        ucRaces ucRace = new ucRaces(nom, planetSelect, couleur, image, insArme, attitude, pourcentage, allie_enemy);
                         flpMonstres.Controls.Add(ucRace);
                     }
                 }
@@ -164,6 +293,22 @@ namespace Projet_SAE_24_Stargate
 
                 flpMonstres.Controls.Add(lbl);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cboAliens.SelectedIndex = 0;
+            cboData.SelectedIndex = 0;
+            chkTriAlpha.Checked = false;
+            chkTriPes.Checked = false;
+            ChkTriTemp.Checked = false;
+
+            genererPlanetes(false, false, false);
         }
     }
 }
