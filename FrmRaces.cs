@@ -24,7 +24,7 @@ namespace Projet_SAE_24_Stargate
         {
             { "Bleu", "Blue" },
             { "Gris", "Gray" },
-            { "Marron", "Brown" },
+            { "Marron", "Peru" },
             { "Orange", "Orange" },
             { "Pourpre", "Crimson" },
             { "Rose", "Pink" },

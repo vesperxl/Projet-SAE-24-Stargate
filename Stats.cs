@@ -57,12 +57,11 @@ namespace Projet_SAE_24_Stargate
             SQLiteCommand command = null;
             SQLiteDataReader reader = null;
 
-            // Correction de ISNULL par IFNULL pour SQLite
             string requete = @"
                  SELECT m.nomPlanete || '-' || m.numero AS NomMission,
                  d.dateD, d.motif, d.montant,
                  m.budget AS BudgetInitial,
-                (m.budget - IFNULL((SELECT SUM(montant) FROM Depense d2 WHERE d2.nomPlanete = m.nomPlanete AND d2.numeroMission = m.numero), 0)) AS BudgetActuel
+                (m.budget - (SELECT TOTAL(montant) FROM Depense d2 WHERE d2.nomPlanete = m.nomPlanete AND d2.numeroMission = m.numero)) AS BudgetActuel
                 FROM Mission m
                 LEFT JOIN Depense d ON m.nomPlanete = d.nomPlanete AND m.numero = d.numeroMission
                 WHERE (SELECT COUNT(*) FROM Composer c WHERE c.nomPlanete = m.nomPlanete AND c.numeroMission = m.numero) > 10";
