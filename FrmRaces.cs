@@ -74,20 +74,30 @@ namespace Projet_SAE_24_Stargate
         // Quand La Case "Tri Alphabétique" Est Cochée, On Décoche Le Tri Par Couleur Et Recharge
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBoxTriAlpha.Checked)
+            if (!enUpdate)
             {
-                chkBoxTriCoul.Checked = false;
+                enUpdate = true;
+                if (chkBoxTriAlpha.Checked)
+                {
+                    chkBoxTriCoul.Checked = false;
+                }
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+                enUpdate = false;
             }
         }
 
         // Quand La Case "Tri Par Couleur" Est Cochée, On Décoche Le Tri Alphabétique Et Recharge
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chkBoxTriCoul.Checked)
+            if (!enUpdate)
             {
-                chkBoxTriAlpha.Checked = false;
+                enUpdate = true;
+                if (chkBoxTriCoul.Checked)
+                {
+                    chkBoxTriAlpha.Checked = false;
+                }
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
+                enUpdate = false;
             }
         }
 
@@ -217,8 +227,14 @@ namespace Projet_SAE_24_Stargate
             if (!enUpdate)
             {
                 enUpdate = true;
-                if (cboColor.Items.Count > 0) cboColor.SelectedIndex = 0;
-                if (cboType.Items.Count > 0) cboType.SelectedIndex = 0;
+                if (cboColor.Items.Count > 0)
+                {
+                    cboColor.SelectedIndex = 0;
+                }
+                if (cboType.Items.Count > 0)
+                {
+                    cboType.SelectedIndex = 0;
+                }
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
                 enUpdate = false;
             }
@@ -230,7 +246,10 @@ namespace Projet_SAE_24_Stargate
             if (!enUpdate)
             {
                 enUpdate = true;
-                if (cboNom.Items.Count > 0) cboNom.SelectedIndex = 0;
+                if (cboNom.Items.Count > 0)
+                {
+                    cboNom.SelectedIndex = 0;
+                }
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
                 enUpdate = false;
             }
@@ -242,7 +261,10 @@ namespace Projet_SAE_24_Stargate
             if (!enUpdate)
             {
                 enUpdate = true;
-                if (cboNom.Items.Count > 0) cboNom.SelectedIndex = 0;
+                if (cboNom.Items.Count > 0)
+                {
+                    cboNom.SelectedIndex = 0;
+                }
                 genererRaces(chkBoxTriAlpha.Checked, chkBoxTriCoul.Checked);
                 enUpdate = false;
             }
