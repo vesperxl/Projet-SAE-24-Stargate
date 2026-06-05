@@ -57,9 +57,9 @@
             this.grpboxAuth.Controls.Add(this.label1);
             this.grpboxAuth.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxAuth.ForeColor = System.Drawing.Color.Gainsboro;
-            this.grpboxAuth.Location = new System.Drawing.Point(12, 155);
+            this.grpboxAuth.Location = new System.Drawing.Point(31, 167);
             this.grpboxAuth.Name = "grpboxAuth";
-            this.grpboxAuth.Size = new System.Drawing.Size(765, 395);
+            this.grpboxAuth.Size = new System.Drawing.Size(827, 383);
             this.grpboxAuth.TabIndex = 0;
             this.grpboxAuth.TabStop = false;
             this.grpboxAuth.Text = "AUTHENTIFICATION";
@@ -170,9 +170,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.loginAdmin;
+            this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.fondMission;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(790, 568);
+            this.ClientSize = new System.Drawing.Size(895, 575);
             this.Controls.Add(this.lbltxttitre);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.grpboxAuth);
