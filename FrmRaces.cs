@@ -129,7 +129,6 @@ namespace Projet_SAE_24_Stargate
                 DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
                 DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
 
-
                 string nom = row["nom"].ToString();
                 string couleur = row["couleur"].ToString();
                 string origine = "Inconnue";
@@ -164,17 +163,25 @@ namespace Projet_SAE_24_Stargate
 
                     if (estAllie[0]["datePremierContact"] != DBNull.Value)
                     {
-                       dateContact = "1er Contact : " + estAllie[0]["datePremierContact"].ToString();
+                        dateContact = "1er Contact : " + estAllie[0]["datePremierContact"].ToString();
                     }
                     allie_enemy = 0;
                 }
-
                 else if (estEnnemi.Length > 0)
                 {
                     insArme = estEnnemi[0]["typeArme"].ToString();
                     attitude = estEnnemi[0]["degreAgressivite"].ToString();
-                    dateContact = ""; 
+                    dateContact = "";
                     allie_enemy = 1;
+                }
+
+                if (typeSelectionne == "Alliés" && allie_enemy != 0)
+                {
+                    continue;
+                }
+                if (typeSelectionne == "Ennemies" && allie_enemy != 1)
+                {
+                    continue;
                 }
 
                 ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, attitude, dateContact, allie_enemy);
@@ -240,12 +247,16 @@ namespace Projet_SAE_24_Stargate
 
         private void btnRes_Click(object sender, EventArgs e)
         {
+            enUpdate = true;
+
             chkBoxTriAlpha.Checked = false;
             chkBoxTriCoul.Checked = false;
-
             cboColor.SelectedIndex = 0;
             cboNom.SelectedIndex = 0;
             cboType.SelectedIndex = 0;
+
+            enUpdate = false;
+            genererRaces(false, false);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
