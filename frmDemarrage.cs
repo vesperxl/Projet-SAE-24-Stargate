@@ -167,8 +167,6 @@ namespace Projet_SAE_24_Stargate
         {
             FrmLoginAdmin fadmin = new FrmLoginAdmin();
 
-            this.Hide();
-
             fadmin.ShowDialog();
             if (fadmin.DialogResult == DialogResult.OK)
             {
@@ -176,8 +174,6 @@ namespace Projet_SAE_24_Stargate
                 fAMission.ShowDialog();
 
             }
-
-            this.Show();
         }
 
 

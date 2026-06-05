@@ -20,6 +20,7 @@ namespace Projet_SAE_24_Stargate
             InitializeComponent();
             // Application Du Thème Visuel Au Formulaire
             ThemeCp.ApplyTheme(this);
+
         }
 
         // Dictionnaire Pour Traduire Les Noms De Couleurs Du Français Vers L'Anglais
