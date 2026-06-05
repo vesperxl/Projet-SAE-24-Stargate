@@ -2,189 +2,202 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-public static class ThemeCp 
+public static class ThemeCp
 {
-    // Les couleurs : retour au cyan de base, et ajout du bleu foncé pour les bordures
-    private static readonly Color fondSombre = Color.FromArgb(15, 15, 20);
-    private static readonly Color bleuNeon = Color.FromArgb(0, 255, 255); // Ton cyan d'origine
-    private static readonly Color bleuFonceBordure = Color.FromArgb(0, 102, 204); // Bleu saphir
-    private static readonly Color fondControle = Color.FromArgb(10, 25, 40);
+    // Palette de couleurs
+    private static readonly Color DarkBackground = Color.FromArgb(15, 15, 20);
+    private static readonly Color ControlBackground = Color.FromArgb(10, 25, 40);
+    private static readonly Color NeonCyan = Color.FromArgb(0, 255, 255);
+    private static readonly Color ElectricBlue = Color.FromArgb(0, 150, 255);
+    private static readonly Color SapphireBlue = Color.FromArgb(0, 102, 204);
+    private static readonly Color TitleMagenta = Color.FromArgb(255, 0, 255);
 
-    public static void AppliquerTheme(Control controleParent)
+    // Fonction pour à appeler pour appliquer le style
+    public static void ApplyTheme(Control parentControl)
     {
-        // Style général
-        controleParent.BackColor = fondSombre;
-        controleParent.ForeColor = bleuNeon;
+        parentControl.BackColor = DarkBackground;
+        parentControl.ForeColor = NeonCyan;
 
-        foreach (Control controle in controleParent.Controls)
+        foreach (Control childControl in parentControl.Controls)
         {
-            // --- Gestion dynamique de la police ---
-            string nomPoliceActuelle = controle.Font.Name;
-            float tailleActuelle = controle.Font.Size;
-            FontStyle styleActuel = controle.Font.Style;
+            // Application du style aux enfant de manière récursive
+            ApplyTheme(childControl);
 
-            if (nomPoliceActuelle != "Consolas")
-            {
-                controle.Font = new Font("Consolas", tailleActuelle, styleActuel);
-            }
+            bool isTitle = (childControl.Tag != null && childControl.Tag.ToString() == "title");
 
-            // --- Appel récursif ---
-            AppliquerTheme(controle);
+            // Couleur différente si le contrôle est marqué comme titre
+            if (isTitle)
+            {
+                childControl.ForeColor = TitleMagenta;
+            }
+            else
+            {
+                childControl.ForeColor = NeonCyan;
 
-            // --- Personnalisation ---
-            if (controle is Button btn)
-            {
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.FlatAppearance.BorderColor = bleuNeon;
-                btn.FlatAppearance.BorderSize = 2;
-                btn.BackColor = fondSombre;
-                btn.Cursor = Cursors.Hand;
+                string currentFontName = childControl.Font.Name;
+                float currentFontSize = childControl.Font.Size;
+                FontStyle currentFontStyle = childControl.Font.Style;
 
-                btn.Paint -= DessinerBoutonDesactive;
-                btn.Paint += DessinerBoutonDesactive;   
-            }
-            else if (controle is TextBox txt)
-            {
-                txt.BackColor = fondControle;
-                txt.ForeColor = bleuNeon;
-                txt.BorderStyle = BorderStyle.FixedSingle;
-            }
-            else if (controle is DataGridView grid)
-            {
-                grid.BackgroundColor = fondSombre;
-                grid.GridColor = bleuNeon;
-                grid.DefaultCellStyle.BackColor = fondControle;
-                grid.DefaultCellStyle.ForeColor = bleuNeon;
-                grid.EnableHeadersVisualStyles = false;
-                grid.ColumnHeadersDefaultCellStyle.BackColor = fondSombre;
-                grid.ColumnHeadersDefaultCellStyle.ForeColor = bleuNeon;
-            }
-            else if (controle is GroupBox grp)
-            {
-                // Force le fond de la GroupBox à transparent pour révéler l'image du formulaire
-                grp.BackColor = Color.Transparent;
-
-                grp.Paint -= DessinerGroupBoxNeon;
-                grp.Paint += DessinerGroupBoxNeon;
-            }
-            else if (controle is TabControl tab)
-            {
-                tab.DrawMode = TabDrawMode.OwnerDrawFixed;
-                tab.DrawItem -= DessinerOngletsNeon;
-                tab.DrawItem += DessinerOngletsNeon;
-            }
-            else if (controle is Panel pnl)
-            {
-                if (pnl.BorderStyle == BorderStyle.FixedSingle || pnl.BorderStyle == BorderStyle.Fixed3D)
+                // Meme font pour tout le monde sauf les titres
+                if (currentFontName != "Consolas")
                 {
-                    pnl.BorderStyle = BorderStyle.None;
-                    pnl.Paint -= DessinerBordurePanelNeon;
-                    pnl.Paint += DessinerBordurePanelNeon;
+                    childControl.Font = new Font("Consolas", currentFontSize, currentFontStyle);
+                }
+            }
+
+            // Application des styles spécifiques par type de contrôle
+            if (childControl is Button button)
+            {
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderColor = isTitle ? TitleMagenta : ElectricBlue;
+                button.FlatAppearance.BorderSize = 2;
+                button.BackColor = DarkBackground;
+                button.Cursor = Cursors.Hand;
+
+                button.Paint -= DrawDisabledButton;
+                button.Paint += DrawDisabledButton;
+            }
+            else if (childControl is TextBox textBox)
+            {
+                textBox.BackColor = ControlBackground;
+                textBox.ForeColor = isTitle ? TitleMagenta : NeonCyan;
+                textBox.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else if (childControl is DataGridView dataGridView)
+            {
+                dataGridView.BackgroundColor = DarkBackground;
+                dataGridView.GridColor = ElectricBlue;
+                dataGridView.DefaultCellStyle.BackColor = ControlBackground;
+                dataGridView.DefaultCellStyle.ForeColor = NeonCyan;
+                dataGridView.EnableHeadersVisualStyles = false;
+                dataGridView.ColumnHeadersDefaultCellStyle.BackColor = DarkBackground;
+                dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = NeonCyan;
+            }
+            else if (childControl is GroupBox groupBox)
+            {
+                groupBox.Paint -= DrawNeonGroupBox;
+                groupBox.Paint += DrawNeonGroupBox;
+            }
+            else if (childControl is TabControl tabControl)
+            {
+                tabControl.Appearance = TabAppearance.FlatButtons;
+
+                foreach (TabPage tabPage in tabControl.TabPages)
+                {
+                    tabPage.BackColor = DarkBackground;
+                    tabPage.ForeColor = NeonCyan;
+                }
+
+                tabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
+                tabControl.DrawItem -= DrawNeonTabs;
+                tabControl.DrawItem += DrawNeonTabs;
+            }
+            else if (childControl is Panel panel)
+            {
+                if (panel.BorderStyle == BorderStyle.FixedSingle || panel.BorderStyle == BorderStyle.Fixed3D)
+                {
+                    panel.BorderStyle = BorderStyle.None;
+                    panel.Paint -= DrawNeonPanelBorder;
+                    panel.Paint += DrawNeonPanelBorder;
                 }
             }
         }
     }
 
-    // --- Méthodes de dessin ---
-
-    private static void DessinerGroupBoxNeon(object sender, PaintEventArgs e)
+    // Fonction pour dessiner une bordure neon pour les groupbox
+    private static void DrawNeonGroupBox(object sender, PaintEventArgs e)
     {
-        GroupBox box = (GroupBox)sender;
-        Graphics g = e.Graphics;
+        GroupBox groupBox = (GroupBox)sender;
+        Graphics graphics = e.Graphics;
 
-        // Le texte reste cyan, mais le trait de la bordure utilise le bleu foncé
-        Brush pinceauTexte = new SolidBrush(bleuNeon);
-        using (Pen styloBordure = new Pen(bleuFonceBordure, 1.0f))
+        bool isTitle = (groupBox.Tag != null && groupBox.Tag.ToString() == "title");
+
+        Brush textBrush = new SolidBrush(isTitle ? TitleMagenta : NeonCyan);
+        using (Pen borderPen = new Pen(isTitle ? TitleMagenta : SapphireBlue, 1.0f))
         {
-            // MODIFICATION : Suppression de g.Clear(fondSombre) pour préserver la transparence
+            graphics.Clear(DarkBackground);
 
-            SizeF tailleTexte = g.MeasureString(box.Text, box.Font);
-            int positionTexteY = (int)(tailleTexte.Height / 2);
-            Rectangle rect = new Rectangle(0, positionTexteY, box.Width - 1, box.Height - positionTexteY - 1);
+            // Calcul de l'espace nécessaire pour le texte
+            SizeF textSize = graphics.MeasureString(groupBox.Text, groupBox.Font);
+            int textPositionY = (int)(textSize.Height / 2);
+            Rectangle borderRect = new Rectangle(0, textPositionY, groupBox.Width - 1, groupBox.Height - textPositionY - 1);
 
-            // Dessin du texte (Cyan)
-            g.DrawString(box.Text, box.Font, pinceauTexte, box.Padding.Left + 5, 0);
+            graphics.DrawString(groupBox.Text, groupBox.Font, textBrush, groupBox.Padding.Left + 5, 0);
 
-            // Dessin des bordures (Bleu foncé)
-            g.DrawLine(styloBordure, rect.Location, new Point(rect.X, rect.Y + rect.Height));
-            g.DrawLine(styloBordure, new Point(rect.X, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y + rect.Height));
-            g.DrawLine(styloBordure, new Point(rect.X + rect.Width, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y));
-            g.DrawLine(styloBordure, new Point(rect.X + rect.Width, rect.Y), new Point(rect.X + box.Padding.Left + (int)tailleTexte.Width + 8, rect.Y));
-            g.DrawLine(styloBordure, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
+            // Traçage manuel des lignes pour laisser un trou au niveau du texte
+            graphics.DrawLine(borderPen, borderRect.Location, new Point(borderRect.X, borderRect.Y + borderRect.Height));
+            graphics.DrawLine(borderPen, new Point(borderRect.X, borderRect.Y + borderRect.Height), new Point(borderRect.X + borderRect.Width, borderRect.Y + borderRect.Height));
+            graphics.DrawLine(borderPen, new Point(borderRect.X + borderRect.Width, borderRect.Y + borderRect.Height), new Point(borderRect.X + borderRect.Width, borderRect.Y));
+            graphics.DrawLine(borderPen, new Point(borderRect.X + borderRect.Width, borderRect.Y), new Point(borderRect.X + groupBox.Padding.Left + (int)textSize.Width + 8, borderRect.Y));
+            graphics.DrawLine(borderPen, new Point(borderRect.X, borderRect.Y), new Point(borderRect.X + groupBox.Padding.Left, borderRect.Y));
         }
     }
 
-    private static void DessinerOngletsNeon(object sender, DrawItemEventArgs e)
+    // Surcharge graphique pour les onglets
+    private static void DrawNeonTabs(object sender, DrawItemEventArgs e)
     {
-        TabControl tab = (TabControl)sender;
-        Graphics g = e.Graphics;
+        TabControl tabControl = (TabControl)sender;
+        Graphics graphics = e.Graphics;
 
-        bool estSelectionne = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
-        Brush pinceauFond = new SolidBrush(estSelectionne ? fondControle : fondSombre);
-        Brush pinceauTexte = new SolidBrush(bleuNeon); // Cyan
+        bool isSelected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+        Brush backgroundBrush = new SolidBrush(isSelected ? ControlBackground : DarkBackground);
+        Brush textBrush = new SolidBrush(NeonCyan);
 
-        g.FillRectangle(pinceauFond, e.Bounds);
+        graphics.FillRectangle(backgroundBrush, e.Bounds);
 
-        if (estSelectionne)
+        // Ajout d'une bordure de sélection pour l'onglet actif
+        if (isSelected)
         {
-            using (Pen styloBordure = new Pen(bleuNeon, 1)) // Cyan
+            using (Pen borderPen = new Pen(ElectricBlue, 1))
             {
-                g.DrawRectangle(styloBordure, e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1);
+                graphics.DrawRectangle(borderPen, e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1);
             }
         }
 
-        StringFormat format = new StringFormat
+        StringFormat textFormat = new StringFormat
         {
             Alignment = StringAlignment.Center,
             LineAlignment = StringAlignment.Center
         };
-        g.DrawString(tab.TabPages[e.Index].Text, e.Font, pinceauTexte, e.Bounds, format);
+        graphics.DrawString(tabControl.TabPages[e.Index].Text, e.Font, textBrush, e.Bounds, textFormat);
     }
 
-    private static void DessinerBordurePanelNeon(object sender, PaintEventArgs e)
+    // Surcharge graphique pour remplacer les bordures Windows par défaut d'un Panel
+    private static void DrawNeonPanelBorder(object sender, PaintEventArgs e)
     {
-        Panel pnl = (Panel)sender;
-        using (Pen styloBordure = new Pen(bleuNeon, 1.0f)) // Cyan
+        Panel panel = (Panel)sender;
+        using (Pen borderPen = new Pen(ElectricBlue, 1.0f))
         {
-            e.Graphics.DrawRectangle(styloBordure, 0, 0, pnl.Width - 1, pnl.Height - 1);
+            e.Graphics.DrawRectangle(borderPen, 0, 0, panel.Width - 1, panel.Height - 1);
         }
     }
 
-
-    private static void DessinerBoutonDesactive(object sender, PaintEventArgs e)
+    // Surcharge graphique pour maintenir la lisibilité d'un bouton inactif
+    private static void DrawDisabledButton(object sender, PaintEventArgs e)
     {
-        Button btn = (Button)sender;
+        Button button = (Button)sender;
 
-        // On n'intervient QUE si le bouton est verrouillé (Enabled = false)
-        if (!btn.Enabled)
+        if (!button.Enabled)
         {
-            Graphics g = e.Graphics;
+            Graphics graphics = e.Graphics;
+            Color disabledCyan = Color.FromArgb(0, 100, 100);
 
-            // On définit des couleurs plus ternes pour le mode "désactivé"
-            Color fondSombre = Color.FromArgb(15, 15, 20);
-            Color cyanDesactive = Color.FromArgb(0, 100, 100); // Un cyan foncé/éteint
-            Color bordureDesactive = Color.FromArgb(0, 102, 204); // Le bleu foncé saphir
+            graphics.Clear(DarkBackground);
 
-            // 1. On efface le texte noir forcé par Windows
-            g.Clear(fondSombre);
-
-            // 2. On redessine notre propre bordure
-            using (Pen styloBordure = new Pen(bordureDesactive, 2))
+            using (Pen borderPen = new Pen(SapphireBlue, 2))
             {
-                // Le +1 et -2 servent à bien centrer le trait dans le bouton
-                g.DrawRectangle(styloBordure, 1, 1, btn.Width - 2, btn.Height - 2);
+                graphics.DrawRectangle(borderPen, 1, 1, button.Width - 2, button.Height - 2);
             }
 
-            // 3. On réécrit le texte par-dessus, bien centré et lisible
-            StringFormat format = new StringFormat
+            StringFormat textFormat = new StringFormat
             {
                 Alignment = StringAlignment.Center,
                 LineAlignment = StringAlignment.Center
             };
 
-            using (Brush pinceauTexte = new SolidBrush(cyanDesactive))
+            using (Brush textBrush = new SolidBrush(disabledCyan))
             {
-                g.DrawString(btn.Text, btn.Font, pinceauTexte, btn.ClientRectangle, format);
+                graphics.DrawString(button.Text, button.Font, textBrush, button.ClientRectangle, textFormat);
             }
         }
     }

@@ -34,9 +34,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblevent = new System.Windows.Forms.Label();
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureDepense = new System.Windows.Forms.PictureBox();
             this.pictureEvent = new System.Windows.Forms.PictureBox();
             this.pictureContact = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDepense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).BeginInit();
@@ -64,33 +67,33 @@
             // 
             // lblContact
             // 
-            this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Inter", 10F);
-            this.lblContact.Location = new System.Drawing.Point(8, 85);
+            this.lblContact.Location = new System.Drawing.Point(12, 75);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(123, 21);
+            this.lblContact.Size = new System.Drawing.Size(82, 47);
             this.lblContact.TabIndex = 5;
             this.lblContact.Text = "Nouveau contact";
+            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 10F);
-            this.label1.Location = new System.Drawing.Point(153, 85);
+            this.label1.Location = new System.Drawing.Point(109, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 21);
+            this.label1.Size = new System.Drawing.Size(94, 47);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nouvelle dépense";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblevent
             // 
-            this.lblevent.AutoSize = true;
             this.lblevent.Font = new System.Drawing.Font("Inter", 10F);
-            this.lblevent.Location = new System.Drawing.Point(299, 85);
+            this.lblevent.Location = new System.Drawing.Point(211, 74);
             this.lblevent.Name = "lblevent";
-            this.lblevent.Size = new System.Drawing.Size(133, 21);
+            this.lblevent.Size = new System.Drawing.Size(99, 51);
             this.lblevent.TabIndex = 7;
-            this.lblevent.Text = "Nouvel Evenement";
+            this.lblevent.Text = "Nouvel évenement";
+            this.lblevent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInfo
             // 
@@ -100,13 +103,27 @@
             this.grpInfo.TabIndex = 8;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "groupBox1";
+            this.grpInfo.Enter += new System.EventHandler(this.grpInfo_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.alien;
+            this.pictureBox1.Location = new System.Drawing.Point(339, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureDepense
             // 
             this.pictureDepense.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureDepense.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureDepense.Image = global::Projet_SAE_24_Stargate.Properties.Resources.depense;
-            this.pictureDepense.Location = new System.Drawing.Point(180, 12);
+            this.pictureDepense.Location = new System.Drawing.Point(120, 4);
             this.pictureDepense.Name = "pictureDepense";
             this.pictureDepense.Size = new System.Drawing.Size(70, 70);
             this.pictureDepense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +136,7 @@
             this.pictureEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEvent.Image = global::Projet_SAE_24_Stargate.Properties.Resources.evenement;
-            this.pictureEvent.Location = new System.Drawing.Point(331, 12);
+            this.pictureEvent.Location = new System.Drawing.Point(227, 4);
             this.pictureEvent.Name = "pictureEvent";
             this.pictureEvent.Size = new System.Drawing.Size(70, 70);
             this.pictureEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,7 +149,7 @@
             this.pictureContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureContact.Image = global::Projet_SAE_24_Stargate.Properties.Resources.contact;
-            this.pictureContact.Location = new System.Drawing.Point(33, 12);
+            this.pictureContact.Location = new System.Drawing.Point(16, 4);
             this.pictureContact.Name = "pictureContact";
             this.pictureContact.Size = new System.Drawing.Size(70, 70);
             this.pictureContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,11 +157,23 @@
             this.pictureContact.TabStop = false;
             this.pictureContact.Click += new System.EventHandler(this.pictureContact_Click);
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Inter", 10F);
+            this.label2.Location = new System.Drawing.Point(322, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 51);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nouvelle capture";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmAjoutInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 595);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.lblevent);
             this.Controls.Add(this.label1);
@@ -158,13 +187,13 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAjoutInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAjoutInfo";
+            this.Text = "Ajouter une information";
             this.Load += new System.EventHandler(this.frmAjoutInfo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDepense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -179,5 +208,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblevent;
         private System.Windows.Forms.GroupBox grpInfo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

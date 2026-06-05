@@ -16,6 +16,9 @@ namespace Projet_SAE_24_Stargate
         public ucContact()
         {
             InitializeComponent();
+            ThemeCp.ApplyTheme(this);
+            dateChoice.MaxDate = DateTime.Now;
+
         }
 
 

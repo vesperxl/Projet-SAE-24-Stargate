@@ -15,9 +15,11 @@ namespace Projet_SAE_24_Stargate
         public ucEvent()
         {
             InitializeComponent();
+            ThemeCp.ApplyTheme(this);
+            dateChoice.MaxDate = DateTime.Now;
         }
 
-      public string getDate
+        public string getDate
         {
             get { return dateChoice.Value.ToString("dd/MM/yyyy"); }
         }

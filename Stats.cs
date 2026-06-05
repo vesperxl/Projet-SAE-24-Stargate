@@ -16,7 +16,7 @@ namespace Projet_SAE_24_Stargate
         public Stats()
         {
             InitializeComponent();
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
         }
 
         public DataTable Req2()
