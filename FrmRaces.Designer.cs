@@ -50,20 +50,18 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(275, 8);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(412, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(884, 508);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1326, 782);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // chkBoxTriAlpha
             // 
             this.chkBoxTriAlpha.AutoSize = true;
             this.chkBoxTriAlpha.ForeColor = System.Drawing.Color.White;
-            this.chkBoxTriAlpha.Location = new System.Drawing.Point(4, 31);
-            this.chkBoxTriAlpha.Margin = new System.Windows.Forms.Padding(2);
+            this.chkBoxTriAlpha.Location = new System.Drawing.Point(6, 48);
             this.chkBoxTriAlpha.Name = "chkBoxTriAlpha";
-            this.chkBoxTriAlpha.Size = new System.Drawing.Size(159, 24);
+            this.chkBoxTriAlpha.Size = new System.Drawing.Size(233, 33);
             this.chkBoxTriAlpha.TabIndex = 1;
             this.chkBoxTriAlpha.Text = "Tri Alphabétique";
             this.chkBoxTriAlpha.UseVisualStyleBackColor = true;
@@ -73,10 +71,9 @@
             // 
             this.chkBoxTriCoul.AutoSize = true;
             this.chkBoxTriCoul.ForeColor = System.Drawing.Color.White;
-            this.chkBoxTriCoul.Location = new System.Drawing.Point(4, 59);
-            this.chkBoxTriCoul.Margin = new System.Windows.Forms.Padding(2);
+            this.chkBoxTriCoul.Location = new System.Drawing.Point(6, 91);
             this.chkBoxTriCoul.Name = "chkBoxTriCoul";
-            this.chkBoxTriCoul.Size = new System.Drawing.Size(115, 24);
+            this.chkBoxTriCoul.Size = new System.Drawing.Size(171, 33);
             this.chkBoxTriCoul.TabIndex = 2;
             this.chkBoxTriCoul.Text = "Tri Couleur";
             this.chkBoxTriCoul.UseVisualStyleBackColor = true;
@@ -86,10 +83,9 @@
             // 
             this.cboNom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNom.FormattingEnabled = true;
-            this.cboNom.Location = new System.Drawing.Point(6, 218);
-            this.cboNom.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNom.Location = new System.Drawing.Point(9, 335);
             this.cboNom.Name = "cboNom";
-            this.cboNom.Size = new System.Drawing.Size(246, 32);
+            this.cboNom.Size = new System.Drawing.Size(367, 41);
             this.cboNom.TabIndex = 3;
             this.cboNom.SelectedIndexChanged += new System.EventHandler(this.cboNom_SelectedIndexChanged);
             // 
@@ -97,10 +93,9 @@
             // 
             this.cboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboColor.FormattingEnabled = true;
-            this.cboColor.Location = new System.Drawing.Point(5, 138);
-            this.cboColor.Margin = new System.Windows.Forms.Padding(2);
+            this.cboColor.Location = new System.Drawing.Point(8, 212);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(247, 32);
+            this.cboColor.Size = new System.Drawing.Size(368, 41);
             this.cboColor.TabIndex = 4;
             this.cboColor.SelectedIndexChanged += new System.EventHandler(this.cboColor_SelectedIndexChanged);
             // 
@@ -108,10 +103,9 @@
             // 
             this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(5, 57);
-            this.cboType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboType.Location = new System.Drawing.Point(8, 88);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(247, 32);
+            this.cboType.Size = new System.Drawing.Size(368, 41);
             this.cboType.TabIndex = 5;
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
@@ -120,11 +114,9 @@
             this.groupBox1.Controls.Add(this.chkBoxTriAlpha);
             this.groupBox1.Controls.Add(this.chkBoxTriCoul);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 8);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(258, 91);
+            this.groupBox1.Size = new System.Drawing.Size(387, 140);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tri";
@@ -138,10 +130,10 @@
             this.groupBox2.Controls.Add(this.cboType);
             this.groupBox2.Controls.Add(this.cboNom);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 104);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(14, 160);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(257, 284);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(386, 437);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtre";
@@ -149,39 +141,37 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(5, 192);
-            this.lblNom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNom.Location = new System.Drawing.Point(8, 295);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(54, 24);
+            this.lblNom.Size = new System.Drawing.Size(80, 33);
             this.lblNom.TabIndex = 8;
             this.lblNom.Text = "Nom";
             // 
             // lblColor
             // 
             this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(2, 112);
-            this.lblColor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblColor.Location = new System.Drawing.Point(3, 172);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(84, 24);
+            this.lblColor.Size = new System.Drawing.Size(124, 33);
             this.lblColor.TabIndex = 7;
             this.lblColor.Text = "Couleur";
             // 
             // lblHosti
             // 
             this.lblHosti.AutoSize = true;
-            this.lblHosti.Location = new System.Drawing.Point(4, 31);
-            this.lblHosti.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHosti.Location = new System.Drawing.Point(6, 48);
             this.lblHosti.Name = "lblHosti";
-            this.lblHosti.Size = new System.Drawing.Size(84, 24);
+            this.lblHosti.Size = new System.Drawing.Size(129, 33);
             this.lblHosti.TabIndex = 6;
             this.lblHosti.Text = "Hostilité";
             // 
             // btnRes
             // 
             this.btnRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRes.Location = new System.Drawing.Point(137, 393);
+            this.btnRes.Location = new System.Drawing.Point(206, 605);
+            this.btnRes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRes.Name = "btnRes";
-            this.btnRes.Size = new System.Drawing.Size(129, 122);
+            this.btnRes.Size = new System.Drawing.Size(194, 188);
             this.btnRes.TabIndex = 8;
             this.btnRes.Text = "Réinitialiser";
             this.btnRes.UseVisualStyleBackColor = true;
@@ -192,9 +182,10 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.homeNeon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 393);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 605);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(182, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -202,16 +193,15 @@
             // 
             // frmRaces
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1168, 527);
+            this.ClientSize = new System.Drawing.Size(1752, 811);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRaces";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liste Des Races";
