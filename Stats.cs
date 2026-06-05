@@ -16,9 +16,11 @@ namespace Projet_SAE_24_Stargate
         public Stats()
         {
             InitializeComponent();
+            // Application Du Thème Visuel Au Formulaire
             ThemeCp.ApplyTheme(this);
         }
 
+        // Requête 1 : Récupère Tous Les Membres Ayant Participé À Une Mission Avec Un Membre Donné
         public DataTable Req1(string matricule)
         {
             DataTable table = new DataTable();
@@ -50,6 +52,7 @@ namespace Projet_SAE_24_Stargate
             return table;
         }
 
+        // Requête 2 : Récupère Les Missions De Plus De 10 Membres Avec Leurs Dépenses Et Budget Restant
         public DataTable Req2()
         {
             DataTable table = new DataTable();
@@ -80,6 +83,7 @@ namespace Projet_SAE_24_Stargate
             return table;
         }
 
+        // Requête 3 : Récupère Le Nombre De Missions Effectuées Par Planète
         public DataTable Req3()
         {
             DataTable table = new DataTable();
@@ -107,6 +111,7 @@ namespace Projet_SAE_24_Stargate
             return table;
         }
 
+        // Requête 4 : Récupère La Dépense La Plus Élevée De Chaque Mission Avec Le Chef Correspondant
         public DataTable Req4()
         {
             DataTable table = new DataTable();
@@ -141,6 +146,7 @@ namespace Projet_SAE_24_Stargate
             return table;
         }
 
+        // Initialisation Du Formulaire : Chargement Des Grilles Et Des Combobox
         private void Stats_Load(object sender, EventArgs e)
         {
             SQLiteCommand cmdMembres = null;
@@ -150,17 +156,20 @@ namespace Projet_SAE_24_Stargate
 
             try
             {
+                // Agrandissement De La Police De Toutes Les Grilles Pour Meilleure Lisibilité
                 dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq2.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq3.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq4.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq5.Font = new Font(dgvReq1.Font.FontFamily, 14);
 
+                // Chargement Des Données Des Requêtes 2, 3 Et 4 Directement Dans Les Grilles
                 dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq2.DataSource = Req2();
                 dgvReq3.DataSource = Req3();
                 dgvReq4.DataSource = Req4();
 
+                // Chargement De La Liste Des Membres Dans Le Combobox De La Requête 1
                 string reqMembres = "SELECT matricule, nom || ' ' || prenom AS NomComplet FROM Membre ORDER BY nom";
                 DataTable membres = new DataTable();
 
@@ -172,6 +181,7 @@ namespace Projet_SAE_24_Stargate
                 cboReq1.ValueMember = "matricule";
                 cboReq1.DataSource = membres;
 
+                // Chargement De La Liste Des Missions Dans Le Combobox De La Requête 5
                 string reqMissions = @"SELECT nomPlanete || '-' || numero AS NomMission, 
                                       nomPlanete, numero 
                                FROM Mission ORDER BY nomPlanete, numero";
@@ -191,6 +201,7 @@ namespace Projet_SAE_24_Stargate
             }
         }
 
+        // Requête 5 : Récupère L'Informateur Ayant Reçu Le Moins D'Argent Sur Une Mission Donnée
         public DataTable Req5(string nomPlanete, int numeroMission)
         {
             DataTable table = new DataTable();
@@ -230,6 +241,7 @@ namespace Projet_SAE_24_Stargate
             return table;
         }
 
+        // Quand Un Membre Est Sélectionné : Affiche Les Coéquipiers Dans La Grille De La Requête 1
         private void cboReq1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboReq1.SelectedValue != null)
@@ -238,6 +250,7 @@ namespace Projet_SAE_24_Stargate
             }
         }
 
+        // Quand Une Mission Est Sélectionnée : Affiche Les Informateurs Dans La Grille De La Requête 5
         private void cboReq5_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboReq5.SelectedItem is DataRowView row)
@@ -248,31 +261,37 @@ namespace Projet_SAE_24_Stargate
             }
         }
 
+        // Bouton 1 : Affiche Le Panneau De La Requête 1 Au Premier Plan
         private void button1_Click(object sender, EventArgs e)
         {
             panelReq1.BringToFront();
         }
 
+        // Bouton 2 : Affiche Le Panneau De La Requête 2 Au Premier Plan
         private void button2_Click(object sender, EventArgs e)
         {
             panelReq2.BringToFront();
         }
 
+        // Bouton 3 : Affiche Le Panneau De La Requête 3 Au Premier Plan
         private void button3_Click(object sender, EventArgs e)
         {
             panelReq3.BringToFront();
         }
 
+        // Bouton 4 : Affiche Le Panneau De La Requête 4 Au Premier Plan
         private void button4_Click(object sender, EventArgs e)
         {
             panelReq4.BringToFront();
         }
 
+        // Bouton 5 : Affiche Le Panneau De La Requête 5 Au Premier Plan
         private void button5_Click(object sender, EventArgs e)
         {
             panelReq5.BringToFront();
         }
 
+        // Clic Sur L'Image De Fermeture : Ferme Le Formulaire
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
