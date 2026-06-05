@@ -37,10 +37,15 @@
             this.grpBoxInsArm = new System.Windows.Forms.GroupBox();
             this.lblInsArm = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.grpBoxAttitude = new System.Windows.Forms.GroupBox();
+            this.lblAttitude = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.grpBoxNom.SuspendLayout();
             this.grpBoxOrigine.SuspendLayout();
             this.grpBoxInsArm.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.grpBoxAttitude.SuspendLayout();
             this.SuspendLayout();
             // 
             // picBox
@@ -58,7 +63,7 @@
             this.grpBoxNom.ForeColor = System.Drawing.Color.Cyan;
             this.grpBoxNom.Location = new System.Drawing.Point(16, 364);
             this.grpBoxNom.Name = "grpBoxNom";
-            this.grpBoxNom.Size = new System.Drawing.Size(384, 94);
+            this.grpBoxNom.Size = new System.Drawing.Size(384, 77);
             this.grpBoxNom.TabIndex = 1;
             this.grpBoxNom.TabStop = false;
             this.grpBoxNom.Text = "Nom";
@@ -67,7 +72,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(7, 39);
+            this.lblNom.Location = new System.Drawing.Point(7, 31);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(0, 32);
             this.lblNom.TabIndex = 0;
@@ -77,9 +82,9 @@
             this.grpBoxOrigine.Controls.Add(this.lblOrigine);
             this.grpBoxOrigine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBoxOrigine.ForeColor = System.Drawing.Color.Cyan;
-            this.grpBoxOrigine.Location = new System.Drawing.Point(16, 464);
+            this.grpBoxOrigine.Location = new System.Drawing.Point(13, 443);
             this.grpBoxOrigine.Name = "grpBoxOrigine";
-            this.grpBoxOrigine.Size = new System.Drawing.Size(383, 94);
+            this.grpBoxOrigine.Size = new System.Drawing.Size(383, 76);
             this.grpBoxOrigine.TabIndex = 2;
             this.grpBoxOrigine.TabStop = false;
             this.grpBoxOrigine.Text = "Origine";
@@ -88,7 +93,7 @@
             // 
             this.lblOrigine.AutoSize = true;
             this.lblOrigine.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigine.Location = new System.Drawing.Point(6, 40);
+            this.lblOrigine.Location = new System.Drawing.Point(6, 31);
             this.lblOrigine.Name = "lblOrigine";
             this.lblOrigine.Size = new System.Drawing.Size(0, 32);
             this.lblOrigine.TabIndex = 1;
@@ -99,9 +104,9 @@
             this.grpBoxInsArm.Controls.Add(this.lblInsArm);
             this.grpBoxInsArm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBoxInsArm.ForeColor = System.Drawing.Color.Cyan;
-            this.grpBoxInsArm.Location = new System.Drawing.Point(16, 564);
+            this.grpBoxInsArm.Location = new System.Drawing.Point(13, 525);
             this.grpBoxInsArm.Name = "grpBoxInsArm";
-            this.grpBoxInsArm.Size = new System.Drawing.Size(383, 94);
+            this.grpBoxInsArm.Size = new System.Drawing.Size(383, 78);
             this.grpBoxInsArm.TabIndex = 3;
             this.grpBoxInsArm.TabStop = false;
             this.grpBoxInsArm.Text = "Text";
@@ -110,7 +115,7 @@
             // 
             this.lblInsArm.AutoSize = true;
             this.lblInsArm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInsArm.Location = new System.Drawing.Point(6, 40);
+            this.lblInsArm.Location = new System.Drawing.Point(6, 31);
             this.lblInsArm.Name = "lblInsArm";
             this.lblInsArm.Size = new System.Drawing.Size(0, 32);
             this.lblInsArm.TabIndex = 2;
@@ -118,25 +123,58 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.lblDate);
+            this.panel1.Controls.Add(this.grpBoxAttitude);
+            this.panel1.Controls.Add(this.grpBoxInsArm);
+            this.panel1.Controls.Add(this.grpBoxOrigine);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 665);
+            this.panel1.Size = new System.Drawing.Size(406, 736);
             this.panel1.TabIndex = 0;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(15, 690);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(0, 32);
+            this.lblDate.TabIndex = 2;
+            // 
+            // grpBoxAttitude
+            // 
+            this.grpBoxAttitude.BackColor = System.Drawing.Color.Transparent;
+            this.grpBoxAttitude.Controls.Add(this.lblAttitude);
+            this.grpBoxAttitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBoxAttitude.ForeColor = System.Drawing.Color.Cyan;
+            this.grpBoxAttitude.Location = new System.Drawing.Point(12, 609);
+            this.grpBoxAttitude.Name = "grpBoxAttitude";
+            this.grpBoxAttitude.Size = new System.Drawing.Size(383, 78);
+            this.grpBoxAttitude.TabIndex = 4;
+            this.grpBoxAttitude.TabStop = false;
+            this.grpBoxAttitude.Text = "Attitude";
+            // 
+            // lblAttitude
+            // 
+            this.lblAttitude.AutoSize = true;
+            this.lblAttitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAttitude.Location = new System.Drawing.Point(6, 31);
+            this.lblAttitude.Name = "lblAttitude";
+            this.lblAttitude.Size = new System.Drawing.Size(0, 32);
+            this.lblAttitude.TabIndex = 5;
             // 
             // ucRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.grpBoxInsArm);
-            this.Controls.Add(this.grpBoxOrigine);
             this.Controls.Add(this.grpBoxNom);
             this.Controls.Add(this.picBox);
             this.Controls.Add(this.panel1);
             this.Name = "ucRaces";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Size = new System.Drawing.Size(415, 673);
+            this.Size = new System.Drawing.Size(414, 744);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.grpBoxNom.ResumeLayout(false);
             this.grpBoxNom.PerformLayout();
@@ -144,6 +182,10 @@
             this.grpBoxOrigine.PerformLayout();
             this.grpBoxInsArm.ResumeLayout(false);
             this.grpBoxInsArm.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.grpBoxAttitude.ResumeLayout(false);
+            this.grpBoxAttitude.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +201,8 @@
         private System.Windows.Forms.Label lblOrigine;
         private System.Windows.Forms.Label lblInsArm;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox grpBoxAttitude;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblAttitude;
     }
 }

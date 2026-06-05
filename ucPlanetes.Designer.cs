@@ -37,6 +37,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblNom.ForeColor = System.Drawing.Color.Cyan;
             this.lblNom.Location = new System.Drawing.Point(164, 60);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(0, 32);
@@ -54,10 +55,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pctBoxImage);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPlanetes";
-            this.Size = new System.Drawing.Size(440, 150);
+            this.Size = new System.Drawing.Size(462, 148);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

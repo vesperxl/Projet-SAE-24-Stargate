@@ -25,9 +25,9 @@ namespace Projet_SAE_24_Stargate
         {
             { "Bleu", "Blue" },
             { "Gris", "Gray" },
-            { "Marron", "Brown" },
+            { "Marron", "Peru" },
             { "Orange", "Orange" },
-            { "Pourpre", "Purple" },
+            { "Pourpre", "Crimson" },
             { "Rose", "Pink" },
             { "Vert", "Green" },
             { "Violet", "Purple" }
@@ -128,17 +128,8 @@ namespace Projet_SAE_24_Stargate
                 string id = row["id"].ToString();
 
                 DataRow[] estAllie = MesDatas.DsGlobal.Tables["Allie"].Select("idEspece = " + id);
-                
                 DataRow[] estEnnemi = MesDatas.DsGlobal.Tables["Ennemi"].Select("idEspece = " + id);
 
-                if (typeSelectionne == "Alliés" && estAllie.Length == 0)
-                {
-                    continue; 
-                }
-                else if (typeSelectionne == "Ennemies" && estEnnemi.Length == 0)
-                {
-                    continue; 
-                }
 
                 string nom = row["nom"].ToString();
                 string couleur = row["couleur"].ToString();
@@ -146,8 +137,13 @@ namespace Projet_SAE_24_Stargate
 
                 string nomImage = nom + ".png";
                 string cheminImage = "./../../pic/" + nomImage;
-                Image image = Properties.Resources.loadingScreen;
+
+                Image image = (Image)Properties.Resources.ResourceManager.GetObject(nom);
+
                 string insArme = "";
+                string attitude = "";
+                string dateContact = "";
+
                 DataRow[] habitation = MesDatas.DsGlobal.Tables["Habiter"].Select("idEspece = " + id);
 
                 if (dicoTrad.ContainsKey(couleur))
@@ -161,18 +157,28 @@ namespace Projet_SAE_24_Stargate
                 }
 
                 int allie_enemy = -1;
+
                 if (estAllie.Length > 0)
                 {
                     insArme = estAllie[0]["instrumentMusique"].ToString();
+                    attitude = estAllie[0]["degreBienveillance"].ToString();
+
+                    if (estAllie[0]["datePremierContact"] != DBNull.Value)
+                    {
+                       dateContact = "1er Contact : " + estAllie[0]["datePremierContact"].ToString();
+                    }
                     allie_enemy = 0;
                 }
+
                 else if (estEnnemi.Length > 0)
                 {
                     insArme = estEnnemi[0]["typeArme"].ToString();
+                    attitude = estEnnemi[0]["degreAgressivite"].ToString();
+                    dateContact = ""; 
                     allie_enemy = 1;
                 }
 
-                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, allie_enemy);
+                ucRaces newRaces = new ucRaces(nom, origine, couleur, image, insArme, attitude, dateContact, allie_enemy);
                 flowLayoutPanel1.Controls.Add(newRaces);
             }
         }
@@ -241,6 +247,11 @@ namespace Projet_SAE_24_Stargate
             cboColor.SelectedIndex = 0;
             cboNom.SelectedIndex = 0;
             cboType.SelectedIndex = 0;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

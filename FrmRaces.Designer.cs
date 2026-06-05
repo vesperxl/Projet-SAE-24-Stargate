@@ -40,8 +40,10 @@
             this.lblColor = new System.Windows.Forms.Label();
             this.lblHosti = new System.Windows.Forms.Label();
             this.btnRes = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -51,7 +53,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(184, 8);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(650, 468);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(975, 788);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // chkBoxTriAlpha
@@ -82,6 +84,7 @@
             // 
             // cboNom
             // 
+            this.cboNom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNom.FormattingEnabled = true;
             this.cboNom.Location = new System.Drawing.Point(5, 266);
             this.cboNom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -92,6 +95,7 @@
             // 
             // cboColor
             // 
+            this.cboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Location = new System.Drawing.Point(4, 158);
             this.cboColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -102,6 +106,7 @@
             // 
             // cboType
             // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.FormattingEnabled = true;
             this.cboType.Location = new System.Drawing.Point(4, 49);
             this.cboType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -136,8 +141,7 @@
             this.groupBox2.Location = new System.Drawing.Point(9, 104);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(171, 318);
+            this.groupBox2.Size = new System.Drawing.Size(257, 513);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtre";
@@ -175,33 +179,48 @@
             // btnRes
             // 
             this.btnRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRes.Location = new System.Drawing.Point(8, 426);
-            this.btnRes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRes.Location = new System.Drawing.Point(141, 679);
             this.btnRes.Name = "btnRes";
-            this.btnRes.Size = new System.Drawing.Size(172, 47);
+            this.btnRes.Size = new System.Drawing.Size(129, 122);
             this.btnRes.TabIndex = 8;
             this.btnRes.Text = "Réinitialiser";
             this.btnRes.UseVisualStyleBackColor = true;
             this.btnRes.Click += new System.EventHandler(this.btnRes_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.homeNeon;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 679);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(842, 481);
+            this.ClientSize = new System.Drawing.Size(1263, 813);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmRaces";
-            this.Text = "frmRaces";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Liste Des Races";
             this.Load += new System.EventHandler(this.frmRaces_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,5 +239,6 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblHosti;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
