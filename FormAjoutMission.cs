@@ -18,7 +18,7 @@ namespace Projet_SAE_24_Stargate
         public FormAjoutMission()
         {
             InitializeComponent();
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
             dtpdepart.MinDate = DateTime.Now;
             nUDBudget.Minimum = 0;
             nUDBudget.Maximum = 1000000000;

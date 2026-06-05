@@ -22,7 +22,7 @@ namespace Projet_SAE_24_Stargate
         public formPlanetes()
         {
             InitializeComponent();
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
         }
 
         Dictionary<string, string> dicoTrad = new Dictionary<string, string>()

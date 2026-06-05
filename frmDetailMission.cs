@@ -21,6 +21,9 @@ namespace Projet_SAE_24_Stargate
         private string nomPlanete;
         private int num;
         private string status;
+        private int soldeRestant;
+
+
 
 
         public frmDetailMission(string nomPlanete, int num, string status)
@@ -29,7 +32,7 @@ namespace Projet_SAE_24_Stargate
             this.nomPlanete = nomPlanete;
             this.num = num;
             this.status = status;
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
         }
         private bool ongletCharge = false;
         BindingSource bsJournal = new BindingSource();
@@ -46,16 +49,57 @@ namespace Projet_SAE_24_Stargate
             lblBudget.Text = ligneMission[0]["budget"].ToString() + " $G";
             int budget = Convert.ToInt16(ligneMission[0]["budget"]);
             grpMembre.Text = "Membre (" + ligneMission[0]["nbMembreRequis"] + " requis)"; 
-           if (status.Equals("Terminée"))
+           if (status.Equals("Terminée") || status.Equals("Dans le futur"))
             {
                 btnAdd.Enabled = false;
                 pictureInfo.Visible = true;
                 ToolTip tooltip = new ToolTip();
-                tooltip.SetToolTip(pictureInfo, "Impossible d'ajouter des informations à une mission qui est terminée.");
+                tooltip.SetToolTip(pictureInfo, "Impossible d'ajouter des informations à une mission qui n'est pas en cours.");
 
             }
-            
-            
+            if (!MesDatas.DsGlobal.Tables.Contains("BilanCapture" + nomPlanete + "-" + num))
+            {
+                DataTable tblBilan = new DataTable("BilanCapture" + nomPlanete + "-" + num);
+                tblBilan.Columns.Add("nomEspece", typeof(string));
+                tblBilan.Columns.Add("objectifInitial", typeof(int));
+                tblBilan.Columns.Add("nbCapture", typeof(int));
+                tblBilan.Columns.Add("taux", typeof(string));
+
+
+                foreach (DataRow row in MesDatas.DsGlobal.Tables["ObjectifCapture"].Rows)
+                {
+
+
+                    if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
+                    {
+                        int nbCapture = 0;
+                        string tauxFormat = "0.00%";
+
+                        string nomEspece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + row["idEspeceEnnemi"])[0]["nom"].ToString();
+                        int objectifCapture = Convert.ToInt16(row["objectif"]);
+
+                        foreach (DataRow row2 in MesDatas.DsGlobal.Tables["Capturer"].Rows)
+                        {
+                            if (row2["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row2["numeroMission"]) == num && row2["idEspeceEnnemi"].ToString() == row["idEspeceEnnemi"].ToString())
+                            {
+                                nbCapture += Convert.ToInt16(row2["nombre"]);
+                                float taux = ((float)nbCapture / (float)objectifCapture) * 100;
+                                tauxFormat = taux.ToString("0.00") + " %";
+
+                            }
+
+
+                        }
+
+                        tblBilan.Rows.Add(nomEspece, objectifCapture, nbCapture, tauxFormat);
+
+                    }
+                }
+
+                MesDatas.DsGlobal.Tables.Add(tblBilan);
+            }
+
+
 
 
             //Calcul du solde apres depenses
@@ -74,8 +118,12 @@ namespace Projet_SAE_24_Stargate
                     budget -= Convert.ToInt16(row["sommeVersee"]);
                 }
             }
+
+
             lblSoldeApresDepense.Text = budget.ToString() + " $G";
+            soldeRestant = budget;
             richTextFeuilleRoute.Text = ligneMission[0]["feuilleDeRoute"].ToString();
+
 
             //Ajout des objectif
             Label lblObjData = new Label();
@@ -104,6 +152,7 @@ namespace Projet_SAE_24_Stargate
             }
 
             //Recuperation des information du chef et ajout du UC
+
             string statutChef = MesDatas.DsGlobal.Tables["Militaire"].Select("matriculeMembre = '" + ligneMission[0]["MatriculeChef"] + "'")[0]["grade"].ToString();
             System.Drawing.Image imgChef = Properties.Resources.Chef;
             DataRow[] rowChef = MesDatas.DsGlobal.Tables["Membre"].Select("matricule = '" + ligneMission[0]["MatriculeChef"] + "'");
@@ -113,14 +162,16 @@ namespace Projet_SAE_24_Stargate
             ucChef.BackColor = Color.DarkGreen;
             flpMembre.Controls.Add(ucChef);
 
-            
-            
+            string matriculeChef = ligneMission[0]["MatriculeChef"].ToString();
+
+
+
             //2 boucle foreach pour afficher d'abord les militaire puis les civils
-            
+
             //Ajout des UC des autre militaire de l'equipe 
             foreach (DataRow row in MesDatas.DsGlobal.Tables["Composer"].Rows)
             {
-                if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num && row["MatriculeMembre"].ToString().StartsWith("M"))
+                if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num && row["MatriculeMembre"].ToString().StartsWith("M") && row["MatriculeMembre"].ToString() != matriculeChef)
                 {
                     DataRow[] rowMilitaire = MesDatas.DsGlobal.Tables["Membre"].Select("matricule = '" + row["matriculeMembre"] + "'");
                     string nomMilitaire = rowMilitaire[0]["nom"].ToString();
@@ -225,46 +276,7 @@ namespace Projet_SAE_24_Stargate
                 lblTotDepense.Text = "Total des dépenses : " + totDepense.ToString() + " $G";
             }
 
-            if(!MesDatas.DsGlobal.Tables.Contains("BilanCapture" + nomPlanete + "-" + num))
-            {
-                DataTable tblBilan = new DataTable("BilanCapture" + nomPlanete + "-" + num);
-                tblBilan.Columns.Add("nomEspece", typeof(string));
-                tblBilan.Columns.Add("objectifInitial", typeof(int));
-                tblBilan.Columns.Add("nbCapture", typeof(int));
-                tblBilan.Columns.Add("taux", typeof(string));
-               
-                foreach (DataRow row in MesDatas.DsGlobal.Tables["ObjectifCapture"].Rows)
-                {
-                    
-
-                    if (row["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row["numeroMission"]) == num)
-                    {
-                        int nbCapture = 0;
-                        string tauxFormat = "0.00%";
-
-                        string nomEspece = MesDatas.DsGlobal.Tables["Espece"].Select("id = " + row["idEspeceEnnemi"])[0]["nom"].ToString();
-                        int objectifCapture = Convert.ToInt16(row["objectif"]);
-
-                        foreach (DataRow row2 in MesDatas.DsGlobal.Tables["Capturer"].Rows)
-                        {
-                            if (row2["nomPlanete"].ToString() == nomPlanete && Convert.ToInt16(row2["numeroMission"]) == num && row2["idEspeceEnnemi"].ToString() == row["idEspeceEnnemi"].ToString())
-                            {
-                                nbCapture += Convert.ToInt16(row2["nombre"]);
-                                float taux = ((float)nbCapture / (float)objectifCapture) * 100;
-                                tauxFormat = taux.ToString("0.00") + " %";
-
-                            }
-
-
-                        }
-
-                        tblBilan.Rows.Add(nomEspece, objectifCapture, nbCapture, tauxFormat);
-
-                    }
-                }
-
-                MesDatas.DsGlobal.Tables.Add(tblBilan);
-            }
+            
            
             
             dgvCapture.DataSource = MesDatas.DsGlobal.Tables["BilanCapture" + nomPlanete + "-" + num];
@@ -310,7 +322,7 @@ namespace Projet_SAE_24_Stargate
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAjoutInfo frm = new frmAjoutInfo(nomPlanete, num);
+            frmAjoutInfo frm = new frmAjoutInfo(nomPlanete, num, soldeRestant);
             frm.ShowDialog();
         }
 
@@ -603,8 +615,14 @@ namespace Projet_SAE_24_Stargate
 
         }
 
-        private void tabDetailMission_Click(object sender, EventArgs e)
+        private void pictureBack_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void pictureBack2_Click(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }

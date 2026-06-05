@@ -51,10 +51,12 @@
             // dateChoice
             // 
             this.dateChoice.Location = new System.Drawing.Point(130, 11);
+            this.dateChoice.MaxDate = new System.DateTime(2026, 6, 3, 0, 0, 0, 0);
             this.dateChoice.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateChoice.Name = "dateChoice";
             this.dateChoice.Size = new System.Drawing.Size(261, 27);
             this.dateChoice.TabIndex = 1;
+            this.dateChoice.Value = new System.DateTime(2026, 6, 3, 0, 0, 0, 0);
             // 
             // lblSomme
             // 
@@ -103,6 +105,11 @@
             // numSomme
             // 
             this.numSomme.Location = new System.Drawing.Point(130, 53);
+            this.numSomme.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.numSomme.Name = "numSomme";
             this.numSomme.Size = new System.Drawing.Size(98, 27);
             this.numSomme.TabIndex = 8;

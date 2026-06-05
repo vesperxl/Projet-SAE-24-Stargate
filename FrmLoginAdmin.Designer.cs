@@ -136,10 +136,11 @@
             this.lblTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblTitre.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.Red;
-            this.lblTitre.Location = new System.Drawing.Point(85, 32);
+            this.lblTitre.Location = new System.Drawing.Point(138, 32);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(534, 38);
             this.lblTitre.TabIndex = 1;
+            this.lblTitre.Tag = "title";
             this.lblTitre.Text = "STARGATE COMMAND USAF";
             // 
             // lbltxttitre
@@ -148,10 +149,11 @@
             this.lbltxttitre.BackColor = System.Drawing.Color.Transparent;
             this.lbltxttitre.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltxttitre.ForeColor = System.Drawing.Color.Red;
-            this.lbltxttitre.Location = new System.Drawing.Point(82, 89);
+            this.lbltxttitre.Location = new System.Drawing.Point(143, 86);
             this.lbltxttitre.Name = "lbltxttitre";
             this.lbltxttitre.Size = new System.Drawing.Size(529, 38);
             this.lbltxttitre.TabIndex = 2;
+            this.lbltxttitre.Tag = "title";
             this.lbltxttitre.Text = "Accès restreint aux missions SG";
             this.lbltxttitre.Click += new System.EventHandler(this.lbltxttitre_Click);
             // 

@@ -15,6 +15,7 @@ namespace Projet_SAE_24_Stargate
         public ucDepenses()
         {
             InitializeComponent();
+            ThemeCp.ApplyTheme(this);
         }
 
         private void ucDepenses_Load(object sender, EventArgs e)

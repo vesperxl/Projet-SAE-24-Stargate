@@ -22,7 +22,7 @@ namespace Projet_SAE_24_Stargate
         public FormAffectationCapture(int member, string dateDep, string dateRet, int numeroM, string planeteM, string nomChef, string matriculeChef)
         {
             InitializeComponent();
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
 
             nbMembre = member-1;
             lblrestreq.Text = nbMembre.ToString();

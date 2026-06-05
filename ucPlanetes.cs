@@ -16,7 +16,7 @@ namespace Projet_SAE_24_Stargate
         public ucPlanetes()
         {
             InitializeComponent();
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
         }
 
         public ucPlanetes(String nom, Image image)

@@ -20,7 +20,7 @@ namespace Projet_SAE_24_Stargate
         {
             InitializeComponent();
             grpboxAuth.Text = "";
-            ThemeCp.AppliquerTheme(this);
+            ThemeCp.ApplyTheme(this);
             grpboxAuth.BackColor = Color.Transparent;
             grpboxAuth.Paint += (s, e) => e.Graphics.DrawString("AUTHENTIFICATION", new Font("Consolas", 12, FontStyle.Bold), Brushes.Cyan, 10, 0);
             txtMdp.UseSystemPasswordChar = true;

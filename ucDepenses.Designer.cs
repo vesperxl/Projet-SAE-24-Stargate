@@ -42,6 +42,11 @@
             // numSomme
             // 
             this.numSomme.Location = new System.Drawing.Point(130, 53);
+            this.numSomme.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.numSomme.Name = "numSomme";
             this.numSomme.Size = new System.Drawing.Size(98, 27);
             this.numSomme.TabIndex = 16;
