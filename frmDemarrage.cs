@@ -217,7 +217,9 @@ namespace Projet_SAE_24_Stargate
         private void showPlanet()
         {
             formPlanetes frmPlanetes = new formPlanetes();
+
             frmPlanetes.ShowDialog();
+            
         }
 
         private void lblPlanete_Click(object sender, EventArgs e)
@@ -232,6 +234,7 @@ namespace Projet_SAE_24_Stargate
 
         private void flpListRace_Click(object sender, EventArgs e)
         {
+            
             showRace();
         }
 
@@ -256,6 +259,7 @@ namespace Projet_SAE_24_Stargate
         {
             Stats stats = new Stats();
             stats.ShowDialog();
+
         }
 
         //filtre mission en cours
