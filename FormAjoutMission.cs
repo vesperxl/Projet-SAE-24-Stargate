@@ -238,7 +238,7 @@ namespace Projet_SAE_24_Stargate
                     cmd.ExecuteNonQuery();
 
                     // Ouverture du formulaire suivant (affectation équipe + objectifs)
-                    this.Hide();
+                    
                     MessageBox.Show("Mission ajoutée avec succès !");
 
                     FormAffectationCapture fAffecCap =
@@ -252,9 +252,12 @@ namespace Projet_SAE_24_Stargate
                             matriculeChef
                         );
 
-                    fAffecCap.ShowDialog();
-
                     DialogResult = DialogResult.OK;
+                    
+                    fAffecCap.ShowDialog();
+                    
+
+                    
                 }
                 catch (Exception ex)
                 {
