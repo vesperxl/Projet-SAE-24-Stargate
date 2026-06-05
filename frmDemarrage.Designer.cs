@@ -65,10 +65,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Projet_SAE_24_Stargate.Properties.Resources.refresh;
-            this.pictureBox1.Location = new System.Drawing.Point(1611, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(1284, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(81, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -81,20 +80,18 @@
             this.flpMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flpMission.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpMission.Controls.Add(this.chkEnCours);
-            this.flpMission.Location = new System.Drawing.Point(1741, 18);
-            this.flpMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpMission.Location = new System.Drawing.Point(1371, 12);
             this.flpMission.Name = "flpMission";
-            this.flpMission.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
-            this.flpMission.Size = new System.Drawing.Size(810, 1335);
+            this.flpMission.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMission.Size = new System.Drawing.Size(541, 1037);
             this.flpMission.TabIndex = 1;
             // 
             // chkEnCours
             // 
             this.chkEnCours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEnCours.Location = new System.Drawing.Point(19, 20);
-            this.chkEnCours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkEnCours.Location = new System.Drawing.Point(13, 13);
             this.chkEnCours.Name = "chkEnCours";
-            this.chkEnCours.Size = new System.Drawing.Size(750, 34);
+            this.chkEnCours.Size = new System.Drawing.Size(500, 22);
             this.chkEnCours.TabIndex = 1;
             this.chkEnCours.Text = "Afficher seulement les missions en cours";
             this.chkEnCours.UseVisualStyleBackColor = true;
@@ -104,23 +101,21 @@
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.Red;
-            this.lblTitre.Location = new System.Drawing.Point(52, 78);
-            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitre.Location = new System.Drawing.Point(35, 51);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(796, 63);
+            this.lblTitre.Size = new System.Drawing.Size(711, 55);
             this.lblTitre.TabIndex = 3;
             this.lblTitre.Tag = "title";
             this.lblTitre.Text = "STARGATE COMMAND USAF";
             // 
             // lblRace
             // 
-            this.lblRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRace.Location = new System.Drawing.Point(176, 2);
-            this.lblRace.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRace.Location = new System.Drawing.Point(175, 1);
             this.lblRace.Name = "lblRace";
-            this.lblRace.Size = new System.Drawing.Size(387, 163);
+            this.lblRace.Size = new System.Drawing.Size(391, 168);
             this.lblRace.TabIndex = 6;
             this.lblRace.Text = "Liste des races";
             this.lblRace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,10 +127,9 @@
             this.flpListRace.Controls.Add(this.pictureRace);
             this.flpListRace.Controls.Add(this.lblRace);
             this.flpListRace.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flpListRace.Location = new System.Drawing.Point(40, 578);
-            this.flpListRace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpListRace.Location = new System.Drawing.Point(27, 409);
             this.flpListRace.Name = "flpListRace";
-            this.flpListRace.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpListRace.Padding = new System.Windows.Forms.Padding(1);
             this.flpListRace.Size = new System.Drawing.Size(580, 175);
             this.flpListRace.TabIndex = 10;
             this.flpListRace.Click += new System.EventHandler(this.flpListRace_Click);
@@ -143,10 +137,9 @@
             // pictureRace
             // 
             this.pictureRace.Image = global::Projet_SAE_24_Stargate.Properties.Resources.alien;
-            this.pictureRace.Location = new System.Drawing.Point(6, 7);
-            this.pictureRace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureRace.Location = new System.Drawing.Point(4, 4);
             this.pictureRace.Name = "pictureRace";
-            this.pictureRace.Size = new System.Drawing.Size(162, 158);
+            this.pictureRace.Size = new System.Drawing.Size(165, 165);
             this.pictureRace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureRace.TabIndex = 5;
             this.pictureRace.TabStop = false;
@@ -154,11 +147,10 @@
             // 
             // lblPlanete
             // 
-            this.lblPlanete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanete.Location = new System.Drawing.Point(176, 2);
-            this.lblPlanete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlanete.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanete.Location = new System.Drawing.Point(175, 1);
             this.lblPlanete.Name = "lblPlanete";
-            this.lblPlanete.Size = new System.Drawing.Size(387, 163);
+            this.lblPlanete.Size = new System.Drawing.Size(391, 168);
             this.lblPlanete.TabIndex = 6;
             this.lblPlanete.Text = "Liste des planètes";
             this.lblPlanete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,10 +162,9 @@
             this.flpListePlanete.Controls.Add(this.picturePlanete);
             this.flpListePlanete.Controls.Add(this.lblPlanete);
             this.flpListePlanete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flpListePlanete.Location = new System.Drawing.Point(40, 844);
-            this.flpListePlanete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpListePlanete.Location = new System.Drawing.Point(27, 610);
             this.flpListePlanete.Name = "flpListePlanete";
-            this.flpListePlanete.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpListePlanete.Padding = new System.Windows.Forms.Padding(1);
             this.flpListePlanete.Size = new System.Drawing.Size(580, 175);
             this.flpListePlanete.TabIndex = 11;
             this.flpListePlanete.Click += new System.EventHandler(this.flpListePlanete_Click);
@@ -181,10 +172,9 @@
             // picturePlanete
             // 
             this.picturePlanete.Image = global::Projet_SAE_24_Stargate.Properties.Resources.neonPlanete;
-            this.picturePlanete.Location = new System.Drawing.Point(6, 7);
-            this.picturePlanete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picturePlanete.Location = new System.Drawing.Point(4, 4);
             this.picturePlanete.Name = "picturePlanete";
-            this.picturePlanete.Size = new System.Drawing.Size(162, 158);
+            this.picturePlanete.Size = new System.Drawing.Size(165, 165);
             this.picturePlanete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturePlanete.TabIndex = 5;
             this.picturePlanete.TabStop = false;
@@ -196,10 +186,9 @@
             this.flpNvMission.Controls.Add(this.pictureMission);
             this.flpNvMission.Controls.Add(this.lblMission);
             this.flpNvMission.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flpNvMission.Location = new System.Drawing.Point(40, 325);
-            this.flpNvMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpNvMission.Location = new System.Drawing.Point(27, 211);
             this.flpNvMission.Name = "flpNvMission";
-            this.flpNvMission.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpNvMission.Padding = new System.Windows.Forms.Padding(1);
             this.flpNvMission.Size = new System.Drawing.Size(580, 175);
             this.flpNvMission.TabIndex = 9;
             this.flpNvMission.Click += new System.EventHandler(this.flpNvMission_Click);
@@ -207,10 +196,9 @@
             // pictureMission
             // 
             this.pictureMission.Image = global::Projet_SAE_24_Stargate.Properties.Resources.ajouterMission;
-            this.pictureMission.Location = new System.Drawing.Point(6, 7);
-            this.pictureMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureMission.Location = new System.Drawing.Point(4, 4);
             this.pictureMission.Name = "pictureMission";
-            this.pictureMission.Size = new System.Drawing.Size(162, 158);
+            this.pictureMission.Size = new System.Drawing.Size(165, 165);
             this.pictureMission.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureMission.TabIndex = 5;
             this.pictureMission.TabStop = false;
@@ -218,11 +206,10 @@
             // 
             // lblMission
             // 
-            this.lblMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMission.Location = new System.Drawing.Point(176, 2);
-            this.lblMission.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMission.Location = new System.Drawing.Point(175, 1);
             this.lblMission.Name = "lblMission";
-            this.lblMission.Size = new System.Drawing.Size(387, 172);
+            this.lblMission.Size = new System.Drawing.Size(391, 168);
             this.lblMission.TabIndex = 6;
             this.lblMission.Text = "Nouvelle mission";
             this.lblMission.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,10 +221,9 @@
             this.flpStat.Controls.Add(this.pictureStt);
             this.flpStat.Controls.Add(this.lblStat);
             this.flpStat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flpStat.Location = new System.Drawing.Point(40, 1118);
-            this.flpStat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpStat.Location = new System.Drawing.Point(27, 812);
             this.flpStat.Name = "flpStat";
-            this.flpStat.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpStat.Padding = new System.Windows.Forms.Padding(1);
             this.flpStat.Size = new System.Drawing.Size(580, 175);
             this.flpStat.TabIndex = 12;
             this.flpStat.Click += new System.EventHandler(this.flpStat_Click);
@@ -245,10 +231,9 @@
             // pictureStt
             // 
             this.pictureStt.Image = global::Projet_SAE_24_Stargate.Properties.Resources.stat;
-            this.pictureStt.Location = new System.Drawing.Point(6, 7);
-            this.pictureStt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureStt.Location = new System.Drawing.Point(4, 4);
             this.pictureStt.Name = "pictureStt";
-            this.pictureStt.Size = new System.Drawing.Size(162, 158);
+            this.pictureStt.Size = new System.Drawing.Size(165, 165);
             this.pictureStt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureStt.TabIndex = 5;
             this.pictureStt.TabStop = false;
@@ -256,11 +241,10 @@
             // 
             // lblStat
             // 
-            this.lblStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStat.Location = new System.Drawing.Point(176, 2);
-            this.lblStat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStat.Location = new System.Drawing.Point(175, 1);
             this.lblStat.Name = "lblStat";
-            this.lblStat.Size = new System.Drawing.Size(387, 163);
+            this.lblStat.Size = new System.Drawing.Size(391, 168);
             this.lblStat.TabIndex = 6;
             this.lblStat.Text = "Statistiques";
             this.lblStat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,20 +253,19 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Projet_SAE_24_Stargate.Properties.Resources.fondTitle;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(887, 226);
+            this.pictureBox2.Size = new System.Drawing.Size(775, 160);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // frmDemarrage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Projet_SAE_24_Stargate.Properties.Resources.backgroundDemar;
-            this.ClientSize = new System.Drawing.Size(2564, 1367);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.flpNvMission);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.flpStat);
@@ -291,7 +274,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flpMission);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDemarrage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tableau de bord";

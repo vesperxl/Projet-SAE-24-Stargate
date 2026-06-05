@@ -157,14 +157,20 @@ namespace Projet_SAE_24_Stargate
             try
             {
                 // Agrandissement De La Police De Toutes Les Grilles Pour Meilleure Lisibilité
-                dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
-                dgvReq2.Font = new Font(dgvReq1.Font.FontFamily, 14);
-                dgvReq3.Font = new Font(dgvReq1.Font.FontFamily, 14);
-                dgvReq4.Font = new Font(dgvReq1.Font.FontFamily, 14);
-                dgvReq5.Font = new Font(dgvReq1.Font.FontFamily, 14);
+                dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 22);
+                dgvReq2.Font = new Font(dgvReq2.Font.FontFamily, 22);
+                dgvReq3.Font = new Font(dgvReq3.Font.FontFamily, 22);
+                dgvReq4.Font = new Font(dgvReq4.Font.FontFamily, 22);
+                dgvReq5.Font = new Font(dgvReq5.Font.FontFamily, 22);
+
+                // Réglages D'Affichage Des Grilles Pour Que Les Colonnes S'Adaptent Au Contenu
+                dgvReq1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvReq2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvReq3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvReq4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvReq5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 // Chargement Des Données Des Requêtes 2, 3 Et 4 Directement Dans Les Grilles
-                dgvReq1.Font = new Font(dgvReq1.Font.FontFamily, 14);
                 dgvReq2.DataSource = Req2();
                 dgvReq3.DataSource = Req3();
                 dgvReq4.DataSource = Req4();
